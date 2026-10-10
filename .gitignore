@@ -1,0 +1,64 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Project-local tools, Python runtimes, environments, and caches
+.tools/
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Local environment settings; retain the credential-free example
+.env
+.env.*
+!.env.example
+
+# Local metadata databases, journals, and generated reports
+.local/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+reports/
+
+# Temporary uploads and customer feedback analysis data
+uploads/
+tmp/
+temp/
+feedback_tmp/
+analysis_tmp/
+*.tmp
+*.temp
+
+# Credentials and environment-managed local configuration
+.aws/
+.ssh/
+.codex/
+.agents/
+credentials/
+secrets/
+credentials*.json
+client_secret*.json
+token.json
+token*.json
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Build artifacts and local logs
+build/
+dist/
+*.egg-info/
+*.log
+
+# PostgreSQL development data and private database backups (T09)
+data/
+pgdata/
+*.dump
