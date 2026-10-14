@@ -1,0 +1,1 @@
+"""External feedback source adapters."""
