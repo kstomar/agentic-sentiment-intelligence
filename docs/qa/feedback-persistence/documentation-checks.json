@@ -1,0 +1,8 @@
+{
+  "markdown_files_checked": 15,
+  "local_links_checked": 129,
+  "broken_links": [],
+  "public_groq_credential_match_paths": [],
+  "postman_export_credentials_blank": true,
+  "python_compile_check": "app/migrations/tests/reviewer harness; no new lint/type tooling installed"
+}

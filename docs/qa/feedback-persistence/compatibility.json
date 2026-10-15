@@ -1,0 +1,478 @@
+{
+  "previous_paths": 19,
+  "current_paths": 20,
+  "added_paths": [
+    "/api/v1/ingest/events/{delivery_id}/result"
+  ],
+  "removed_paths": [],
+  "changed_existing_operations": [
+    {
+      "path": "/api/v1/ingest/feedback",
+      "method": "post",
+      "old": {
+        "tags": [
+          "ingestion"
+        ],
+        "summary": "Analyze externally submitted feedback",
+        "operationId": "ingest_api_v1_ingest_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngestionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ]
+      },
+      "new": {
+        "tags": [
+          "ingestion"
+        ],
+        "summary": "Analyze externally submitted feedback",
+        "operationId": "ingest_api_v1_ingest_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngestionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "headers": {
+              "X-Feedback-Delivery-Id": {
+                "description": "Server-created persistent event ID.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Location": {
+                "description": "Owned result retrieval URL.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ]
+      }
+    }
+  ],
+  "changed_existing_schemas": [
+    {
+      "name": "ErrorCode",
+      "old": {
+        "type": "string",
+        "enum": [
+          "GMAIL_NOT_CONFIGURED",
+          "GMAIL_INVALID_STATE",
+          "GMAIL_OAUTH_DENIED",
+          "GMAIL_OAUTH_FAILED",
+          "GMAIL_SCOPE_INVALID",
+          "GMAIL_MAILBOX_CONFLICT",
+          "GMAIL_ALREADY_CONNECTED",
+          "GMAIL_NOT_CONNECTED",
+          "GMAIL_RECONNECT_REQUIRED",
+          "GMAIL_CAPACITY_EXCEEDED",
+          "GMAIL_PROVIDER_ERROR",
+          "GMAIL_RATE_LIMITED",
+          "GMAIL_TIMEOUT",
+          "GMAIL_RESPONSE_INVALID",
+          "GMAIL_SELECTION_INVALID",
+          "GMAIL_MESSAGE_INVALID",
+          "GMAIL_MESSAGE_TOO_LARGE",
+          "GMAIL_ATTACHMENTS_SKIPPED",
+          "GMAIL_JOB_NOT_FOUND",
+          "GMAIL_DISCONNECTED",
+          "GMAIL_UNAVAILABLE",
+          "AUTHENTICATION_FAILED",
+          "AUTHORIZATION_FAILED",
+          "TENANT_CAPACITY_EXCEEDED",
+          "WEBHOOK_DELIVERY_COLLISION",
+          "APP_AUTH_NOT_CONFIGURED",
+          "GROQ_NOT_CONFIGURED",
+          "GROQ_MODEL_UNSUPPORTED",
+          "GROQ_CONFIGURATION_ERROR",
+          "UPSTREAM_AUTHENTICATION_FAILED",
+          "UPSTREAM_RATE_LIMITED",
+          "UPSTREAM_TIMEOUT",
+          "UPSTREAM_UNAVAILABLE",
+          "UPSTREAM_REQUEST_REJECTED",
+          "INVALID_MODEL_RESPONSE",
+          "INVALID_ACTION_SELECTION",
+          "INVALID_GRAPH_STATE",
+          "EVIDENCE_VERIFICATION_FAILED",
+          "INVESTIGATION_TIMEOUT",
+          "BATCH_FILE_TOO_LARGE",
+          "BATCH_UNSUPPORTED_FORMAT",
+          "BATCH_INVALID_ENCODING",
+          "BATCH_INVALID_FILE",
+          "BATCH_INVALID_COLUMNS",
+          "BATCH_INVALID_IDS",
+          "BATCH_INVALID_TEXT",
+          "BATCH_EXTRACTION_LIMIT",
+          "BATCH_TOO_MANY_RECORDS",
+          "BATCH_NO_VALID_RECORDS",
+          "BATCH_CAPACITY_EXCEEDED",
+          "BATCH_JOB_NOT_FOUND",
+          "BATCH_JOB_TIMEOUT",
+          "BATCH_UNAVAILABLE",
+          "BATCH_REPORT_UNAVAILABLE",
+          "REQUEST_TOO_LARGE",
+          "REQUEST_BODY_TIMEOUT",
+          "INGRESS_CAPACITY_EXCEEDED",
+          "INGRESS_RATE_LIMITED",
+          "PROCESSING_CAPACITY_EXCEEDED",
+          "WEBHOOK_NOT_CONFIGURED",
+          "WEBHOOK_AUTHENTICATION_FAILED",
+          "WEBHOOK_DELIVERY_CONFLICT",
+          "WEBHOOK_CAPACITY_EXCEEDED",
+          "WEBHOOK_EVENT_NOT_FOUND",
+          "WEBHOOK_PROCESSING_TIMEOUT",
+          "WEBHOOK_UNAVAILABLE",
+          "VALIDATION_ERROR",
+          "HTTP_ERROR",
+          "INTERNAL_ERROR"
+        ],
+        "title": "ErrorCode"
+      },
+      "new": {
+        "type": "string",
+        "enum": [
+          "INGESTION_INTERRUPTED",
+          "GMAIL_NOT_CONFIGURED",
+          "GMAIL_INVALID_STATE",
+          "GMAIL_OAUTH_DENIED",
+          "GMAIL_OAUTH_FAILED",
+          "GMAIL_SCOPE_INVALID",
+          "GMAIL_MAILBOX_CONFLICT",
+          "GMAIL_ALREADY_CONNECTED",
+          "GMAIL_NOT_CONNECTED",
+          "GMAIL_RECONNECT_REQUIRED",
+          "GMAIL_CAPACITY_EXCEEDED",
+          "GMAIL_PROVIDER_ERROR",
+          "GMAIL_RATE_LIMITED",
+          "GMAIL_TIMEOUT",
+          "GMAIL_RESPONSE_INVALID",
+          "GMAIL_SELECTION_INVALID",
+          "GMAIL_MESSAGE_INVALID",
+          "GMAIL_MESSAGE_TOO_LARGE",
+          "GMAIL_ATTACHMENTS_SKIPPED",
+          "GMAIL_JOB_NOT_FOUND",
+          "GMAIL_DISCONNECTED",
+          "GMAIL_UNAVAILABLE",
+          "AUTHENTICATION_FAILED",
+          "AUTHORIZATION_FAILED",
+          "TENANT_CAPACITY_EXCEEDED",
+          "WEBHOOK_DELIVERY_COLLISION",
+          "APP_AUTH_NOT_CONFIGURED",
+          "GROQ_NOT_CONFIGURED",
+          "GROQ_MODEL_UNSUPPORTED",
+          "GROQ_CONFIGURATION_ERROR",
+          "UPSTREAM_AUTHENTICATION_FAILED",
+          "UPSTREAM_RATE_LIMITED",
+          "UPSTREAM_TIMEOUT",
+          "UPSTREAM_UNAVAILABLE",
+          "UPSTREAM_REQUEST_REJECTED",
+          "INVALID_MODEL_RESPONSE",
+          "INVALID_ACTION_SELECTION",
+          "INVALID_GRAPH_STATE",
+          "EVIDENCE_VERIFICATION_FAILED",
+          "INVESTIGATION_TIMEOUT",
+          "BATCH_FILE_TOO_LARGE",
+          "BATCH_UNSUPPORTED_FORMAT",
+          "BATCH_INVALID_ENCODING",
+          "BATCH_INVALID_FILE",
+          "BATCH_INVALID_COLUMNS",
+          "BATCH_INVALID_IDS",
+          "BATCH_INVALID_TEXT",
+          "BATCH_EXTRACTION_LIMIT",
+          "BATCH_TOO_MANY_RECORDS",
+          "BATCH_NO_VALID_RECORDS",
+          "BATCH_CAPACITY_EXCEEDED",
+          "BATCH_JOB_NOT_FOUND",
+          "BATCH_JOB_TIMEOUT",
+          "BATCH_UNAVAILABLE",
+          "BATCH_REPORT_UNAVAILABLE",
+          "REQUEST_TOO_LARGE",
+          "REQUEST_BODY_TIMEOUT",
+          "INGRESS_CAPACITY_EXCEEDED",
+          "INGRESS_RATE_LIMITED",
+          "PROCESSING_CAPACITY_EXCEEDED",
+          "WEBHOOK_NOT_CONFIGURED",
+          "WEBHOOK_AUTHENTICATION_FAILED",
+          "WEBHOOK_DELIVERY_CONFLICT",
+          "WEBHOOK_CAPACITY_EXCEEDED",
+          "WEBHOOK_EVENT_NOT_FOUND",
+          "WEBHOOK_PROCESSING_TIMEOUT",
+          "WEBHOOK_UNAVAILABLE",
+          "VALIDATION_ERROR",
+          "HTTP_ERROR",
+          "INTERNAL_ERROR"
+        ],
+        "title": "ErrorCode"
+      }
+    }
+  ],
+  "new_schemas": [
+    "EventResult"
+  ],
+  "baseline_cases_retained": 604,
+  "baseline_cases_removed": [],
+  "new_cases": 34
+}

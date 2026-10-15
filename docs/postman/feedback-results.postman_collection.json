@@ -1,0 +1,664 @@
+{
+  "info": {
+    "name": "Persistent feedback ingestion and original analysis",
+    "description": "Local synthetic demonstration; valid new submissions invoke the configured provider once. GETs, duplicates and security checks do not. Configure private environment values locally; never share populated credentials or customer data. Request 10 requires an actual manual FastAPI restart; request 11 is optional and makes one additional inference.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "noauth"
+  },
+  "item": [
+    {
+      "name": "01 Valid signed webhook: accept new event",
+      "request": {
+        "method": "POST",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/webhooks/feedback",
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Web Crypto only: no npm packages or credential logging.",
+              "const integration = pm.environment.get(\"integration_id\");",
+              "const secret = pm.environment.get(\"signing_secret\");",
+              "if (!integration || !secret) throw new Error(\"Configure integration_id and signing_secret privately.\");",
+              "const mode = \"new\";",
+              "let delivery = pm.environment.get(\"event_delivery_id\");",
+              "let raw = pm.environment.get(\"event_original_body\");",
+              "if (mode === \"new\") {",
+              "  delivery = pm.variables.replaceIn(\"{{$guid}}\").replace(/-/g, \"\");",
+              "  const payload = {event_type: \"customer.feedback.created\", feedback: {",
+              "    id: \"WEBHOOK-TEST-001\", text: pm.environment.get(\"review_text\")",
+              "  }, source: \"customer_review\", business_type: \"ecommerce\"};",
+              "  raw = JSON.stringify(payload);",
+              "  pm.environment.set(\"event_delivery_id\", delivery);",
+              "  pm.environment.set(\"event_original_body\", raw);",
+              "  pm.environment.set(\"event_poll_count\", \"0\");",
+              "  pm.environment.unset(\"event_result_before_restart\");",
+              "}",
+              "if (!delivery || !raw) throw new Error(\"Run the valid webhook request first.\");",
+              "if (mode === \"conflict\") {",
+              "  const changed = JSON.parse(raw);",
+              "  changed.feedback.text += \" Changed payload for conflict demonstration.\";",
+              "  raw = JSON.stringify(changed);",
+              "}",
+              "// Postman performs variable substitution when sending. Refuse unresolved",
+              "// expressions so the sent bytes cannot differ from the bytes signed below.",
+              "if (raw.includes(\"{{\")) throw new Error(\"Use literal review text without Postman variable expressions.\");",
+              "pm.request.body.update(raw);",
+              "const timestamp = Math.floor(Date.now() / 1000).toString();",
+              "const encoder = new TextEncoder();",
+              "const key = await crypto.subtle.importKey(\"raw\", encoder.encode(secret),",
+              "  {name: \"HMAC\", hash: \"SHA-256\"}, false, [\"sign\"]);",
+              "const canonical = `${integration}.${timestamp}.${delivery}.${raw}`;",
+              "const bytes = await crypto.subtle.sign(\"HMAC\", key, encoder.encode(canonical));",
+              "const hex = Array.from(new Uint8Array(bytes)).map(b => b.toString(16).padStart(2, \"0\")).join(\"\");",
+              "pm.request.headers.upsert({key: \"X-Feedback-Integration-Id\", value: integration});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Delivery-Id\", value: delivery});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Timestamp\", value: timestamp});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Signature\", value: \"sha256=\" + (mode === \"invalid\" ? \"0\".repeat(64) : hex)});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"New signed delivery accepted\", () => pm.response.to.have.status(202));",
+              "const value = pm.response.json();",
+              "pm.test(\"Acknowledgment shape\", () => pm.expect(value.status).to.eql(\"ACCEPTED\"));",
+              "pm.environment.set(\"event_delivery_id\", value.delivery_id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 Poll processing status",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/ingest/events/{{event_delivery_id}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Owned status returned\", () => pm.response.to.have.status(200));",
+              "if (pm.response.code === 200) {",
+              "  const value = pm.response.json();",
+              "  if ([\"ACCEPTED\", \"PROCESSING\"].includes(value.status)) {",
+              "    const count = Number(pm.environment.get(\"event_poll_count\") || \"0\") + 1;",
+              "    pm.environment.set(\"event_poll_count\", String(count));",
+              "    if (count < 40) {",
+              "      await new Promise(resolve => setTimeout(resolve, 1000));",
+              "      pm.execution.setNextRequest(pm.info.requestId);",
+              "    } else {",
+              "      pm.test(\"Event settled within bounded polling\", () => pm.expect.fail(\"Processing still pending; inspect server status.\"));",
+              "      pm.execution.setNextRequest(null);",
+              "    }",
+              "  } else {",
+              "    pm.test(\"Completed successfully\", () => pm.expect(value.status).to.eql(\"COMPLETED\"));",
+              "  }",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 Retrieve actual persisted webhook analysis",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/ingest/events/{{event_delivery_id}}/result"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Stored result returned\", () => pm.response.to.have.status(200));",
+              "const value = pm.response.json();",
+              "pm.test(\"Original feedback and grounded analysis\", () => {",
+              "  pm.expect(value.delivery_id).to.eql(pm.environment.get(\"event_delivery_id\"));",
+              "  pm.expect(value.status).to.eql(\"COMPLETED\");",
+              "  const original = JSON.parse(pm.environment.get(\"event_original_body\"));",
+              "  pm.expect(value.feedback.feedback_id).to.eql(original.feedback.id);",
+              "  pm.expect(value.feedback.text).to.eql(original.feedback.text);",
+              "  pm.expect(value.analysis).to.have.property(\"sentiment\");",
+              "  pm.expect(value.analysis).to.have.property(\"issue_category\");",
+              "  pm.expect(value.analysis.evidence_phrases).to.be.an(\"array\");",
+              "  value.analysis.evidence_phrases.forEach(phrase => pm.expect(value.feedback.text).to.include(phrase));",
+              "});",
+              "pm.environment.set(\"event_result_before_restart\", JSON.stringify(value));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 Identical authenticated delivery: duplicate",
+      "request": {
+        "method": "POST",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/webhooks/feedback",
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Web Crypto only: no npm packages or credential logging.",
+              "const integration = pm.environment.get(\"integration_id\");",
+              "const secret = pm.environment.get(\"signing_secret\");",
+              "if (!integration || !secret) throw new Error(\"Configure integration_id and signing_secret privately.\");",
+              "const mode = \"duplicate\";",
+              "let delivery = pm.environment.get(\"event_delivery_id\");",
+              "let raw = pm.environment.get(\"event_original_body\");",
+              "if (mode === \"new\") {",
+              "  delivery = pm.variables.replaceIn(\"{{$guid}}\").replace(/-/g, \"\");",
+              "  const payload = {event_type: \"customer.feedback.created\", feedback: {",
+              "    id: \"WEBHOOK-TEST-001\", text: pm.environment.get(\"review_text\")",
+              "  }, source: \"customer_review\", business_type: \"ecommerce\"};",
+              "  raw = JSON.stringify(payload);",
+              "  pm.environment.set(\"event_delivery_id\", delivery);",
+              "  pm.environment.set(\"event_original_body\", raw);",
+              "  pm.environment.set(\"event_poll_count\", \"0\");",
+              "  pm.environment.unset(\"event_result_before_restart\");",
+              "}",
+              "if (!delivery || !raw) throw new Error(\"Run the valid webhook request first.\");",
+              "if (mode === \"conflict\") {",
+              "  const changed = JSON.parse(raw);",
+              "  changed.feedback.text += \" Changed payload for conflict demonstration.\";",
+              "  raw = JSON.stringify(changed);",
+              "}",
+              "// Postman performs variable substitution when sending. Refuse unresolved",
+              "// expressions so the sent bytes cannot differ from the bytes signed below.",
+              "if (raw.includes(\"{{\")) throw new Error(\"Use literal review text without Postman variable expressions.\");",
+              "pm.request.body.update(raw);",
+              "const timestamp = Math.floor(Date.now() / 1000).toString();",
+              "const encoder = new TextEncoder();",
+              "const key = await crypto.subtle.importKey(\"raw\", encoder.encode(secret),",
+              "  {name: \"HMAC\", hash: \"SHA-256\"}, false, [\"sign\"]);",
+              "const canonical = `${integration}.${timestamp}.${delivery}.${raw}`;",
+              "const bytes = await crypto.subtle.sign(\"HMAC\", key, encoder.encode(canonical));",
+              "const hex = Array.from(new Uint8Array(bytes)).map(b => b.toString(16).padStart(2, \"0\")).join(\"\");",
+              "pm.request.headers.upsert({key: \"X-Feedback-Integration-Id\", value: integration});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Delivery-Id\", value: delivery});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Timestamp\", value: timestamp});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Signature\", value: \"sha256=\" + (mode === \"invalid\" ? \"0\".repeat(64) : hex)});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Duplicate accepted without reanalysis\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Duplicate status\", () => pm.expect(pm.response.json().status).to.eql(\"DUPLICATE\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 Invalid HMAC even for an existing delivery",
+      "request": {
+        "method": "POST",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/webhooks/feedback",
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Web Crypto only: no npm packages or credential logging.",
+              "const integration = pm.environment.get(\"integration_id\");",
+              "const secret = pm.environment.get(\"signing_secret\");",
+              "if (!integration || !secret) throw new Error(\"Configure integration_id and signing_secret privately.\");",
+              "const mode = \"invalid\";",
+              "let delivery = pm.environment.get(\"event_delivery_id\");",
+              "let raw = pm.environment.get(\"event_original_body\");",
+              "if (mode === \"new\") {",
+              "  delivery = pm.variables.replaceIn(\"{{$guid}}\").replace(/-/g, \"\");",
+              "  const payload = {event_type: \"customer.feedback.created\", feedback: {",
+              "    id: \"WEBHOOK-TEST-001\", text: pm.environment.get(\"review_text\")",
+              "  }, source: \"customer_review\", business_type: \"ecommerce\"};",
+              "  raw = JSON.stringify(payload);",
+              "  pm.environment.set(\"event_delivery_id\", delivery);",
+              "  pm.environment.set(\"event_original_body\", raw);",
+              "  pm.environment.set(\"event_poll_count\", \"0\");",
+              "  pm.environment.unset(\"event_result_before_restart\");",
+              "}",
+              "if (!delivery || !raw) throw new Error(\"Run the valid webhook request first.\");",
+              "if (mode === \"conflict\") {",
+              "  const changed = JSON.parse(raw);",
+              "  changed.feedback.text += \" Changed payload for conflict demonstration.\";",
+              "  raw = JSON.stringify(changed);",
+              "}",
+              "// Postman performs variable substitution when sending. Refuse unresolved",
+              "// expressions so the sent bytes cannot differ from the bytes signed below.",
+              "if (raw.includes(\"{{\")) throw new Error(\"Use literal review text without Postman variable expressions.\");",
+              "pm.request.body.update(raw);",
+              "const timestamp = Math.floor(Date.now() / 1000).toString();",
+              "const encoder = new TextEncoder();",
+              "const key = await crypto.subtle.importKey(\"raw\", encoder.encode(secret),",
+              "  {name: \"HMAC\", hash: \"SHA-256\"}, false, [\"sign\"]);",
+              "const canonical = `${integration}.${timestamp}.${delivery}.${raw}`;",
+              "const bytes = await crypto.subtle.sign(\"HMAC\", key, encoder.encode(canonical));",
+              "const hex = Array.from(new Uint8Array(bytes)).map(b => b.toString(16).padStart(2, \"0\")).join(\"\");",
+              "pm.request.headers.upsert({key: \"X-Feedback-Integration-Id\", value: integration});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Delivery-Id\", value: delivery});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Timestamp\", value: timestamp});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Signature\", value: \"sha256=\" + (mode === \"invalid\" ? \"0\".repeat(64) : hex)});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Invalid signature rejected\", () => pm.response.to.have.status(401));",
+              "pm.test(\"Safe authentication error\", () => pm.expect(pm.response.json().error.code).to.eql(\"WEBHOOK_AUTHENTICATION_FAILED\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 Same delivery with changed and correctly signed body",
+      "request": {
+        "method": "POST",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/webhooks/feedback",
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Web Crypto only: no npm packages or credential logging.",
+              "const integration = pm.environment.get(\"integration_id\");",
+              "const secret = pm.environment.get(\"signing_secret\");",
+              "if (!integration || !secret) throw new Error(\"Configure integration_id and signing_secret privately.\");",
+              "const mode = \"conflict\";",
+              "let delivery = pm.environment.get(\"event_delivery_id\");",
+              "let raw = pm.environment.get(\"event_original_body\");",
+              "if (mode === \"new\") {",
+              "  delivery = pm.variables.replaceIn(\"{{$guid}}\").replace(/-/g, \"\");",
+              "  const payload = {event_type: \"customer.feedback.created\", feedback: {",
+              "    id: \"WEBHOOK-TEST-001\", text: pm.environment.get(\"review_text\")",
+              "  }, source: \"customer_review\", business_type: \"ecommerce\"};",
+              "  raw = JSON.stringify(payload);",
+              "  pm.environment.set(\"event_delivery_id\", delivery);",
+              "  pm.environment.set(\"event_original_body\", raw);",
+              "  pm.environment.set(\"event_poll_count\", \"0\");",
+              "  pm.environment.unset(\"event_result_before_restart\");",
+              "}",
+              "if (!delivery || !raw) throw new Error(\"Run the valid webhook request first.\");",
+              "if (mode === \"conflict\") {",
+              "  const changed = JSON.parse(raw);",
+              "  changed.feedback.text += \" Changed payload for conflict demonstration.\";",
+              "  raw = JSON.stringify(changed);",
+              "}",
+              "// Postman performs variable substitution when sending. Refuse unresolved",
+              "// expressions so the sent bytes cannot differ from the bytes signed below.",
+              "if (raw.includes(\"{{\")) throw new Error(\"Use literal review text without Postman variable expressions.\");",
+              "pm.request.body.update(raw);",
+              "const timestamp = Math.floor(Date.now() / 1000).toString();",
+              "const encoder = new TextEncoder();",
+              "const key = await crypto.subtle.importKey(\"raw\", encoder.encode(secret),",
+              "  {name: \"HMAC\", hash: \"SHA-256\"}, false, [\"sign\"]);",
+              "const canonical = `${integration}.${timestamp}.${delivery}.${raw}`;",
+              "const bytes = await crypto.subtle.sign(\"HMAC\", key, encoder.encode(canonical));",
+              "const hex = Array.from(new Uint8Array(bytes)).map(b => b.toString(16).padStart(2, \"0\")).join(\"\");",
+              "pm.request.headers.upsert({key: \"X-Feedback-Integration-Id\", value: integration});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Delivery-Id\", value: delivery});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Timestamp\", value: timestamp});",
+              "pm.request.headers.upsert({key: \"X-Feedback-Signature\", value: \"sha256=\" + (mode === \"invalid\" ? \"0\".repeat(64) : hex)});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Conflicting delivery rejected\", () => pm.response.to.have.status(409));",
+              "pm.test(\"Conflict code\", () => pm.expect(pm.response.json().error.code).to.eql(\"WEBHOOK_DELIVERY_CONFLICT\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 Result without API key",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [],
+        "url": "{{base_url}}/api/v1/ingest/events/{{event_delivery_id}}/result"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Missing key rejected\", () => pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "08 Result with invalid API key",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "intentionally-invalid-demo-key",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/ingest/events/{{event_delivery_id}}/result"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Invalid key rejected\", () => pm.response.to.have.status(401));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "09 Other tenant cannot read stored result",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{other_tenant_api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/ingest/events/{{event_delivery_id}}/result"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (!pm.environment.get(\"other_tenant_api_key\")) pm.execution.skipRequest();"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Foreign tenant cannot discover this event\", () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "10 MANUAL after FastAPI restart: same result",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/ingest/events/{{event_delivery_id}}/result"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.environment.get(\"verify_restart\") !== \"true\") pm.execution.skipRequest();"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Stored result still available\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Exact same result after restart\", () => pm.expect(pm.response.json()).to.deep.equal(",
+              "  JSON.parse(pm.environment.get(\"event_result_before_restart\"))));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "11 OPTIONAL direct synchronous ingestion",
+      "request": {
+        "method": "POST",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/ingest/feedback",
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.environment.get(\"run_direct_demo\") !== \"true\") {",
+              "  pm.execution.skipRequest();",
+              "} else {",
+              "  pm.request.body.update(JSON.stringify({feedback_id: \"DIRECT-TEST-001\",",
+              "    text: pm.environment.get(\"review_text\"), channel: \"website\",",
+              "    source: \"customer_review\", business_type: \"ecommerce\"}));",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Existing synchronous analysis body retained\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Analysis returned\", () => pm.expect(pm.response.json().status).to.eql(\"ANALYZED\"));",
+              "pm.environment.set(\"direct_delivery_id\", pm.response.headers.get(\"X-Feedback-Delivery-Id\"));",
+              "pm.environment.set(\"direct_analysis\", JSON.stringify(pm.response.json().analysis));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "12 OPTIONAL retrieve direct-ingestion result",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "noauth"
+        },
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/ingest/events/{{direct_delivery_id}}/result"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.environment.get(\"run_direct_demo\") !== \"true\") pm.execution.skipRequest();"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Direct result retrieved without another inference\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Exact original direct analysis\", () => pm.expect(pm.response.json().analysis).to.deep.equal(",
+              "  JSON.parse(pm.environment.get(\"direct_analysis\"))));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

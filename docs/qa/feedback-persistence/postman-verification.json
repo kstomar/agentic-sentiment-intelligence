@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-04",
+  "result": "PASS",
+  "validation": "Executed exported signing scripts using the available Node Web Crypto implementation; independent HMAC comparison; no HTTP requests",
+  "scripts_syntax_checked": 20,
+  "requests": 12,
+  "environment_credentials_blank": true,
+  "signing_checks": [
+    {
+      "request": "01 Valid signed webhook: accept new event",
+      "expected_hmac_behavior_verified": true
+    },
+    {
+      "request": "04 Identical authenticated delivery: duplicate",
+      "expected_hmac_behavior_verified": true
+    },
+    {
+      "request": "05 Invalid HMAC even for an existing delivery",
+      "expected_hmac_behavior_verified": true
+    },
+    {
+      "request": "06 Same delivery with changed and correctly signed body",
+      "expected_hmac_behavior_verified": true
+    }
+  ],
+  "postman_desktop_execution": "NOT_PERFORMED"
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-04",
+  "result": "PASS",
+  "backend": "real PostgreSQL 12.22",
+  "isolation": "Dedicated test database, random migrated schema, dropped afterward",
+  "method": "Two independent Python interpreter/FastAPI lifecycles with a clean process exit between them",
+  "provider": "mocked; no Groq or Google request",
+  "stages": [
+    {
+      "phase": "write-and-exit",
+      "mock_inference_calls": 1,
+      "stored_original_feedback_and_analysis": true
+    },
+    {
+      "phase": "fresh-process-read-and-retry",
+      "exact_result_and_status_equal": true,
+      "duplicate_status": 200,
+      "conflict_status": 409,
+      "invalid_signature_status": 401,
+      "foreign_result_status": 404,
+      "mock_inference_calls": 0
+    }
+  ],
+  "pytest_case_count": 638
+}

@@ -1,0 +1,164 @@
+{
+  "server_version": "12.22 (Ubuntu 12.22-0ubuntu0.20.04.4)",
+  "database": "agentic_sentiment_dev",
+  "revision": "feedback_results_v1",
+  "expected_revision": "feedback_results_v1",
+  "columns": [
+    {
+      "name": "id",
+      "type": "INTEGER",
+      "nullable": false
+    },
+    {
+      "name": "tenant_id",
+      "type": "VARCHAR(100)",
+      "nullable": false
+    },
+    {
+      "name": "delivery_id",
+      "type": "VARCHAR(100)",
+      "nullable": false
+    },
+    {
+      "name": "integration_id",
+      "type": "VARCHAR(100)",
+      "nullable": true
+    },
+    {
+      "name": "kind",
+      "type": "VARCHAR(10)",
+      "nullable": false
+    },
+    {
+      "name": "event_type",
+      "type": "VARCHAR(40)",
+      "nullable": true
+    },
+    {
+      "name": "digest",
+      "type": "BYTEA",
+      "nullable": true
+    },
+    {
+      "name": "operation_id",
+      "type": "VARCHAR(32)",
+      "nullable": false
+    },
+    {
+      "name": "feedback",
+      "type": "JSONB",
+      "nullable": false
+    },
+    {
+      "name": "analysis",
+      "type": "JSONB",
+      "nullable": true
+    },
+    {
+      "name": "status",
+      "type": "VARCHAR(20)",
+      "nullable": false
+    },
+    {
+      "name": "error_code",
+      "type": "VARCHAR(100)",
+      "nullable": true
+    },
+    {
+      "name": "created_at",
+      "type": "TIMESTAMP",
+      "nullable": false
+    },
+    {
+      "name": "updated_at",
+      "type": "TIMESTAMP",
+      "nullable": false
+    },
+    {
+      "name": "completed_at",
+      "type": "TIMESTAMP",
+      "nullable": true
+    },
+    {
+      "name": "expires_at",
+      "type": "TIMESTAMP",
+      "nullable": true
+    }
+  ],
+  "unique_constraints": [
+    {
+      "column_names": [
+        "tenant_id",
+        "delivery_id"
+      ],
+      "name": "uq_feedback_event_owner_delivery",
+      "comment": null,
+      "dialect_options": {
+        "postgresql_include": [],
+        "postgresql_nulls_not_distinct": false
+      }
+    }
+  ],
+  "indexes": [
+    {
+      "name": "ix_feedback_event_expiry",
+      "unique": false,
+      "column_names": [
+        "expires_at"
+      ],
+      "include_columns": [],
+      "dialect_options": {
+        "postgresql_include": []
+      }
+    },
+    {
+      "name": "ix_feedback_event_status",
+      "unique": false,
+      "column_names": [
+        "status",
+        "created_at"
+      ],
+      "include_columns": [],
+      "dialect_options": {
+        "postgresql_include": []
+      }
+    },
+    {
+      "name": "uq_feedback_event_owner_delivery",
+      "unique": true,
+      "column_names": [
+        "tenant_id",
+        "delivery_id"
+      ],
+      "duplicates_constraint": "uq_feedback_event_owner_delivery",
+      "include_columns": [],
+      "dialect_options": {
+        "postgresql_include": []
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "ck_feedback_event_kind",
+      "sqltext": "kind::text = ANY (ARRAY['webhook'::character varying, 'direct'::character varying]::text[])",
+      "comment": null
+    },
+    {
+      "name": "ck_feedback_event_origin",
+      "sqltext": "kind::text = 'webhook'::text AND integration_id IS NOT NULL AND digest IS NOT NULL AND event_type::text = 'customer.feedback.created'::text OR kind::text = 'direct'::text AND integration_id IS NULL AND digest IS NULL AND event_type IS NULL",
+      "comment": null
+    },
+    {
+      "name": "ck_feedback_event_outcome",
+      "sqltext": "status::text = 'COMPLETED'::text AND analysis IS NOT NULL AND error_code IS NULL AND completed_at IS NOT NULL OR status::text = 'FAILED'::text AND analysis IS NULL AND error_code IS NOT NULL AND completed_at IS NOT NULL OR (status::text = ANY (ARRAY['ACCEPTED'::character varying, 'PROCESSING'::character varying]::text[])) AND analysis IS NULL AND error_code IS NULL AND completed_at IS NULL",
+      "comment": null
+    },
+    {
+      "name": "ck_feedback_event_status",
+      "sqltext": "status::text = ANY (ARRAY['ACCEPTED'::character varying, 'PROCESSING'::character varying, 'COMPLETED'::character varying, 'FAILED'::character varying]::text[])",
+      "comment": null
+    }
+  ],
+  "orm_migration_diff_count": 0,
+  "existing_batch_tables_present": true
+}
