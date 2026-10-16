@@ -1,0 +1,92 @@
+{
+  "baseline_paths": 12,
+  "current_paths": 12,
+  "changed_existing_schemas": [
+    "ErrorCode"
+  ],
+  "existing_request_parameters_and_success_responses_preserved": true,
+  "path_changes": {
+    "/api/v1/sentiment/analyze": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/agent/investigate": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/chat": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/batch/upload": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/batch/jobs/{job_id}": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/batch/jobs/{job_id}/report": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/batch/jobs/{job_id}/results": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/batch/jobs/{job_id}/download": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/ingest/feedback": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {}
+    },
+    "/api/v1/ingest/events/{delivery_id}": {
+      "added_responses": [
+        "403"
+      ],
+      "documentation_changes": {
+        "summary": {
+          "before": "Get development integration event status",
+          "after": "Get an owned feedback event status"
+        }
+      }
+    }
+  },
+  "security_description_updated": true,
+  "dependencies_unchanged": true,
+  "configuration_changes": [
+    "Production always disables legacy API and webhook fallback.",
+    "A business registry requires explicit compatibility opt-in to add the development owner.",
+    "Malformed/ambiguous registry aborts startup with sanitized diagnostics."
+  ],
+  "python_service_changes": [
+    "Owned methods require a verified Principal argument or authenticated context.",
+    "Webhook admission requires a signed verified delivery, not an integration string.",
+    "Store maintenance is private; public inspection/lookup authorizes and filters owners."
+  ],
+  "added_error_codes": [
+    "AUTHORIZATION_FAILED",
+    "TENANT_CAPACITY_EXCEEDED",
+    "WEBHOOK_DELIVERY_COLLISION"
+  ]
+}

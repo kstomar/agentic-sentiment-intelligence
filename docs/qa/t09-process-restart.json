@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-03",
+  "database_backend": "real PostgreSQL12.22",
+  "isolation": "random migrated schema in dedicated *_test database; removed after check",
+  "verification": "Two independent Python interpreter/application lifecycles with a clean process exit between them",
+  "provider": "mocked; no live Groq/Google request",
+  "steps": [
+    {
+      "process": "upload-and-complete",
+      "synthetic_records": 4,
+      "mock_classifier_calls": 4,
+      "exit": "clean shutdown"
+    },
+    {
+      "process": "fresh-interpreter-read",
+      "same_job_id": true,
+      "status_report_results_pagination_download_exactly_equal": true,
+      "foreign_tenant_denied_all_four_reads": true,
+      "mock_classifier_calls": 0
+    }
+  ],
+  "result": "PASS",
+  "test_suite_count_unchanged": 604
+}

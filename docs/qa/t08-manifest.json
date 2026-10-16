@@ -1,0 +1,258 @@
+{
+  "phase": "T08",
+  "comparison": "Pre-T08 public file snapshot; no Git used",
+  "scope": "app/tests/docs and README/AGENTS/.env.example/pyproject/uv.lock; excludes private and ignored runtime files",
+  "self": "docs/qa/t08-manifest.json (created, not self-hashed)",
+  "created_count_excluding_manifest": 30,
+  "modified_count": 25,
+  "created": [
+    {
+      "path": "app/api/v1/gmail.py",
+      "sha256": "ffefb98eb65ca54cbd916a3be7f240328dd4f8a07205708e581469628449b0bf"
+    },
+    {
+      "path": "app/integrations/gmail_mime.py",
+      "sha256": "d51cfa248e9e0a3a14425d1f5e267e5a6f6d1b3dfe5265366865270ce99ecdd8"
+    },
+    {
+      "path": "app/integrations/google_gmail.py",
+      "sha256": "a43126cb7cc77418e8d27548fffbb00bfec5e6bf06cd87ed9866c7495ff1b6fc"
+    },
+    {
+      "path": "app/schemas/gmail.py",
+      "sha256": "26e2826d83ce9860bb9059af859bb105fe22bb117fe3f86f62eb7e16422693ce"
+    },
+    {
+      "path": "app/services/gmail_service.py",
+      "sha256": "f5afe44f690ff816335d5b1e4a7e85885444b3dae95d650d1b083c36742f8e2f"
+    },
+    {
+      "path": "app/storage/gmail_store.py",
+      "sha256": "457c0b8a9e7dd10ddf9c8cad6862b36b540e9dc846b052cdb7e108c90dd21ade"
+    },
+    {
+      "path": "docs/GMAIL_INTEGRATION.md",
+      "sha256": "06387c56538323bfc0e123f97212ca96f6b577b9d2ff60e9910505f694cba601"
+    },
+    {
+      "path": "docs/qa/T08_IMPLEMENTATION_REPORT.md",
+      "sha256": "0cdf35eda5a0204cff3821ffc2a0b79b354ef1c3e8a82263038b8c9709cac8cc"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/AGENTIC_PATTERN_VERIFICATION.md",
+      "sha256": "a86a04f5573b524b0ea7fb0513059417c983b5f6c2a2f9fcf4a1d164b1a7193a"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/API_CONTRACT_REPORT.md",
+      "sha256": "b4eb7c15e0f3ac15cab338724c44543b6459221d2836ef16bb0395bf38a91f90"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/KNOWN_ISSUES.md",
+      "sha256": "20808ccb2566cba10716e1c6e058cf89b12daf786179bffbe22a11fb3dba3667"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/PROJECT_AUDIT_REPORT.md",
+      "sha256": "195e79990b61235833a01c00078e03db3fe211f9eb00e2d9822d051aa8dbc856"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/RELEASE_READINESS_REPORT.md",
+      "sha256": "e30addabff99472909d1012c4e08dc70055281894f0b71af4cab4a31a5c73e43"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/SECURITY_REVIEW.md",
+      "sha256": "dc651d3936e6d1bf19d07121f7a9c4682bd0d6635a8d92f00a535ee48d21a388"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/TEST_EXECUTION_REPORT.md",
+      "sha256": "b13ddde772b87b4f36f82f779adb781bda3cbdea556ac8ae01b2e1f161c162f5"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/audit_summary.json",
+      "sha256": "e6cdce8011371072ba6d4574ab3e75a81b73d38ccd0e8bcef8545365757f4094"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/benchmark_results.json",
+      "sha256": "e8c597a488b991798d75b0bc865d98de0ccdd2987cd9f3b316eae0fa9f00ce04"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/console-summary.txt",
+      "sha256": "6148aabaa9f5a56ab9c7d4d8f5ca268271d733d11447ed1cbb6aca2635202942"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/openapi.json",
+      "sha256": "3c23d985ebed2474e95cf59e7c38f447d6823c69ccb087f915276dd7a1fb70c0"
+    },
+    {
+      "path": "docs/qa/history/pre-t08/source_inventory.json",
+      "sha256": "547d7d7282ef9f2eb07a844d1334118a23055f7656f4f06b7d1c7688461a4d3a"
+    },
+    {
+      "path": "docs/qa/t08-compatibility.json",
+      "sha256": "e6c52aa50abbb4e14696147a73e2aeb94adeabd5cb9a4291de37bbfdd2cccc81"
+    },
+    {
+      "path": "docs/qa/t08-dependency-checks.txt",
+      "sha256": "9c61355adf1fa7918697e22e80f26b63fb482d331080c7d189c15adcfcfd36b2"
+    },
+    {
+      "path": "docs/qa/t08-full.xml",
+      "sha256": "440dfe8430612a97a41afddc86a0e094173141b7a7a32a31f03f072b1cb8d6ce"
+    },
+    {
+      "path": "docs/qa/t08-pytest-output.txt",
+      "sha256": "acf1c347b2379491ef658b2e847c9ebdb8e52a7d6079ea439ee378cb8cccac63"
+    },
+    {
+      "path": "docs/qa/t08-summary.json",
+      "sha256": "d5379b485de8336c874b8cd51d73c33a167c2446c4832d11d0e56d0e79226822"
+    },
+    {
+      "path": "tests/integration/test_gmail_import.py",
+      "sha256": "b4fd2d40dc38336dc1efd1e833f12c1dc32def9974bc2494b488ea2ff35b19e7"
+    },
+    {
+      "path": "tests/security/test_gmail_oauth.py",
+      "sha256": "2daeccbfa21765fa43dac4bbc667ea2404d61e38d2445c59f091ad517a355e8d"
+    },
+    {
+      "path": "tests/t08_helpers.py",
+      "sha256": "1f882b72849a38900f46d7a7b90ad9c8ab02d2ebd058030b4277ef280210fe73"
+    },
+    {
+      "path": "tests/unit/test_gmail_lifecycle.py",
+      "sha256": "496cf05cd73683cfa8d64c16334adfd0fb2dd024bce517dce5cb3fcdd7ef1c36"
+    },
+    {
+      "path": "tests/unit/test_gmail_mime.py",
+      "sha256": "cb502af81fe4ba39edb66e2cd4462149412143d02bc1d2caef1f9f13cf20d3b3"
+    }
+  ],
+  "modified": [
+    {
+      "path": ".env.example",
+      "sha256": "454a9e1e726ebc0fa28811b1dd1fa437f7f8b04abe5f942bd13f0e2ecbe0ce8a",
+      "previous_sha256": "e6f0cbbf06b2bacfc93bb5c0ed682e8dde166753555ec074944ddb443445f203"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "7f31ee626d8756597d9af3309d68bb12339300fe95f061d30a2d15610a55f201",
+      "previous_sha256": "f9d42b38b4f4ced5d273858f9d42b2206bccd1789efe19ff2115d3df484f817b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9c6c23f5052ae9753f6e8154ab65747cd559b9fd13bdf362d12230d6dd68548f",
+      "previous_sha256": "cd726fd336c5f6c0c9012ebd8bd8e7570667e7018a99dc193857256483093368"
+    },
+    {
+      "path": "app/core/config.py",
+      "sha256": "252df2907c59697a46b340004a7366b7437f5ca79f2c20ca0d80424176061ca9",
+      "previous_sha256": "894d0412d8a88511cef76992acf421b8469b50f9348a647f1ec467ad11644869"
+    },
+    {
+      "path": "app/core/exceptions.py",
+      "sha256": "e95d5e6e523a75b22312ae61efec316e87cdaaa85278ab8ea4f49eb9d4bbc7c3",
+      "previous_sha256": "304bd0196b7a9c14040e6249687c4c44b7d89f7d72b61bb57ec01a4914e9e89b"
+    },
+    {
+      "path": "app/core/ingress_limits.py",
+      "sha256": "f6f59248dc44a8a39e4133ebe87ea944534124c366c4759c50a9bcc38b917309",
+      "previous_sha256": "d5d8348de10c84a8e3bc3f6341e73ac2503a750022b232c7554e7c669c4b66ac"
+    },
+    {
+      "path": "app/core/tenant_auth.py",
+      "sha256": "89f8c159e242fe2c720c26f119ea25229ef036111c0c10442dee4f27f556fbbc",
+      "previous_sha256": "28ca1ea5bf605ad681b525854348bf35a85ba842405fee36fc05c5aee0591719"
+    },
+    {
+      "path": "app/main.py",
+      "sha256": "a36c0e34567ec5163dc0fc0b1a36eb721a88c9bc8d0ffce181fb9260b6a2fc90",
+      "previous_sha256": "2d5656834da5d01191d303c63c0469adf146905d700e725003d80a78c95cca8f"
+    },
+    {
+      "path": "docs/AGENTIC_PATTERNS.md",
+      "sha256": "af94ff438f9604492ac992b82c1732123a2a3b599f1e42ceb12ed10f1446614a",
+      "previous_sha256": "bf973f096966610a789a1889dd642c03126768c872520a6be5d03ae6f1db7fa6"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "62e7a182cca6b9b78df457e2e587aed8e6f63650132f283907cee49685bce50b",
+      "previous_sha256": "95503bf5d66924e461c97261204d5d34868f500425ef85774f420fdf4909169a"
+    },
+    {
+      "path": "docs/TENANT_ISOLATION.md",
+      "sha256": "ff04288b7bab8e3c5568f65e26a32c9c42afc01df268c24333f34a21fe1138eb",
+      "previous_sha256": "e2cd8b904e9914a7263d488407ce8f8295c7172db5b961eb0adecb5b210de4ea"
+    },
+    {
+      "path": "docs/qa/AGENTIC_PATTERN_VERIFICATION.md",
+      "sha256": "4f65aae382fd557d76cd5e72dd570e03e988a24095d09283adf495941bcf681e",
+      "previous_sha256": "366ac7b7d17c144ab80f424e8c29c11396294b1278814554db46c7011114d5c8"
+    },
+    {
+      "path": "docs/qa/API_CONTRACT_REPORT.md",
+      "sha256": "5603c467cfb78c2d15f01194ed01b0a1047846f1416c517933a880f6389c35d0",
+      "previous_sha256": "47fc6e2e33ed8a2dc994b58995a86562ccf8c74e96cedfcebd4c1b8332e34c40"
+    },
+    {
+      "path": "docs/qa/KNOWN_ISSUES.md",
+      "sha256": "9be4dfd2fe96c1d341a6c0f28c5b629744e855b3764215f94679f636ab6e0397",
+      "previous_sha256": "9dcc3f696340eadb681d13ec8e32451beba9e0c8a7f52cc860cc4452ef51fb23"
+    },
+    {
+      "path": "docs/qa/PROJECT_AUDIT_REPORT.md",
+      "sha256": "fda8d01c5debbaee116957666395036cdc07b248c1730a1f054b30c4dae699c5",
+      "previous_sha256": "f756e29608d8143e03c753e0729e263ca8dd53875d2321494027e34f0a973f04"
+    },
+    {
+      "path": "docs/qa/RELEASE_READINESS_REPORT.md",
+      "sha256": "c8d47879b61ec334f9f42fd8b2d8e895dde06bcfb0aeac024172c57e8f5f514c",
+      "previous_sha256": "fd745c13db8ce3d47ebe50f0d82bacc96c8c21d17f4c68a73a9da04082691dc5"
+    },
+    {
+      "path": "docs/qa/SECURITY_REVIEW.md",
+      "sha256": "badf5a0140ee6e9b7db0da62ada34952bc5e620793473f2ed9fc770e285fba3f",
+      "previous_sha256": "32483ca4a1d13b1656e6117924377220f2a5e64d59e0db68929e9e84491648ca"
+    },
+    {
+      "path": "docs/qa/TEST_EXECUTION_REPORT.md",
+      "sha256": "a1e58385a7fa9249bef6078c94f4ef30bf077683a984309ac346c0d1d66f76ea",
+      "previous_sha256": "e17d138845a5eff248d3aec1ceb0a97b9d565febc90e8bbf7089080e3231aeb7"
+    },
+    {
+      "path": "docs/qa/audit_summary.json",
+      "sha256": "d5379b485de8336c874b8cd51d73c33a167c2446c4832d11d0e56d0e79226822",
+      "previous_sha256": "e6cdce8011371072ba6d4574ab3e75a81b73d38ccd0e8bcef8545365757f4094"
+    },
+    {
+      "path": "docs/qa/benchmark_results.json",
+      "sha256": "ebc06447054db43d81160d5f541aa323058199327c02fc63c7168f4b52370539",
+      "previous_sha256": "e8c597a488b991798d75b0bc865d98de0ccdd2987cd9f3b316eae0fa9f00ce04"
+    },
+    {
+      "path": "docs/qa/console-summary.txt",
+      "sha256": "2997f74479e55b45ee2aebaa41e902d1e52cb6932c111ee847ff8471e9acff1f",
+      "previous_sha256": "6148aabaa9f5a56ab9c7d4d8f5ca268271d733d11447ed1cbb6aca2635202942"
+    },
+    {
+      "path": "docs/qa/documentation_links.json",
+      "sha256": "593bd43f7ce867a8ccd849be21b867286a910173a8ac77ce106809215ce97690",
+      "previous_sha256": "eb5a9fabd568926fe1def4afc830642f15df95150470fc3919cb70ff303c527a"
+    },
+    {
+      "path": "docs/qa/openapi.json",
+      "sha256": "5b6fe9424c24ee476d11e64370740a128ce984d192aa6a63022142f1e8048a2c",
+      "previous_sha256": "3c23d985ebed2474e95cf59e7c38f447d6823c69ccb087f915276dd7a1fb70c0"
+    },
+    {
+      "path": "docs/qa/source_inventory.json",
+      "sha256": "325c88af1d0d4abce43e748f9047175613c1cd3d5aa7146f13b70fe197c20bf2",
+      "previous_sha256": "547d7d7282ef9f2eb07a844d1334118a23055f7656f4f06b7d1c7688461a4d3a"
+    },
+    {
+      "path": "tests/integration/test_api_contracts.py",
+      "sha256": "6c377952b7e6aeeded4d8f333f35d7f13fddc373bd6a7c82f4e1422e11b46de8",
+      "previous_sha256": "04e575e57e16c7c44688415fedf5fe7fbad3ec1c93ef8c89ffaf93e438fa7b95"
+    }
+  ],
+  "deleted_baseline_files": []
+}

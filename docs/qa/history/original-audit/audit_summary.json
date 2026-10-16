@@ -1,0 +1,29 @@
+{
+  "release_decision": "NOT READY",
+  "tests_collected": 210,
+  "tests_failed": 1,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "duration_seconds": 17.732,
+  "timestamp": "2026-10-30T17:34:43.157494+05:30",
+  "coverage_measured": false,
+  "changed_preexisting_files": [
+    "pyproject.toml",
+    "uv.lock"
+  ],
+  "production_source_unchanged": true,
+  "openapi_unchanged": true,
+  "git_entries": 0,
+  "git_read_only": true,
+  "live_groq_verification": "BLOCKED",
+  "mcp_protocol": "VERIFIED",
+  "multi_tenant_isolation": "NOT_IMPLEMENTED",
+  "T06": "NOT_IMPLEMENTED",
+  "optional_tools": {
+    "coverage": false,
+    "ruff": false,
+    "mypy": false
+  },
+  "feedback_storage_paths_created": [],
+  "tests_passed": 209
+}

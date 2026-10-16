@@ -1,0 +1,79 @@
+{
+  "old_paths": 9,
+  "current_paths": 12,
+  "changed_existing_schemas": [
+    "ErrorCode"
+  ],
+  "existing_path_changes": {
+    "/api/v1/sentiment/analyze": [
+      "408",
+      "413"
+    ],
+    "/api/v1/agent/investigate": [
+      "408",
+      "413"
+    ],
+    "/api/v1/chat": [
+      "408",
+      "413"
+    ],
+    "/api/v1/batch/upload": [
+      "408"
+    ],
+    "/api/v1/batch/jobs/{job_id}": [
+      "408"
+    ],
+    "/api/v1/batch/jobs/{job_id}/report": [
+      "408"
+    ],
+    "/api/v1/batch/jobs/{job_id}/results": [
+      "408"
+    ],
+    "/api/v1/batch/jobs/{job_id}/download": [
+      "408"
+    ]
+  },
+  "new_python_files": [
+    "app/api/v1/ingestion.py",
+    "app/api/v1/webhooks.py",
+    "app/core/ingress_limits.py",
+    "app/core/processing_limits.py",
+    "app/core/webhook_security.py",
+    "app/schemas/ingestion.py",
+    "app/services/ingestion_service.py",
+    "app/services/webhook_service.py",
+    "app/storage/event_store.py",
+    "tests/integration/test_ingestion_api.py",
+    "tests/security/test_ingress_limits.py",
+    "tests/security/test_webhook_security.py",
+    "tests/t06_helpers.py",
+    "tests/unit/test_webhook_workers.py"
+  ],
+  "dependencies_unchanged": true,
+  "production_modified_since_original_audit": [
+    "app/agents/action_selector.py",
+    "app/api/v1/batch.py",
+    "app/api/v1/chat.py",
+    "app/api/v1/investigation.py",
+    "app/api/v1/sentiment.py",
+    "app/core/config.py",
+    "app/core/exceptions.py",
+    "app/core/security.py",
+    "app/main.py",
+    "app/services/investigation_service.py",
+    "app/services/sentiment_service.py"
+  ],
+  "new_production_files_since_original_audit": [
+    "app/api/v1/ingestion.py",
+    "app/api/v1/webhooks.py",
+    "app/core/ingress_limits.py",
+    "app/core/processing_limits.py",
+    "app/core/webhook_security.py",
+    "app/schemas/ingestion.py",
+    "app/services/ingestion_service.py",
+    "app/services/webhook_service.py",
+    "app/storage/event_store.py"
+  ],
+  "snapshot_note": "Complete production inventory uses the preserved original-audit source inventory. QA-005 already changed batch.py before T06. Dependency hashes and old OpenAPI contracts are separately checked.",
+  "schema_baseline": "history/original-audit/openapi.json; QA-005 retained exact OpenAPI"
+}

@@ -1,0 +1,426 @@
+{
+  "server_version": "12.22 (Ubuntu 12.22-0ubuntu0.20.04.4)",
+  "database": "agentic_sentiment_dev",
+  "revision": "t09_batch_v2",
+  "expected_revision": "t09_batch_v2",
+  "tables": {
+    "batch_jobs": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "public_id",
+          "type": "VARCHAR(32)",
+          "nullable": false
+        },
+        {
+          "name": "tenant_id",
+          "type": "VARCHAR(100)",
+          "nullable": false
+        },
+        {
+          "name": "options",
+          "type": "JSONB",
+          "nullable": false
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(20)",
+          "nullable": false
+        },
+        {
+          "name": "total",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "valid",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "invalid",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "skipped_blank_rows",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "processed",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "successful",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "failed",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "error_code",
+          "type": "VARCHAR(100)",
+          "nullable": true
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "nullable": false
+        },
+        {
+          "name": "started_at",
+          "type": "TIMESTAMP",
+          "nullable": true
+        },
+        {
+          "name": "completed_at",
+          "type": "TIMESTAMP",
+          "nullable": true
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "nullable": false
+        },
+        {
+          "name": "expires_at",
+          "type": "TIMESTAMP",
+          "nullable": true
+        },
+        {
+          "name": "business_type",
+          "type": "VARCHAR(20)",
+          "nullable": false
+        },
+        {
+          "name": "source",
+          "type": "VARCHAR(64)",
+          "nullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "ix_batch_jobs_expiration",
+          "unique": false,
+          "column_names": [
+            "expires_at"
+          ],
+          "include_columns": [],
+          "dialect_options": {
+            "postgresql_include": []
+          }
+        },
+        {
+          "name": "ix_batch_jobs_recovery",
+          "unique": false,
+          "column_names": [
+            "status",
+            "created_at"
+          ],
+          "include_columns": [],
+          "dialect_options": {
+            "postgresql_include": []
+          }
+        },
+        {
+          "name": "ix_batch_jobs_tenant_public",
+          "unique": false,
+          "column_names": [
+            "tenant_id",
+            "public_id"
+          ],
+          "include_columns": [],
+          "dialect_options": {
+            "postgresql_include": []
+          }
+        },
+        {
+          "name": "uq_batch_jobs_public_id",
+          "unique": true,
+          "column_names": [
+            "public_id"
+          ],
+          "duplicates_constraint": "uq_batch_jobs_public_id",
+          "include_columns": [],
+          "dialect_options": {
+            "postgresql_include": []
+          }
+        }
+      ],
+      "unique_constraints": [
+        {
+          "column_names": [
+            "public_id"
+          ],
+          "name": "uq_batch_jobs_public_id",
+          "comment": null,
+          "dialect_options": {
+            "postgresql_include": [],
+            "postgresql_nulls_not_distinct": false
+          }
+        }
+      ],
+      "foreign_keys": [],
+      "checks": [
+        {
+          "name": "ck_batch_job_counts",
+          "sqltext": "total > 0 AND valid >= 0 AND invalid >= 0 AND (valid + invalid) = total AND processed >= 0 AND successful >= 0 AND failed >= 0",
+          "comment": null
+        },
+        {
+          "name": "ck_batch_job_outcomes",
+          "sqltext": "(status::text <> 'COMPLETED'::text OR failed = 0) AND (status::text <> 'FAILED'::text OR successful = 0) AND (status::text <> 'PARTIAL_SUCCESS'::text OR successful > 0 AND failed > 0)",
+          "comment": null
+        },
+        {
+          "name": "ck_batch_job_progress",
+          "sqltext": "processed = (successful + failed) AND processed <= total",
+          "comment": null
+        },
+        {
+          "name": "ck_batch_job_status",
+          "sqltext": "status::text = ANY (ARRAY['PENDING'::character varying, 'RUNNING'::character varying, 'COMPLETED'::character varying, 'PARTIAL_SUCCESS'::character varying, 'FAILED'::character varying]::text[])",
+          "comment": null
+        },
+        {
+          "name": "ck_batch_job_terminal",
+          "sqltext": "(status::text <> ALL (ARRAY['COMPLETED'::character varying, 'PARTIAL_SUCCESS'::character varying, 'FAILED'::character varying]::text[])) OR processed = total",
+          "comment": null
+        }
+      ]
+    },
+    "batch_records": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "job_id",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "position",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "feedback_id",
+          "type": "VARCHAR(100)",
+          "nullable": false
+        },
+        {
+          "name": "source_row",
+          "type": "INTEGER",
+          "nullable": false
+        },
+        {
+          "name": "raw_text",
+          "type": "TEXT",
+          "nullable": true
+        },
+        {
+          "name": "normalized_date",
+          "type": "DATE",
+          "nullable": true
+        },
+        {
+          "name": "date_status",
+          "type": "VARCHAR(20)",
+          "nullable": false
+        },
+        {
+          "name": "validation_error",
+          "type": "VARCHAR(100)",
+          "nullable": true
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(20)",
+          "nullable": false
+        },
+        {
+          "name": "attempted",
+          "type": "BOOLEAN",
+          "nullable": false
+        },
+        {
+          "name": "error_code",
+          "type": "VARCHAR(100)",
+          "nullable": true
+        },
+        {
+          "name": "sentiment",
+          "type": "VARCHAR(20)",
+          "nullable": true
+        },
+        {
+          "name": "issue_category",
+          "type": "VARCHAR(40)",
+          "nullable": true
+        },
+        {
+          "name": "urgency",
+          "type": "VARCHAR(20)",
+          "nullable": true
+        },
+        {
+          "name": "aspects",
+          "type": "JSONB",
+          "nullable": false
+        },
+        {
+          "name": "summary",
+          "type": "TEXT",
+          "nullable": true
+        },
+        {
+          "name": "suggested_next_step",
+          "type": "TEXT",
+          "nullable": true
+        },
+        {
+          "name": "evidence_phrases",
+          "type": "JSONB",
+          "nullable": false
+        },
+        {
+          "name": "claim_token",
+          "type": "VARCHAR(32)",
+          "nullable": true
+        },
+        {
+          "name": "claim_expires_at",
+          "type": "TIMESTAMP",
+          "nullable": true
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "nullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "ix_batch_records_claim",
+          "unique": false,
+          "column_names": [
+            "job_id",
+            "status",
+            "claim_expires_at",
+            "position"
+          ],
+          "include_columns": [],
+          "dialect_options": {
+            "postgresql_include": []
+          }
+        },
+        {
+          "name": "uq_batch_records_feedback",
+          "unique": true,
+          "column_names": [
+            "job_id",
+            "feedback_id"
+          ],
+          "duplicates_constraint": "uq_batch_records_feedback",
+          "include_columns": [],
+          "dialect_options": {
+            "postgresql_include": []
+          }
+        },
+        {
+          "name": "uq_batch_records_position",
+          "unique": true,
+          "column_names": [
+            "job_id",
+            "position"
+          ],
+          "duplicates_constraint": "uq_batch_records_position",
+          "include_columns": [],
+          "dialect_options": {
+            "postgresql_include": []
+          }
+        }
+      ],
+      "unique_constraints": [
+        {
+          "column_names": [
+            "job_id",
+            "feedback_id"
+          ],
+          "name": "uq_batch_records_feedback",
+          "comment": null,
+          "dialect_options": {
+            "postgresql_include": [],
+            "postgresql_nulls_not_distinct": false
+          }
+        },
+        {
+          "column_names": [
+            "job_id",
+            "position"
+          ],
+          "name": "uq_batch_records_position",
+          "comment": null,
+          "dialect_options": {
+            "postgresql_include": [],
+            "postgresql_nulls_not_distinct": false
+          }
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "batch_records_job_id_fkey",
+          "constrained_columns": [
+            "job_id"
+          ],
+          "referred_schema": null,
+          "referred_table": "batch_jobs",
+          "referred_columns": [
+            "id"
+          ],
+          "options": {
+            "ondelete": "CASCADE"
+          },
+          "comment": null
+        }
+      ],
+      "checks": [
+        {
+          "name": "ck_batch_record_claim",
+          "sqltext": "(status::text = 'PROCESSING'::text) = (claim_token IS NOT NULL AND claim_expires_at IS NOT NULL)",
+          "comment": null
+        },
+        {
+          "name": "ck_batch_record_cleared_claim",
+          "sqltext": "status::text = 'PROCESSING'::text OR claim_token IS NULL AND claim_expires_at IS NULL",
+          "comment": null
+        },
+        {
+          "name": "ck_batch_record_status",
+          "sqltext": "status::text = ANY (ARRAY['PENDING'::character varying, 'PROCESSING'::character varying, 'SUCCESS'::character varying, 'FAILED'::character varying]::text[])",
+          "comment": null
+        }
+      ]
+    }
+  },
+  "test_isolation": "Dedicated agentic_sentiment_test database; independent random schema per case; dropped after each case",
+  "system_cluster_modified": false,
+  "server_topology": "Private project-local Unix socket; TCP disabled; one application coordinator",
+  "application_role": {
+    "rolsuper": false,
+    "rolcreatedb": false,
+    "rolcreaterole": false
+  }
+}

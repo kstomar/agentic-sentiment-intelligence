@@ -1,0 +1,39 @@
+{
+  "production_files_changed": [
+    "app/api/v1/batch.py"
+  ],
+  "original_failing_test_unchanged": true,
+  "openapi_unchanged": true,
+  "dependency_files_unchanged": true,
+  "qa005_status": "RESOLVED",
+  "release_decision": "NOT READY",
+  "high_security_findings_open": [
+    "QA-001",
+    "QA-003"
+  ],
+  "live_groq_verification": "BLOCKED",
+  "live_groq_request_count": 0,
+  "T06": "NOT_IMPLEMENTED",
+  "focused": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "1",
+    "time": "0.098",
+    "timestamp": "2026-10-30T18:52:31.530170+05:30",
+    "hostname": "rails"
+  },
+  "full": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "220",
+    "time": "9.390",
+    "timestamp": "2026-10-30T18:55:06.139304+05:30",
+    "hostname": "rails"
+  },
+  "original_cases_retained": 210,
+  "new_cases": 10
+}

@@ -1,0 +1,85 @@
+{
+  "modified_production": [
+    "app/agents/action_selector.py",
+    "app/api/v1/batch.py",
+    "app/api/v1/chat.py",
+    "app/api/v1/investigation.py",
+    "app/api/v1/sentiment.py",
+    "app/core/config.py",
+    "app/core/exceptions.py",
+    "app/core/security.py",
+    "app/main.py",
+    "app/services/investigation_service.py",
+    "app/services/sentiment_service.py"
+  ],
+  "new_production": [
+    "app/api/v1/ingestion.py",
+    "app/api/v1/webhooks.py",
+    "app/core/ingress_limits.py",
+    "app/core/processing_limits.py",
+    "app/core/webhook_security.py",
+    "app/schemas/ingestion.py",
+    "app/services/ingestion_service.py",
+    "app/services/webhook_service.py",
+    "app/storage/event_store.py"
+  ],
+  "modified_tests": [
+    "tests/integration/test_api_contracts.py"
+  ],
+  "new_tests": [
+    "tests/integration/test_ingestion_api.py",
+    "tests/security/test_ingress_limits.py",
+    "tests/security/test_webhook_security.py",
+    "tests/unit/test_webhook_workers.py",
+    "tests/t06_helpers.py"
+  ],
+  "modified_documentation": [
+    ".env.example",
+    "README.md",
+    "AGENTS.md",
+    "docs/README.md",
+    "docs/AGENTIC_PATTERNS.md",
+    "docs/qa/PROJECT_AUDIT_REPORT.md",
+    "docs/qa/TEST_EXECUTION_REPORT.md",
+    "docs/qa/SECURITY_REVIEW.md",
+    "docs/qa/AGENTIC_PATTERN_VERIFICATION.md",
+    "docs/qa/API_CONTRACT_REPORT.md",
+    "docs/qa/RELEASE_READINESS_REPORT.md",
+    "docs/qa/KNOWN_ISSUES.md"
+  ],
+  "new_documentation": [
+    "docs/WEBHOOK_INTEGRATION.md",
+    "docs/qa/T06_IMPLEMENTATION_REPORT.md"
+  ],
+  "updated_qa_artifacts": [
+    "docs/qa/openapi.json",
+    "docs/qa/benchmark_results.json",
+    "docs/qa/source_inventory.json",
+    "docs/qa/audit_summary.json",
+    "docs/qa/console-summary.txt",
+    "docs/qa/documentation_links.json"
+  ],
+  "new_qa_artifacts": [
+    "docs/qa/t06-full.xml",
+    "docs/qa/t06-compatibility.json",
+    "docs/qa/t06-summary.json",
+    "docs/qa/t06-manifest.json",
+    "docs/qa/t06-dependency-checks.txt"
+  ],
+  "new_history_files": [
+    "docs/qa/history/pre-t06/AGENTIC_PATTERN_VERIFICATION.md",
+    "docs/qa/history/pre-t06/API_CONTRACT_REPORT.md",
+    "docs/qa/history/pre-t06/KNOWN_ISSUES.md",
+    "docs/qa/history/pre-t06/PROJECT_AUDIT_REPORT.md",
+    "docs/qa/history/pre-t06/RELEASE_READINESS_REPORT.md",
+    "docs/qa/history/pre-t06/SECURITY_REVIEW.md",
+    "docs/qa/history/pre-t06/TEST_EXECUTION_REPORT.md",
+    "docs/qa/history/pre-t06/audit_summary.json",
+    "docs/qa/history/pre-t06/console-summary.txt"
+  ],
+  "notes": [
+    "No Git commands or mount modifications.",
+    "No .env, pyproject.toml, uv.lock, MCP implementation, sentiment prompt/schema or graph modification.",
+    "batch.py has existing QA-005 source fix; T06 only adds router-level 408 documentation."
+  ]
+}

@@ -1,0 +1,1553 @@
+[
+  {
+    "path": "app/__init__.py",
+    "lines": 1,
+    "sha256": "563513c3164225302f05f3f28880e426a075203d49ea10add879c7b8941d5aa8",
+    "definitions": []
+  },
+  {
+    "path": "app/agents/__init__.py",
+    "lines": 1,
+    "sha256": "787d3f8983e62909e38a984b4005e4c297dd271dfbf6b01dc7965514e7527b06",
+    "definitions": []
+  },
+  {
+    "path": "app/agents/action_selector.py",
+    "lines": 111,
+    "sha256": "ac9306ffb65b4207af3105fed07aef90836bc113a2e5493e763ac1b07f7cf4d2",
+    "definitions": [
+      {
+        "name": "Selector",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ActionSelector",
+        "line": 25,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_action_selector",
+        "line": 75,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "select",
+        "line": 22,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 28,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configure_admission",
+        "line": 43,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "select",
+        "line": 46,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_select",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/agents/feedback_graph.py",
+    "lines": 133,
+    "sha256": "f1f3a3fe06cb1af6b007a11981bec1c94aa7f918c75220c43c7422225a712aa8",
+    "definitions": [
+      {
+        "name": "selected",
+        "line": 17,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "summary",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "build_feedback_graph",
+        "line": 29,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "select_action",
+        "line": 32,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "analyze",
+        "line": 44,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "route",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "issues",
+        "line": 55,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "evidence",
+        "line": 61,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "verify",
+        "line": 72,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "insights",
+        "line": 79,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/agents/state.py",
+    "lines": 19,
+    "sha256": "23b6621e2efdc48d08292d2d46969d2288e64c2266f4cbc53965f5b400234594",
+    "definitions": [
+      {
+        "name": "InvestigationState",
+        "line": 11,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/__init__.py",
+    "lines": 1,
+    "sha256": "8dc4f612182384a3be5c9c48d841537e3846169990d8e58ce2ad49501dc49dd9",
+    "definitions": []
+  },
+  {
+    "path": "app/api/v1/__init__.py",
+    "lines": 1,
+    "sha256": "530026b32c2c3c4048eea810e2a296e0f368892e09941237df470d0582bd3dca",
+    "definitions": []
+  },
+  {
+    "path": "app/api/v1/batch.py",
+    "lines": 97,
+    "sha256": "526317fd589feb50a4495181883b0cc50b20893cfd59c4f175672683542bf734",
+    "definitions": [
+      {
+        "name": "get_batch_service",
+        "line": 22,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "upload",
+        "line": 27,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "status",
+        "line": 63,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "report",
+        "line": 69,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "results",
+        "line": 79,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "download",
+        "line": 89,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/chat.py",
+    "lines": 35,
+    "sha256": "e8ca7f869f35cfd2752b6553296665c5a04fce67aa520cd8f71227f1157a6fa3",
+    "definitions": [
+      {
+        "name": "get_conversation_service",
+        "line": 21,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "chat",
+        "line": 30,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/ingestion.py",
+    "lines": 27,
+    "sha256": "952979864721e41d3acfc4dd4dbce5d803d5e82752050cfc1babe924fb7c13ee",
+    "definitions": [
+      {
+        "name": "ingest",
+        "line": 19,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "event_status",
+        "line": 24,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/investigation.py",
+    "lines": 30,
+    "sha256": "276ef1d87a325bf79bb9e11e9ab2cd7af2571f7ef2767a90a472397e8ce8da89",
+    "definitions": [
+      {
+        "name": "get_investigation_service",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "investigate_feedback",
+        "line": 25,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/sentiment.py",
+    "lines": 34,
+    "sha256": "37566efda34d5058671cf5f943093e8c937bc55e56f648b38b5d959dfaf508dd",
+    "definitions": [
+      {
+        "name": "get_sentiment_service",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze_sentiment",
+        "line": 29,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/webhooks.py",
+    "lines": 32,
+    "sha256": "65f7f35b8cd66326a97d6f13359a884a4ccf07b8ddbbe8199390fb45a51b59fa",
+    "definitions": [
+      {
+        "name": "webhook",
+        "line": 23,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/__init__.py",
+    "lines": 1,
+    "sha256": "fce00cdb1c5b2d6c3cabb7f91a6f8965a9e8a938f20a7f5e04eca25335a27a52",
+    "definitions": []
+  },
+  {
+    "path": "app/core/config.py",
+    "lines": 80,
+    "sha256": "32140a778be24bd1229a225dd288f2cb27a3a288e0383caf2a0dc73b01013eb1",
+    "definitions": [
+      {
+        "name": "Settings",
+        "line": 10,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "empty_secret_is_unconfigured",
+        "line": 58,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bounded_job_capacity",
+        "line": 64,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "docs_enabled",
+        "line": 77,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/exceptions.py",
+    "lines": 111,
+    "sha256": "0b6b893d9409db70f80859039f547d57d21508399122d5f652e84a678da7e099",
+    "definitions": [
+      {
+        "name": "ErrorCode",
+        "line": 6,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ApplicationError",
+        "line": 105,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 108,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/ingress_limits.py",
+    "lines": 127,
+    "sha256": "37ba56b56d8a9c930cc398122541af5659d543ce5de9f3befcea023e23370f42",
+    "definitions": [
+      {
+        "name": "IngressLimitMiddleware",
+        "line": 33,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__call__",
+        "line": 43,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "replay",
+        "line": 104,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/processing_limits.py",
+    "lines": 24,
+    "sha256": "09f0931a2620a174410b63955618bd12dce021911d2225e68849866f43186ae5",
+    "definitions": [
+      {
+        "name": "ModelAdmission",
+        "line": 9,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 12,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "claim",
+        "line": 17,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/security.py",
+    "lines": 36,
+    "sha256": "8b6406634bf7faa3079e416224beaa0d6bbaf562cfaff14ade90f07b42c480f1",
+    "definitions": [
+      {
+        "name": "require_api_key",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "verify_api_key",
+        "line": 28,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/upload_limits.py",
+    "lines": 59,
+    "sha256": "20fef9db8dc867e0e9001a39acfe5232cc19ebc4c5e7e411431f4c0183ea52fd",
+    "definitions": [
+      {
+        "name": "UploadSizeLimitMiddleware",
+        "line": 12,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 13,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__call__",
+        "line": 17,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "replay",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/webhook_security.py",
+    "lines": 54,
+    "sha256": "e0cd0ac9a0249afd482564c5a80bd812a0c876b0675f466c07b926ac3995b723",
+    "definitions": [
+      {
+        "name": "SignedDelivery",
+        "line": 18,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "signed_headers",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "authenticate_webhook",
+        "line": 47,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/integrations/__init__.py",
+    "lines": 1,
+    "sha256": "87ca257e5c4729ade24aeaa2d5c033cfb4d9a10d795bd2c72d4e37a2c9194767",
+    "definitions": []
+  },
+  {
+    "path": "app/main.py",
+    "lines": 254,
+    "sha256": "ba8346fe778d8135324c43ef24986a0b2c4a7e44cc8145b2a4affff96ce3bc4a",
+    "definitions": [
+      {
+        "name": "error_response",
+        "line": 83,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "create_app",
+        "line": 103,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "lifespan",
+        "line": 121,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "request_boundary",
+        "line": 171,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "application_error_handler",
+        "line": 189,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "validation_error_handler",
+        "line": 193,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "http_error_handler",
+        "line": 237,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "health",
+        "line": 241,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/mcp_server/__init__.py",
+    "lines": 1,
+    "sha256": "c9b0833a61d30ab69fe0939b291f66b8a0a3045c7543a71542d55396a7241537",
+    "definitions": []
+  },
+  {
+    "path": "app/mcp_server/server.py",
+    "lines": 141,
+    "sha256": "103f56fc0885fa607ccb15ad2a8bc8f363354ddf14bd3c3d84a19ed4c3145a83",
+    "definitions": [
+      {
+        "name": "_service_error",
+        "line": 37,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "AnalysisMCPServer",
+        "line": 47,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_mcp_server",
+        "line": 80,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "main",
+        "line": 125,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 50,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "call_tool",
+        "line": 55,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "lifespan",
+        "line": 95,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/mcp_server/tools.py",
+    "lines": 63,
+    "sha256": "3947fca772b747c027baca2ee4ce629b3ca8ccbd826f32cb134b1653defec196",
+    "definitions": [
+      {
+        "name": "AnalysisServices",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "register_tools",
+        "line": 24,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze_feedback",
+        "line": 28,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "investigate_feedback",
+        "line": 46,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/prompts/__init__.py",
+    "lines": 1,
+    "sha256": "8ff6b7a2a8f7f3cfb22cdb7983da2e4edb95205f8f102fd07f60f91c15f75abc",
+    "definitions": []
+  },
+  {
+    "path": "app/prompts/investigation.py",
+    "lines": 33,
+    "sha256": "09daf475185cf681a78d79dc3d28d18f28aab2e2683ff014d8ba8f35f7c518a5",
+    "definitions": [
+      {
+        "name": "action_messages",
+        "line": 29,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/prompts/sentiment.py",
+    "lines": 34,
+    "sha256": "a83655b6d35ed9e7bc9e5f95f97f3400aab59436af15e9d9dbecc003f021e0c3",
+    "definitions": [
+      {
+        "name": "build_messages",
+        "line": 29,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/__init__.py",
+    "lines": 1,
+    "sha256": "f8a0bd1673aaac9704233825c57351ba3ef654dfc24af9789e92d85cd37d9ac0",
+    "definitions": []
+  },
+  {
+    "path": "app/schemas/batch.py",
+    "lines": 238,
+    "sha256": "55b2af5fc49d40f7616f76e0b57c47cca483098f08fff7280fb0bf4f5d6d2785",
+    "definitions": [
+      {
+        "name": "BatchModel",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobState",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "DateState",
+        "line": 32,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "RecordState",
+        "line": 39,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "UploadOptions",
+        "line": 44,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "RecordMetadata",
+        "line": 68,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ParsedRecord",
+        "line": 81,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "BatchResult",
+        "line": 89,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobAccepted",
+        "line": 120,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobStatus",
+        "line": 127,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IssueAggregate",
+        "line": 156,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "AspectAggregate",
+        "line": 168,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ReportEvidence",
+        "line": 183,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "BatchReport",
+        "line": 189,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ResultsPage",
+        "line": 227,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "BatchDownload",
+        "line": 236,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "nonblank",
+        "line": 53,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "distinct_mapping",
+        "line": 61,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "date_consistent",
+        "line": 75,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analysis_data",
+        "line": 101,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "result_consistent",
+        "line": 105,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "reconcile",
+        "line": 138,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "unique_count",
+        "line": 162,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "unique_mentions",
+        "line": 175,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "totals",
+        "line": 209,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/chat.py",
+    "lines": 86,
+    "sha256": "8b2cdb01725285d477ab61972387be1b5db0feb57f53cebd6fe8fa695de3249d",
+    "definitions": [
+      {
+        "name": "ChatMode",
+        "line": 18,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ChatRequest",
+        "line": 23,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ChatResponse",
+        "line": 63,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "require_message",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "require_nonblank_feedback",
+        "line": 41,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_mode_payload",
+        "line": 45,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_mode_result",
+        "line": 75,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/errors.py",
+    "lines": 28,
+    "sha256": "4f7cc1f2af9b3e8a791baf2ab5beeb4e996c481c78825fb88adde0d3679a9768",
+    "definitions": [
+      {
+        "name": "ValidationIssue",
+        "line": 10,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ErrorDetail",
+        "line": 16,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ErrorResponse",
+        "line": 22,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "HealthResponse",
+        "line": 27,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/ingestion.py",
+    "lines": 59,
+    "sha256": "f198d17f868757f3c9e87391f7ca57b3399c7b3b24ccbd11d324b8f2f7a5e445",
+    "definitions": [
+      {
+        "name": "IngestionRequest",
+        "line": 13,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IngestionResponse",
+        "line": 27,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "WebhookPayload",
+        "line": 35,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "EventState",
+        "line": 43,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "WebhookAcknowledgment",
+        "line": 50,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "EventStatus",
+        "line": 56,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "normalize_id",
+        "line": 20,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/investigation.py",
+    "lines": 160,
+    "sha256": "5103754af191a71ed539b5b7f5f12d90379b59acd263832104b9cdad68497103",
+    "definitions": [
+      {
+        "name": "FeedbackItem",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "InvestigationRequest",
+        "line": 36,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "InvestigationAction",
+        "line": 57,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ActionSelection",
+        "line": 64,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "AnalyzedFeedback",
+        "line": 95,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "SentimentSummary",
+        "line": 102,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IssueSummary",
+        "line": 111,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "FeedbackEvidence",
+        "line": 125,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "InvestigationResponse",
+        "line": 132,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "require_nonblank",
+        "line": 29,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "require_question",
+        "line": 45,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "unique_ids",
+        "line": 51,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bound_evidence",
+        "line": 76,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "compatible_filters",
+        "line": 82,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "consistent_count",
+        "line": 119,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "consistent_totals",
+        "line": 149,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/sentiment.py",
+    "lines": 120,
+    "sha256": "f4e3d1e2a6d057e383e50340d64930662283864a6d5a6e4e1d046b6fc9c435d0",
+    "definitions": [
+      {
+        "name": "Sentiment",
+        "line": 14,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Urgency",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IssueCategory",
+        "line": 28,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "SentimentRequest",
+        "line": 41,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Aspect",
+        "line": 59,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "SentimentResponse",
+        "line": 75,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "require_nonblank_feedback",
+        "line": 52,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_name",
+        "line": 69,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_summary_text",
+        "line": 92,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bound_aspects",
+        "line": 100,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bound_evidence",
+        "line": 107,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "verify_evidence",
+        "line": 113,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/__init__.py",
+    "lines": 1,
+    "sha256": "cdf5445ed1c588ead198a442035c6e2b144a813c0f1964ccac11a7ed84cfd64c",
+    "definitions": []
+  },
+  {
+    "path": "app/services/batch_service.py",
+    "lines": 211,
+    "sha256": "a46000910935401f797617738472554923c5e2e57e39ad379d194d528e39af1c",
+    "definitions": [
+      {
+        "name": "BatchService",
+        "line": 24,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 27,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "start",
+        "line": 47,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "close",
+        "line": 51,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_sweep",
+        "line": 64,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_reserve",
+        "line": 70,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_abandoned_parse",
+        "line": 84,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "submit",
+        "line": 92,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_abort_remaining",
+        "line": 127,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_run",
+        "line": 135,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "status",
+        "line": 185,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "report",
+        "line": 188,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "results",
+        "line": 196,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "download",
+        "line": 206,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/conversation_service.py",
+    "lines": 70,
+    "sha256": "357fc76f783b12b149b86eef0c36e40cac6a2e0f17c4af17e7ca35cd33e3a896",
+    "definitions": [
+      {
+        "name": "ConversationService",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "respond",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/file_parser.py",
+    "lines": 252,
+    "sha256": "ccc9953fdf0ddfad1a8f61b1afbf9135a85707a947582d9326c40fcad9a7fd3a",
+    "definitions": [
+      {
+        "name": "ParsedFile",
+        "line": 22,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "blank",
+        "line": 27,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "FileParser",
+        "line": 31,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 32,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "parse",
+        "line": 38,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_headers",
+        "line": 59,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_csv",
+        "line": 70,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_csv_quotes",
+        "line": 98,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_check_archive",
+        "line": 123,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_xlsx",
+        "line": 153,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_append",
+        "line": 191,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_date",
+        "line": 224,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_finish",
+        "line": 249,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/ingestion_service.py",
+    "lines": 25,
+    "sha256": "600552f117404bfb25df7f8e6ce582627ed05f1216a4d799b1a161f99f54a76d",
+    "definitions": [
+      {
+        "name": "normalize_event",
+        "line": 8,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "IngestionService",
+        "line": 15,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze",
+        "line": 19,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/investigation_service.py",
+    "lines": 88,
+    "sha256": "c8e5ff62ddfc656c9c865eab4042b0ecc30782bf5af03c1852c6376f6d9c0643",
+    "definitions": [
+      {
+        "name": "InvestigationService",
+        "line": 20,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configure_admission",
+        "line": 32,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "investigate",
+        "line": 37,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/reporting_service.py",
+    "lines": 108,
+    "sha256": "ccfa98d3cbddc4b26debeedbf7253703a42e82bc7c32121c6b9395be3800841b",
+    "definitions": [
+      {
+        "name": "percentages",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ReportingService",
+        "line": 28,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "build",
+        "line": 29,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/sentiment_service.py",
+    "lines": 184,
+    "sha256": "9c7070703bc07028c0f98cd7aab2a3168299e84138fe59ecfacd03d7cc0bbdb8",
+    "definitions": [
+      {
+        "name": "StructuredModel",
+        "line": 24,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "classify_provider_error",
+        "line": 30,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "SentimentService",
+        "line": 51,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_sentiment_service",
+        "line": 134,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ainvoke",
+        "line": 27,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 54,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configuration_error",
+        "line": 72,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configure_admission",
+        "line": 76,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze",
+        "line": 80,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_analyze",
+        "line": 87,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/webhook_service.py",
+    "lines": 99,
+    "sha256": "d236875cec514218a6e6de9607b52db5dbb22dac4ea712c7b495eb14b9e8c5a7",
+    "definitions": [
+      {
+        "name": "WebhookService",
+        "line": 13,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 14,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "start",
+        "line": 23,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "close",
+        "line": 30,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "accept",
+        "line": 43,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "status",
+        "line": 65,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_worker",
+        "line": 72,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_cleanup",
+        "line": 96,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/storage/__init__.py",
+    "lines": 1,
+    "sha256": "feaf294a7074b361c8053e5b54cf4504ab4e7df5a00fba450e2f43a4a3726eca",
+    "definitions": []
+  },
+  {
+    "path": "app/storage/event_store.py",
+    "lines": 46,
+    "sha256": "6c115c33c2a64cfca48d9e5961f802a467f746de919bbee8e10dd486c6d39cb7",
+    "definitions": [
+      {
+        "name": "Event",
+        "line": 11,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "EventStore",
+        "line": 24,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "public_status",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "purge",
+        "line": 30,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "finish",
+        "line": 37,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "clear",
+        "line": 43,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/storage/job_store.py",
+    "lines": 82,
+    "sha256": "586f61af12dd191cd37bf7834e355819e135c85408d5954546d86f6f5f872a35",
+    "definitions": [
+      {
+        "name": "Job",
+        "line": 13,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobStore",
+        "line": 44,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "snapshot",
+        "line": 26,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "erase",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 47,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "purge",
+        "line": 52,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "add",
+        "line": 58,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "get",
+        "line": 66,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "terminal",
+        "line": 72,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "clear",
+        "line": 79,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/__init__.py",
+    "lines": 1,
+    "sha256": "e8fd899a86b4b5b532fc59c1168e68d4fcd015862c1aca29e78532ee98b09c9e",
+    "definitions": []
+  },
+  {
+    "path": "app/tools/aggregation.py",
+    "lines": 85,
+    "sha256": "d91d6f018b487ba0c7048bc22f244a00205295b9cd0744171ce985a3ca871288",
+    "definitions": [
+      {
+        "name": "aggregate_sentiment",
+        "line": 13,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "aggregate_issues",
+        "line": 17,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "matching_results",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "generate_insights",
+        "line": 40,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/batch_analysis.py",
+    "lines": 35,
+    "sha256": "00a5cd873833894bbdfaa9afd23764c5b6f0462ca96d63a7c30a676431d36e7f",
+    "definitions": [
+      {
+        "name": "failed_result",
+        "line": 11,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze_record",
+        "line": 15,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/evidence.py",
+    "lines": 79,
+    "sha256": "71a0b45aec2ae96700b240f5702e7f74f49a1765ae77d4013b9b1125cc650bb3",
+    "definitions": [
+      {
+        "name": "evidence_ids",
+        "line": 12,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "retrieve_evidence",
+        "line": 26,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "verify_findings",
+        "line": 41,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/feedback_analysis.py",
+    "lines": 18,
+    "sha256": "dad69f0e68f3ea2e91ee92a2c26095df4575e87abd046d9808fb7cb77216ef23",
+    "definitions": [
+      {
+        "name": "analyze_feedback_items",
+        "line": 8,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/statistics.py",
+    "lines": 21,
+    "sha256": "5ed154d016cddcc1705baddfbb0e16185e3ab6dceb02767857d81a9cc456c0ab",
+    "definitions": [
+      {
+        "name": "count_sentiments",
+        "line": 9,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "group_issue_ids",
+        "line": 14,
+        "kind": "FunctionDef"
+      }
+    ]
+  }
+]

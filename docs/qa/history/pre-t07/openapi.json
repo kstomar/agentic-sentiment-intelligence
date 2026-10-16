@@ -1,0 +1,3229 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Agentic Sentiment Intelligence API",
+    "description": "Customer feedback analysis and sentiment intelligence API",
+    "version": "v1"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Health",
+        "description": "Process liveness only; no authentication or provider call.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sentiment/analyze": {
+      "post": {
+        "tags": [
+          "sentiment"
+        ],
+        "summary": "Analyze customer feedback",
+        "description": "Classify feedback. Urgency is suggested triage, not a verified safety assessment.",
+        "operationId": "analyze_sentiment_api_v1_sentiment_analyze_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SentimentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SentimentResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ]
+      }
+    },
+    "/api/v1/agent/investigate": {
+      "post": {
+        "tags": [
+          "investigation"
+        ],
+        "summary": "Investigate submitted feedback",
+        "description": "Answer a bounded question using at most ten request-supplied records.",
+        "operationId": "investigate_feedback_api_v1_agent_investigate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvestigationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvestigationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ]
+      }
+    },
+    "/api/v1/chat": {
+      "post": {
+        "tags": [
+          "chat"
+        ],
+        "summary": "Analyze or investigate feedback conversationally",
+        "description": "Use an explicit mode and current feedback; no chat history is retained.",
+        "operationId": "chat_api_v1_chat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ]
+      }
+    },
+    "/api/v1/batch/upload": {
+      "post": {
+        "tags": [
+          "batch"
+        ],
+        "summary": "Upload feedback for background analysis",
+        "operationId": "upload_api_v1_batch_upload_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_api_v1_batch_upload_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobAccepted"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ]
+      }
+    },
+    "/api/v1/batch/jobs/{job_id}": {
+      "get": {
+        "tags": [
+          "batch"
+        ],
+        "summary": "Get batch progress",
+        "operationId": "status_api_v1_batch_jobs__job_id__get",
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Timeout"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unsupported Media Type"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/batch/jobs/{job_id}/report": {
+      "get": {
+        "tags": [
+          "batch"
+        ],
+        "summary": "Get a completed JSON report",
+        "operationId": "report_api_v1_batch_jobs__job_id__report_get",
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/BatchReport"
+                    },
+                    {
+                      "$ref": "#/components/schemas/JobStatus"
+                    }
+                  ],
+                  "title": "Response Report Api V1 Batch Jobs  Job Id  Report Get"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Timeout"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unsupported Media Type"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Gateway Timeout"
+          },
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            },
+            "description": "Accepted"
+          }
+        }
+      }
+    },
+    "/api/v1/batch/jobs/{job_id}/results": {
+      "get": {
+        "tags": [
+          "batch"
+        ],
+        "summary": "Page through settled record results",
+        "operationId": "results_api_v1_batch_jobs__job_id__results_get",
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Job Id"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000000,
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 25,
+              "title": "Page Size"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultsPage"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Timeout"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unsupported Media Type"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/batch/jobs/{job_id}/download": {
+      "get": {
+        "tags": [
+          "batch"
+        ],
+        "summary": "Download completed report and results as JSON",
+        "operationId": "download_api_v1_batch_jobs__job_id__download_get",
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/BatchDownload"
+                    },
+                    {
+                      "$ref": "#/components/schemas/JobStatus"
+                    }
+                  ],
+                  "title": "Response Download Api V1 Batch Jobs  Job Id  Download Get"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Timeout"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unsupported Media Type"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Gateway Timeout"
+          },
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobStatus"
+                }
+              }
+            },
+            "description": "Accepted"
+          }
+        }
+      }
+    },
+    "/api/v1/ingest/feedback": {
+      "post": {
+        "tags": [
+          "ingestion"
+        ],
+        "summary": "Analyze externally submitted feedback",
+        "operationId": "ingest_api_v1_ingest_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngestionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Request Entity Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "Gateway Timeout",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ]
+      }
+    },
+    "/api/v1/ingest/events/{delivery_id}": {
+      "get": {
+        "tags": [
+          "ingestion"
+        ],
+        "summary": "Get development integration event status",
+        "operationId": "event_status_api_v1_ingest_events__delivery_id__get",
+        "security": [
+          {
+            "DevelopmentAPIKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "delivery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,99}$",
+              "title": "Delivery Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Timeout"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Bad Gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/webhooks/feedback": {
+      "post": {
+        "tags": [
+          "webhooks"
+        ],
+        "summary": "Accept a signed feedback-created event",
+        "operationId": "webhook_api_v1_webhooks_feedback_post",
+        "security": [
+          {
+            "FeedbackHMAC": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookAcknowledgment"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Timeout"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookAcknowledgment"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "parameters": [
+          {
+            "name": "X-Feedback-Integration-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Feedback-Delivery-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Feedback-Timestamp",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActionSelection": {
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/InvestigationAction"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IssueCategory"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sentiment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Sentiment"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence_limit": {
+            "type": "integer",
+            "title": "Evidence Limit",
+            "description": "Number of source records to return, from 1 to 10."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "action",
+          "category",
+          "sentiment",
+          "evidence_limit"
+        ],
+        "title": "ActionSelection",
+        "description": "All provider fields are required; null represents an unused filter."
+      },
+      "Aspect": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Lowercase snake_case name, at most 64 characters."
+          },
+          "sentiment": {
+            "$ref": "#/components/schemas/Sentiment"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "sentiment"
+        ],
+        "title": "Aspect",
+        "description": "An important feedback aspect with a normalized snake_case name."
+      },
+      "AspectAggregate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Count"
+          },
+          "sentiment_distribution": {
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0.0
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/Sentiment"
+            },
+            "type": "object",
+            "title": "Sentiment Distribution"
+          },
+          "feedback_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Feedback Ids"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "count",
+          "sentiment_distribution",
+          "feedback_ids"
+        ],
+        "title": "AspectAggregate"
+      },
+      "BatchDownload": {
+        "properties": {
+          "report": {
+            "$ref": "#/components/schemas/BatchReport"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/BatchResult"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "report",
+          "results"
+        ],
+        "title": "BatchDownload"
+      },
+      "BatchReport": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Job Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/JobState"
+          },
+          "total_records": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Total Records"
+          },
+          "processed_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Processed Records"
+          },
+          "successful_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Successful Records"
+          },
+          "failed_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Failed Records"
+          },
+          "progress_percentage": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Progress Percentage"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ErrorCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "business_type": {
+            "type": "string",
+            "enum": [
+              "ecommerce",
+              "restaurant",
+              "software",
+              "banking",
+              "general"
+            ],
+            "title": "Business Type"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "valid_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Valid Records"
+          },
+          "invalid_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Invalid Records"
+          },
+          "attempted_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Attempted Records"
+          },
+          "unattempted_valid_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Unattempted Valid Records"
+          },
+          "skipped_blank_rows": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Skipped Blank Rows"
+          },
+          "invalid_date_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Invalid Date Records"
+          },
+          "sentiment_distribution": {
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0.0
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/Sentiment"
+            },
+            "type": "object",
+            "title": "Sentiment Distribution"
+          },
+          "sentiment_percentages": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/Sentiment"
+            },
+            "type": "object",
+            "title": "Sentiment Percentages"
+          },
+          "percentage_denominator": {
+            "type": "string",
+            "title": "Percentage Denominator",
+            "default": "successful_records"
+          },
+          "issue_categories": {
+            "items": {
+              "$ref": "#/components/schemas/IssueAggregate"
+            },
+            "type": "array",
+            "title": "Issue Categories"
+          },
+          "top_issues": {
+            "items": {
+              "$ref": "#/components/schemas/IssueAggregate"
+            },
+            "type": "array",
+            "title": "Top Issues"
+          },
+          "top_aspects": {
+            "items": {
+              "$ref": "#/components/schemas/AspectAggregate"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Top Aspects"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ReportEvidence"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Evidence"
+          },
+          "recommendations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Recommendations"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "job_id",
+          "status",
+          "total_records",
+          "processed_records",
+          "successful_records",
+          "failed_records",
+          "progress_percentage",
+          "business_type",
+          "source",
+          "valid_records",
+          "invalid_records",
+          "attempted_records",
+          "unattempted_valid_records",
+          "skipped_blank_rows",
+          "invalid_date_records",
+          "sentiment_distribution",
+          "sentiment_percentages",
+          "issue_categories",
+          "top_issues",
+          "top_aspects",
+          "evidence",
+          "recommendations",
+          "limitations"
+        ],
+        "title": "BatchReport"
+      },
+      "BatchResult": {
+        "properties": {
+          "feedback_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Feedback Id"
+          },
+          "source_row": {
+            "type": "integer",
+            "minimum": 2.0,
+            "title": "Source Row"
+          },
+          "normalized_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Normalized Date"
+          },
+          "date_status": {
+            "$ref": "#/components/schemas/DateState",
+            "default": "NOT_PROVIDED"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RecordState"
+          },
+          "attempted": {
+            "type": "boolean",
+            "title": "Attempted"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ErrorCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sentiment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Sentiment"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "issue_category": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IssueCategory"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "urgency": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Urgency"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "aspects": {
+            "items": {
+              "$ref": "#/components/schemas/Aspect"
+            },
+            "type": "array",
+            "title": "Aspects"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary"
+          },
+          "suggested_next_step": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Suggested Next Step"
+          },
+          "evidence_phrases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Phrases"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "feedback_id",
+          "source_row",
+          "status",
+          "attempted"
+        ],
+        "title": "BatchResult"
+      },
+      "Body_upload_api_v1_batch_upload_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          },
+          "text_column": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Text Column"
+          },
+          "id_column": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id Column"
+          },
+          "date_column": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date Column"
+          },
+          "business_type": {
+            "type": "string",
+            "enum": [
+              "ecommerce",
+              "restaurant",
+              "software",
+              "banking",
+              "general"
+            ],
+            "title": "Business Type",
+            "default": "general"
+          },
+          "source": {
+            "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Source",
+            "default": "file_upload"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file",
+          "text_column"
+        ],
+        "title": "Body_upload_api_v1_batch_upload_post"
+      },
+      "ChatMode": {
+        "type": "string",
+        "enum": [
+          "ANALYZE_TEXT",
+          "INVESTIGATE_FEEDBACK"
+        ],
+        "title": "ChatMode"
+      },
+      "ChatRequest": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/ChatMode"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Message"
+          },
+          "feedback_text": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 5000,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Feedback Text"
+          },
+          "feedback": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FeedbackItem"
+                },
+                "type": "array",
+                "maxItems": 10,
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Feedback"
+          },
+          "business_type": {
+            "type": "string",
+            "enum": [
+              "ecommerce",
+              "restaurant",
+              "software",
+              "banking",
+              "general"
+            ],
+            "title": "Business Type",
+            "default": "general"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode",
+          "message"
+        ],
+        "title": "ChatRequest",
+        "description": "Every request contains its own feedback; history and identity fields are rejected."
+      },
+      "ChatResponse": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/ChatMode"
+          },
+          "answer": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Answer"
+          },
+          "sentiment_analysis": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SentimentResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "investigation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InvestigationResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 11,
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode",
+          "answer",
+          "limitations"
+        ],
+        "title": "ChatResponse",
+        "description": "One typed envelope with exactly one populated result and explicit limitations."
+      },
+      "DateState": {
+        "type": "string",
+        "enum": [
+          "NOT_PROVIDED",
+          "MISSING",
+          "VALID",
+          "INVALID"
+        ],
+        "title": "DateState"
+      },
+      "ErrorCode": {
+        "type": "string",
+        "enum": [
+          "AUTHENTICATION_FAILED",
+          "APP_AUTH_NOT_CONFIGURED",
+          "GROQ_NOT_CONFIGURED",
+          "GROQ_MODEL_UNSUPPORTED",
+          "GROQ_CONFIGURATION_ERROR",
+          "UPSTREAM_AUTHENTICATION_FAILED",
+          "UPSTREAM_RATE_LIMITED",
+          "UPSTREAM_TIMEOUT",
+          "UPSTREAM_UNAVAILABLE",
+          "UPSTREAM_REQUEST_REJECTED",
+          "INVALID_MODEL_RESPONSE",
+          "INVALID_ACTION_SELECTION",
+          "INVALID_GRAPH_STATE",
+          "EVIDENCE_VERIFICATION_FAILED",
+          "INVESTIGATION_TIMEOUT",
+          "BATCH_FILE_TOO_LARGE",
+          "BATCH_UNSUPPORTED_FORMAT",
+          "BATCH_INVALID_ENCODING",
+          "BATCH_INVALID_FILE",
+          "BATCH_INVALID_COLUMNS",
+          "BATCH_INVALID_IDS",
+          "BATCH_INVALID_TEXT",
+          "BATCH_EXTRACTION_LIMIT",
+          "BATCH_TOO_MANY_RECORDS",
+          "BATCH_NO_VALID_RECORDS",
+          "BATCH_CAPACITY_EXCEEDED",
+          "BATCH_JOB_NOT_FOUND",
+          "BATCH_JOB_TIMEOUT",
+          "BATCH_UNAVAILABLE",
+          "BATCH_REPORT_UNAVAILABLE",
+          "REQUEST_TOO_LARGE",
+          "REQUEST_BODY_TIMEOUT",
+          "INGRESS_CAPACITY_EXCEEDED",
+          "INGRESS_RATE_LIMITED",
+          "PROCESSING_CAPACITY_EXCEEDED",
+          "WEBHOOK_NOT_CONFIGURED",
+          "WEBHOOK_AUTHENTICATION_FAILED",
+          "WEBHOOK_DELIVERY_CONFLICT",
+          "WEBHOOK_CAPACITY_EXCEEDED",
+          "WEBHOOK_EVENT_NOT_FOUND",
+          "WEBHOOK_PROCESSING_TIMEOUT",
+          "WEBHOOK_UNAVAILABLE",
+          "VALIDATION_ERROR",
+          "HTTP_ERROR",
+          "INTERNAL_ERROR"
+        ],
+        "title": "ErrorCode"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ErrorCode"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "details": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/ValidationIssue"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Details"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          },
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "title": "ErrorResponse"
+      },
+      "EventState": {
+        "type": "string",
+        "enum": [
+          "ACCEPTED",
+          "PROCESSING",
+          "COMPLETED",
+          "FAILED"
+        ],
+        "title": "EventState"
+      },
+      "EventStatus": {
+        "properties": {
+          "delivery_id": {
+            "type": "string",
+            "title": "Delivery Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/EventState"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ErrorCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "delivery_id",
+          "status"
+        ],
+        "title": "EventStatus"
+      },
+      "FeedbackEvidence": {
+        "properties": {
+          "feedback_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Feedback Id"
+          },
+          "text_excerpt": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Text Excerpt"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "feedback_id",
+          "text_excerpt"
+        ],
+        "title": "FeedbackEvidence"
+      },
+      "FeedbackItem": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Id"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "text"
+        ],
+        "title": "FeedbackItem"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status",
+            "default": "ok"
+          }
+        },
+        "type": "object",
+        "title": "HealthResponse"
+      },
+      "IngestionRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "customer_review",
+              "support_ticket",
+              "email",
+              "social_media",
+              "manual"
+            ],
+            "title": "Source",
+            "default": "customer_review"
+          },
+          "business_type": {
+            "type": "string",
+            "enum": [
+              "ecommerce",
+              "restaurant",
+              "software",
+              "banking",
+              "general"
+            ],
+            "title": "Business Type",
+            "default": "general"
+          },
+          "feedback_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Feedback Id"
+          },
+          "channel": {
+            "type": "string",
+            "enum": [
+              "website",
+              "mobile_app",
+              "support_platform",
+              "external_api"
+            ],
+            "title": "Channel"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text",
+          "channel"
+        ],
+        "title": "IngestionRequest"
+      },
+      "IngestionResponse": {
+        "properties": {
+          "feedback_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Feedback Id"
+          },
+          "channel": {
+            "type": "string",
+            "enum": [
+              "website",
+              "mobile_app",
+              "support_platform",
+              "external_api"
+            ],
+            "title": "Channel"
+          },
+          "status": {
+            "type": "string",
+            "const": "ANALYZED",
+            "title": "Status",
+            "default": "ANALYZED"
+          },
+          "analysis": {
+            "$ref": "#/components/schemas/SentimentResponse"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "feedback_id",
+          "channel",
+          "analysis"
+        ],
+        "title": "IngestionResponse"
+      },
+      "InvestigationAction": {
+        "type": "string",
+        "enum": [
+          "SENTIMENT_OVERVIEW",
+          "ISSUE_FREQUENCY",
+          "EVIDENCE_SEARCH",
+          "GENERAL_FEEDBACK_SUMMARY"
+        ],
+        "title": "InvestigationAction"
+      },
+      "InvestigationRequest": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "business_type": {
+            "type": "string",
+            "enum": [
+              "ecommerce",
+              "restaurant",
+              "software",
+              "banking",
+              "general"
+            ],
+            "title": "Business Type",
+            "default": "general"
+          },
+          "feedback": {
+            "items": {
+              "$ref": "#/components/schemas/FeedbackItem"
+            },
+            "type": "array",
+            "maxItems": 10,
+            "minItems": 1,
+            "title": "Feedback"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "question",
+          "feedback"
+        ],
+        "title": "InvestigationRequest"
+      },
+      "InvestigationResponse": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "selected_action": {
+            "$ref": "#/components/schemas/ActionSelection"
+          },
+          "answer": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Answer"
+          },
+          "total_feedback": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Total Feedback"
+          },
+          "sentiment_summary": {
+            "$ref": "#/components/schemas/SentimentSummary"
+          },
+          "top_issues": {
+            "items": {
+              "$ref": "#/components/schemas/IssueSummary"
+            },
+            "type": "array",
+            "maxItems": 10,
+            "title": "Top Issues"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/FeedbackEvidence"
+            },
+            "type": "array",
+            "maxItems": 10,
+            "title": "Evidence"
+          },
+          "tools_used": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "analyze_feedback_items",
+                "aggregate_sentiment",
+                "aggregate_issues",
+                "retrieve_evidence",
+                "generate_insights"
+              ]
+            },
+            "type": "array",
+            "maxItems": 5,
+            "minItems": 1,
+            "title": "Tools Used"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 10,
+            "minItems": 1,
+            "title": "Limitations"
+          },
+          "recommendations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Recommendations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "question",
+          "selected_action",
+          "answer",
+          "total_feedback",
+          "sentiment_summary",
+          "top_issues",
+          "evidence",
+          "tools_used",
+          "limitations",
+          "recommendations"
+        ],
+        "title": "InvestigationResponse",
+        "description": "Observed classifications are distinct from tentative recommendations."
+      },
+      "IssueAggregate": {
+        "properties": {
+          "category": {
+            "$ref": "#/components/schemas/IssueCategory"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Count"
+          },
+          "feedback_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Feedback Ids"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "category",
+          "count",
+          "feedback_ids"
+        ],
+        "title": "IssueAggregate"
+      },
+      "IssueCategory": {
+        "type": "string",
+        "enum": [
+          "DELIVERY",
+          "PRODUCT_QUALITY",
+          "FOOD_QUALITY",
+          "BILLING",
+          "CUSTOMER_SUPPORT",
+          "TECHNICAL_ISSUE",
+          "STAFF_BEHAVIOR",
+          "FEATURE_REQUEST",
+          "PRAISE",
+          "OTHER"
+        ],
+        "title": "IssueCategory"
+      },
+      "IssueSummary": {
+        "properties": {
+          "category": {
+            "$ref": "#/components/schemas/IssueCategory"
+          },
+          "count": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Count"
+          },
+          "feedback_ids": {
+            "items": {
+              "type": "string",
+              "maxLength": 100,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 10,
+            "minItems": 1,
+            "title": "Feedback Ids"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "category",
+          "count",
+          "feedback_ids"
+        ],
+        "title": "IssueSummary"
+      },
+      "JobAccepted": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Job Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/JobState",
+            "default": "PENDING"
+          },
+          "total_records": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Total Records"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "default": "Bulk analysis job accepted."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "job_id",
+          "total_records"
+        ],
+        "title": "JobAccepted"
+      },
+      "JobState": {
+        "type": "string",
+        "enum": [
+          "PENDING",
+          "RUNNING",
+          "COMPLETED",
+          "PARTIAL_SUCCESS",
+          "FAILED"
+        ],
+        "title": "JobState"
+      },
+      "JobStatus": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Job Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/JobState"
+          },
+          "total_records": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Total Records"
+          },
+          "processed_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Processed Records"
+          },
+          "successful_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Successful Records"
+          },
+          "failed_records": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Failed Records"
+          },
+          "progress_percentage": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Progress Percentage"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ErrorCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "job_id",
+          "status",
+          "total_records",
+          "processed_records",
+          "successful_records",
+          "failed_records",
+          "progress_percentage"
+        ],
+        "title": "JobStatus"
+      },
+      "RecordState": {
+        "type": "string",
+        "enum": [
+          "SUCCESS",
+          "FAILED"
+        ],
+        "title": "RecordState"
+      },
+      "ReportEvidence": {
+        "properties": {
+          "feedback_id": {
+            "type": "string",
+            "title": "Feedback Id"
+          },
+          "source_row": {
+            "type": "integer",
+            "title": "Source Row"
+          },
+          "text_excerpt": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Text Excerpt"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "feedback_id",
+          "source_row",
+          "text_excerpt"
+        ],
+        "title": "ReportEvidence"
+      },
+      "ResultsPage": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Job Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/JobState"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Page"
+          },
+          "page_size": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Page Size"
+          },
+          "total_results": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Total Results"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/BatchResult"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "job_id",
+          "status",
+          "page",
+          "page_size",
+          "total_results",
+          "results"
+        ],
+        "title": "ResultsPage"
+      },
+      "Sentiment": {
+        "type": "string",
+        "enum": [
+          "POSITIVE",
+          "NEGATIVE",
+          "NEUTRAL",
+          "MIXED"
+        ],
+        "title": "Sentiment"
+      },
+      "SentimentRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "customer_review",
+              "support_ticket",
+              "email",
+              "social_media",
+              "manual"
+            ],
+            "title": "Source",
+            "default": "manual"
+          },
+          "business_type": {
+            "type": "string",
+            "enum": [
+              "ecommerce",
+              "restaurant",
+              "software",
+              "banking",
+              "general"
+            ],
+            "title": "Business Type",
+            "default": "general"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "SentimentRequest",
+        "description": "Feedback and allowlisted context hints; no tenant identity is accepted."
+      },
+      "SentimentResponse": {
+        "properties": {
+          "sentiment": {
+            "$ref": "#/components/schemas/Sentiment"
+          },
+          "issue_category": {
+            "$ref": "#/components/schemas/IssueCategory"
+          },
+          "urgency": {
+            "$ref": "#/components/schemas/Urgency",
+            "description": "Suggested triage level, not a verified safety or risk assessment."
+          },
+          "aspects": {
+            "items": {
+              "$ref": "#/components/schemas/Aspect"
+            },
+            "type": "array",
+            "title": "Aspects",
+            "description": "At most 20 important aspects; empty when none can be identified."
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary",
+            "description": "Concise factual summary, at most 1000 characters."
+          },
+          "suggested_next_step": {
+            "type": "string",
+            "title": "Suggested Next Step",
+            "description": "A recommendation, not an action taken; at most 1000 characters."
+          },
+          "evidence_phrases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Phrases",
+            "description": "At most 20 exact, nonblank substrings of the original feedback."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "sentiment",
+          "issue_category",
+          "urgency",
+          "aspects",
+          "summary",
+          "suggested_next_step",
+          "evidence_phrases"
+        ],
+        "title": "SentimentResponse",
+        "description": "Validated classification; urgency is suggested triage, not a safety assessment."
+      },
+      "SentimentSummary": {
+        "properties": {
+          "POSITIVE": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Positive"
+          },
+          "NEGATIVE": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Negative"
+          },
+          "NEUTRAL": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Neutral"
+          },
+          "MIXED": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Mixed"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "POSITIVE",
+          "NEGATIVE",
+          "NEUTRAL",
+          "MIXED"
+        ],
+        "title": "SentimentSummary"
+      },
+      "Urgency": {
+        "type": "string",
+        "enum": [
+          "LOW",
+          "MEDIUM",
+          "HIGH",
+          "CRITICAL"
+        ],
+        "title": "Urgency"
+      },
+      "ValidationIssue": {
+        "properties": {
+          "field": {
+            "type": "string",
+            "title": "Field"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "field",
+          "code",
+          "message"
+        ],
+        "title": "ValidationIssue"
+      },
+      "WebhookAcknowledgment": {
+        "properties": {
+          "delivery_id": {
+            "type": "string",
+            "title": "Delivery Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACCEPTED",
+              "DUPLICATE"
+            ],
+            "title": "Status"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "delivery_id",
+          "status",
+          "message"
+        ],
+        "title": "WebhookAcknowledgment"
+      },
+      "WebhookPayload": {
+        "properties": {
+          "event_type": {
+            "type": "string",
+            "const": "customer.feedback.created",
+            "title": "Event Type"
+          },
+          "feedback": {
+            "$ref": "#/components/schemas/FeedbackItem"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "customer_review",
+              "support_ticket",
+              "email",
+              "social_media",
+              "manual"
+            ],
+            "title": "Source",
+            "default": "customer_review"
+          },
+          "business_type": {
+            "type": "string",
+            "enum": [
+              "ecommerce",
+              "restaurant",
+              "software",
+              "banking",
+              "general"
+            ],
+            "title": "Business Type",
+            "default": "general"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_type",
+          "feedback"
+        ],
+        "title": "WebhookPayload"
+      }
+    },
+    "securitySchemes": {
+      "DevelopmentAPIKey": {
+        "type": "apiKey",
+        "description": "Single development API key; this does not provide tenant isolation.",
+        "in": "header",
+        "name": "X-API-Key"
+      },
+      "FeedbackHMAC": {
+        "type": "apiKey",
+        "description": "HMAC-SHA256 over integration.timestamp.delivery.original_body; all four signed headers are required. See docs/WEBHOOK_INTEGRATION.md.",
+        "in": "header",
+        "name": "X-Feedback-Signature"
+      }
+    }
+  }
+}

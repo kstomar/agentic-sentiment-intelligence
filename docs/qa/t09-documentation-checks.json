@@ -1,0 +1,9 @@
+{
+  "markdown_files_checked": 23,
+  "local_links_checked": 211,
+  "broken_links": [],
+  "public_real_looking_groq_key_paths": [],
+  "public_scan_scope": "app/tests/docs/migrations and public root configuration/docs; .env and local database excluded",
+  "migration_repeat_exit_code": 0,
+  "private_env_modified": false
+}

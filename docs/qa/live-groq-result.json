@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-02",
+  "python": "3.12.16",
+  "groq_sdk": "0.37.1",
+  "langchain_groq": "1.1.3",
+  "credential_status": "CONFIGURED",
+  "model": "openai/gpt-oss-20b",
+  "provider_requests": 1,
+  "http_status": 200,
+  "strict_requested": true,
+  "strict_output": "Passed",
+  "pydantic_validation": "Passed",
+  "evidence_verification": "Passed",
+  "latency_seconds": 1.4903,
+  "usage": {
+    "prompt_tokens": 856,
+    "completion_tokens": 515,
+    "total_tokens": 1371
+  },
+  "analysis": {
+    "sentiment": "MIXED",
+    "issue_category": "DELIVERY",
+    "urgency": "HIGH",
+    "aspects": [
+      {
+        "name": "product_quality",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "name": "delivery",
+        "sentiment": "NEGATIVE"
+      }
+    ],
+    "summary": "Customer praised product quality but complained about delivery being extremely late.",
+    "suggested_next_step": "Investigate delivery delay and confirm if compensation is warranted.",
+    "evidence_phrases": [
+      "The product quality is excellent",
+      "delivery was extremely late"
+    ]
+  },
+  "error_category": null,
+  "sanitized_explanation": null,
+  "overall_status": "LIVE_GROQ_VERIFIED",
+  "network_transport_retries": 0,
+  "sdk_retries": 0,
+  "service_retries": 0
+}

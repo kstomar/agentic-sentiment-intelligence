@@ -1,0 +1,82 @@
+[
+  {
+    "name": "health",
+    "samples": 30,
+    "concurrency": 1,
+    "median_ms": 0.31,
+    "p95_ms": 0.4993,
+    "max_ms": 0.8324,
+    "errors": 0,
+    "provider": "mocked"
+  },
+  {
+    "name": "validation",
+    "samples": 30,
+    "concurrency": 1,
+    "median_ms": 0.9865,
+    "p95_ms": 3.3246,
+    "max_ms": 3.4157,
+    "errors": 0,
+    "provider": "mocked"
+  },
+  {
+    "name": "mock_sentiment",
+    "samples": 30,
+    "concurrency": 1,
+    "median_ms": 0.887,
+    "p95_ms": 1.0501,
+    "max_ms": 1.0639,
+    "errors": 0,
+    "provider": "mocked"
+  },
+  {
+    "name": "mock_investigation",
+    "samples": 20,
+    "concurrency": 1,
+    "median_ms": 3.0552,
+    "p95_ms": 3.4706,
+    "max_ms": 5.5808,
+    "errors": 0,
+    "provider": "mocked"
+  },
+  {
+    "name": "csv_100",
+    "samples": 20,
+    "concurrency": 1,
+    "median_ms": 0.38,
+    "p95_ms": 0.4676,
+    "max_ms": 0.4677,
+    "errors": 0,
+    "provider": "mocked"
+  },
+  {
+    "name": "xlsx_100",
+    "samples": 20,
+    "concurrency": 1,
+    "median_ms": 3.0677,
+    "p95_ms": 3.6659,
+    "max_ms": 3.7745,
+    "errors": 0,
+    "provider": "mocked"
+  },
+  {
+    "name": "aggregation_100",
+    "samples": 20,
+    "concurrency": 1,
+    "median_ms": 0.626,
+    "p95_ms": 0.762,
+    "max_ms": 1.2571,
+    "errors": 0,
+    "provider": "mocked"
+  },
+  {
+    "name": "mcp_inprocess_mock_sentiment",
+    "samples": 30,
+    "concurrency": 1,
+    "median_ms": 0.4858,
+    "p95_ms": 0.6647,
+    "max_ms": 3.4497,
+    "errors": 0,
+    "provider": "mocked"
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "release_decision": "NOT READY",
+  "tests_collected": 220,
+  "tests_failed": 0,
+  "tests_errors": 0,
+  "tests_skipped": 0,
+  "duration_seconds": 9.39,
+  "timestamp": "2026-10-30T18:55:06.139304+05:30",
+  "coverage_measured": false,
+  "production_source_unchanged": false,
+  "openapi_unchanged": true,
+  "git_entries": 0,
+  "git_read_only": true,
+  "live_groq_verification": "BLOCKED",
+  "mcp_protocol": "VERIFIED",
+  "multi_tenant_isolation": "NOT_IMPLEMENTED",
+  "T06": "NOT_IMPLEMENTED",
+  "optional_tools": {
+    "coverage": false,
+    "ruff": false,
+    "mypy": false
+  },
+  "feedback_storage_paths_created": [],
+  "tests_passed": 220,
+  "phase": "QA-005 remediation",
+  "production_files_changed": [
+    "app/api/v1/batch.py"
+  ],
+  "test_files_changed": [
+    "tests/integration/test_batch_api.py"
+  ],
+  "dependency_files_unchanged_this_remediation": true,
+  "qa005_status": "RESOLVED",
+  "original_failing_test_unchanged": true,
+  "original_cases_retained": 210,
+  "new_cases": 10,
+  "high_security_findings_open": [
+    "QA-001",
+    "QA-003"
+  ],
+  "patterns_verified_locally": 7,
+  "patterns_partially_verified": 0,
+  "patterns_not_implemented": 1,
+  "live_groq_requests_this_remediation": 0,
+  "history": "history/original-audit/audit_summary.json",
+  "T06_gate": "Separate authorization and live-Groq prerequisite satisfied or explicitly deferred"
+}

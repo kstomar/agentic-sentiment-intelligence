@@ -1,0 +1,51 @@
+{
+  "baseline_paths": 12,
+  "current_paths": 19,
+  "all_existing_operations_equal": true,
+  "changed_existing_schemas": [
+    "ErrorCode"
+  ],
+  "new_paths": [
+    "/api/v1/integrations/gmail/connect",
+    "/api/v1/integrations/gmail/disconnect",
+    "/api/v1/integrations/gmail/import",
+    "/api/v1/integrations/gmail/imports/{job_id}",
+    "/api/v1/integrations/gmail/imports/{job_id}/results",
+    "/api/v1/integrations/gmail/oauth/callback",
+    "/api/v1/integrations/gmail/status"
+  ],
+  "new_error_codes": [
+    "GMAIL_ALREADY_CONNECTED",
+    "GMAIL_ATTACHMENTS_SKIPPED",
+    "GMAIL_CAPACITY_EXCEEDED",
+    "GMAIL_DISCONNECTED",
+    "GMAIL_INVALID_STATE",
+    "GMAIL_JOB_NOT_FOUND",
+    "GMAIL_MAILBOX_CONFLICT",
+    "GMAIL_MESSAGE_INVALID",
+    "GMAIL_MESSAGE_TOO_LARGE",
+    "GMAIL_NOT_CONFIGURED",
+    "GMAIL_NOT_CONNECTED",
+    "GMAIL_OAUTH_DENIED",
+    "GMAIL_OAUTH_FAILED",
+    "GMAIL_PROVIDER_ERROR",
+    "GMAIL_RATE_LIMITED",
+    "GMAIL_RECONNECT_REQUIRED",
+    "GMAIL_RESPONSE_INVALID",
+    "GMAIL_SCOPE_INVALID",
+    "GMAIL_SELECTION_INVALID",
+    "GMAIL_TIMEOUT",
+    "GMAIL_UNAVAILABLE"
+  ],
+  "dependencies_unchanged": true,
+  "existing_classifier_prompt_schema_graph_and_mcp_unchanged": true,
+  "permissions_added": [
+    "gmail:connect",
+    "gmail:import",
+    "gmail:read"
+  ],
+  "transport_headers_added": [
+    "Referrer-Policy: no-referrer on private data routes"
+  ],
+  "access_logs_suppressed": "uvicorn.access CRITICAL to prevent OAuth query diagnostics"
+}
