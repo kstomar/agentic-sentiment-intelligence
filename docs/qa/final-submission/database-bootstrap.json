@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "operations": [
+    {
+      "operation": "initdb",
+      "exit_code": 0
+    },
+    {
+      "operation": "pg_ctl",
+      "exit_code": 0
+    },
+    {
+      "operation": "psql",
+      "exit_code": 0
+    },
+    {
+      "operation": "createdb",
+      "exit_code": 0
+    },
+    {
+      "operation": "createdb",
+      "exit_code": 0
+    }
+  ],
+  "cluster": ".local/postgres-demo",
+  "socket": ".local/postgres-demo-socket",
+  "tcp_enabled": false,
+  "directory_mode": "0700",
+  "system_and_previous_cluster_untouched": true,
+  "real_credentials_created": false
+}

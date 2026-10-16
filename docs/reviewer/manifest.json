@@ -1,0 +1,110 @@
+{
+  "scope": "All newly created reviewer audit artifacts; self-hash excluded",
+  "production_or_preexisting_files_modified": false,
+  "files": [
+    {
+      "path": "docs/reviewer/AGENTIC_AI_VERIFICATION.md",
+      "sha256": "f01941a85374d2c92832b6d83a493463603a7e4ac05ac4afdd14b8df105f3bc2"
+    },
+    {
+      "path": "docs/reviewer/API_FUNCTIONAL_COVERAGE.md",
+      "sha256": "0f3821d241ea15548f4a84a75bc6bb534ee49181ddac2909391143aa3e460b7c"
+    },
+    {
+      "path": "docs/reviewer/END_TO_END_VERIFICATION.md",
+      "sha256": "cc413709853087fed6d90a2fe5b9c60b2ee3f9a05a5a972a46f156bb5dc273e0"
+    },
+    {
+      "path": "docs/reviewer/REQUIREMENTS_SOURCE_RECORD.md",
+      "sha256": "770b591658e0ab67feb3b0436369b53c0bc5a81a9afcfb86875ce868145b4776"
+    },
+    {
+      "path": "docs/reviewer/REQUIREMENTS_TRACEABILITY_MATRIX.md",
+      "sha256": "024df5e8fffb7c97b8aad4274e1fcf344426af4b5630acd4f23745f755a83e5e"
+    },
+    {
+      "path": "docs/reviewer/REQUIREMENT_GAPS.md",
+      "sha256": "1f0f7ec80fdef5a6cca97432e8c0a51bb7d46cbf104bc775b9a6b3c4ad869d50"
+    },
+    {
+      "path": "docs/reviewer/REVIEWER_COMPLIANCE_REPORT.md",
+      "sha256": "07788090e99a6a332e5da8a7d7734dc76b5e6e1b36bff66e2b09874cf1d4e14f"
+    },
+    {
+      "path": "docs/reviewer/REVIEWER_DEMO_CHECKLIST.md",
+      "sha256": "306fcca1ebf370e728667619c27bccbd3b46e98eddfc9c43f89581d2487d8028"
+    },
+    {
+      "path": "docs/reviewer/api-inventory.json",
+      "sha256": "94154c182ae1b38174d01b6783f5aa52305708a654e2f873fbe8f075d637515e"
+    },
+    {
+      "path": "docs/reviewer/console-report.txt",
+      "sha256": "7ae01946aded236de31c465add1eaaf5f36624aa94016ab105d8cd012438b937"
+    },
+    {
+      "path": "docs/reviewer/dependency-checks.txt",
+      "sha256": "d4991604f010ee1fd7273e541bf58abcbd781a0e4ad2b33a3ac1f587653ff3a2"
+    },
+    {
+      "path": "docs/reviewer/documentation-links.json",
+      "sha256": "4f4883c2b90e23f3850df833e24431421c864251a1d6f3d4429815ca4cf3d512"
+    },
+    {
+      "path": "docs/reviewer/environment.json",
+      "sha256": "d6fd1637f1c5717a1907d831b0db087e5c1871946ab6c4cdb23ec0672b45afd0"
+    },
+    {
+      "path": "docs/reviewer/historical-live-evidence.json",
+      "sha256": "55e52dface71a0a2058d6d21180b0c3ee1902051bc9b12ddb0ec5afad7e6dfbd"
+    },
+    {
+      "path": "docs/reviewer/mock-benchmarks.json",
+      "sha256": "361a70e18c910560eff47d4e20410db85f4912d71444f538ead1596aa8ce608f"
+    },
+    {
+      "path": "docs/reviewer/openapi.json",
+      "sha256": "5b6fe9424c24ee476d11e64370740a128ce984d192aa6a63022142f1e8048a2c"
+    },
+    {
+      "path": "docs/reviewer/preservation.json",
+      "sha256": "37fcb46317ede139366e6c99bf84d2c5382f43ee36a6749747c8de254907f437"
+    },
+    {
+      "path": "docs/reviewer/pytest-output.txt",
+      "sha256": "91f813ef77fb682e23442379a990073207570ad6420dbc0bb7113f62c1d9bb41"
+    },
+    {
+      "path": "docs/reviewer/pytest.xml",
+      "sha256": "312eadad526228a3feef01fd4018c42723897a0105457f98a5bf8310ba886e2b"
+    },
+    {
+      "path": "docs/reviewer/requirements.json",
+      "sha256": "888ee59b839d0eb9dc4e2141d3d07f57b72cba11fec120b147e8a46ccf383422"
+    },
+    {
+      "path": "docs/reviewer/source-test-inventory.json",
+      "sha256": "87932049c24eace1bf2e9965b96b82b039f635364e25d1dc4349ce2dcc41ceea"
+    },
+    {
+      "path": "docs/reviewer/summary.json",
+      "sha256": "5c80aaffa0519bdb82af53a5fedf37bfb94ae1ad623603a23bd553433a8997a5"
+    },
+    {
+      "path": "docs/reviewer/test-results.json",
+      "sha256": "9013b82157330faa426b40c29d675a7bb9f93f5fe95101463ddff134f07a7da9"
+    },
+    {
+      "path": "docs/reviewer/verify_workflows.py",
+      "sha256": "3ee6bf3dc3a189ca287cdf2974c027659677fbb9003577b07748ec57074e8a4a"
+    },
+    {
+      "path": "docs/reviewer/workflow-output.txt",
+      "sha256": "36ff533389bc4830bfb40e802881ec0c4cc0f6498b61d5d1f1a318b5b15989e3"
+    },
+    {
+      "path": "docs/reviewer/workflow-results.json",
+      "sha256": "32793f2a582415ffa4bc5d28696ae6b0433a2bee80466766a39ec58ccc78be46"
+    }
+  ]
+}

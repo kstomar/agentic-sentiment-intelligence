@@ -1,0 +1,3769 @@
+[
+  {
+    "path": "app/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/agents/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/agents/action_selector.py",
+    "definitions": [
+      {
+        "name": "Selector",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ActionSelector",
+        "line": 25,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_action_selector",
+        "line": 75,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "select",
+        "line": 22,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 28,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configure_admission",
+        "line": 43,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "select",
+        "line": 46,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_select",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/agents/feedback_graph.py",
+    "definitions": [
+      {
+        "name": "selected",
+        "line": 17,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "summary",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "build_feedback_graph",
+        "line": 29,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "select_action",
+        "line": 32,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "analyze",
+        "line": 44,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "route",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "issues",
+        "line": 55,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "evidence",
+        "line": 61,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "verify",
+        "line": 72,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "insights",
+        "line": 79,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/agents/state.py",
+    "definitions": [
+      {
+        "name": "InvestigationState",
+        "line": 11,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/api/v1/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/api/v1/batch.py",
+    "definitions": [
+      {
+        "name": "get_batch_service",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "upload",
+        "line": 28,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "status",
+        "line": 65,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "report",
+        "line": 72,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "results",
+        "line": 83,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "download",
+        "line": 94,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/chat.py",
+    "definitions": [
+      {
+        "name": "get_conversation_service",
+        "line": 22,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "chat",
+        "line": 31,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/gmail.py",
+    "definitions": [
+      {
+        "name": "connect",
+        "line": 29,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "callback",
+        "line": 37,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "connection_status",
+        "line": 49,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "disconnect",
+        "line": 54,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "import_feedback",
+        "line": 59,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "import_status",
+        "line": 64,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "import_results",
+        "line": 69,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/ingestion.py",
+    "definitions": [
+      {
+        "name": "ingest",
+        "line": 21,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "event_status",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/investigation.py",
+    "definitions": [
+      {
+        "name": "get_investigation_service",
+        "line": 21,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "investigate_feedback",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/sentiment.py",
+    "definitions": [
+      {
+        "name": "get_sentiment_service",
+        "line": 24,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze_sentiment",
+        "line": 30,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/api/v1/webhooks.py",
+    "definitions": [
+      {
+        "name": "webhook",
+        "line": 23,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/core/config.py",
+    "definitions": [
+      {
+        "name": "Settings",
+        "line": 11,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "protect_security_error_inputs",
+        "line": 98,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "empty_secret_is_unconfigured",
+        "line": 124,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bounded_job_capacity",
+        "line": 130,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "gmail_configured",
+        "line": 145,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "legacy_auth_enabled",
+        "line": 162,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "docs_enabled",
+        "line": 170,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/exceptions.py",
+    "definitions": [
+      {
+        "name": "ErrorCode",
+        "line": 6,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ApplicationError",
+        "line": 155,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 158,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/ingress_limits.py",
+    "definitions": [
+      {
+        "name": "IngressLimitMiddleware",
+        "line": 36,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 39,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_admit_tenant",
+        "line": 50,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__call__",
+        "line": 77,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "replay",
+        "line": 160,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/processing_limits.py",
+    "definitions": [
+      {
+        "name": "ModelAdmission",
+        "line": 10,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "InvestigationAdmission",
+        "line": 41,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 13,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "claim",
+        "line": 21,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 44,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "claim",
+        "line": 49,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/security.py",
+    "definitions": [
+      {
+        "name": "require_api_key",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "verify_api_key",
+        "line": 30,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "require_permission",
+        "line": 35,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "dependency",
+        "line": 36,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/tenant_auth.py",
+    "definitions": [
+      {
+        "name": "Permission",
+        "line": 31,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Principal",
+        "line": 45,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "principal_context",
+        "line": 58,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "current_principal",
+        "line": 67,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_Credential",
+        "line": 75,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "_Integration",
+        "line": 83,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "_identifier",
+        "line": 89,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_secret",
+        "line": 95,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_rows",
+        "line": 105,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "TenantRegistry",
+        "line": 129,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "unique_object",
+        "line": 112,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "invalid_constant",
+        "line": 120,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 137,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_configure",
+        "line": 148,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "limit",
+        "line": 215,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "batch_active_limit",
+        "line": 220,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "authenticate",
+        "line": 224,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "require",
+        "line": 239,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "integration",
+        "line": 255,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_webhook_principal",
+        "line": 263,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/upload_limits.py",
+    "definitions": [
+      {
+        "name": "UploadSizeLimitMiddleware",
+        "line": 12,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 13,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__call__",
+        "line": 17,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "replay",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/core/webhook_security.py",
+    "definitions": [
+      {
+        "name": "SignedDelivery",
+        "line": 19,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "signed_headers",
+        "line": 27,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "authenticate_webhook",
+        "line": 51,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "verify_delivery",
+        "line": 62,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/integrations/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/integrations/gmail_mime.py",
+    "definitions": [
+      {
+        "name": "ExtractedEmail",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "_HTMLText",
+        "line": 24,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "headers",
+        "line": 47,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "leaves",
+        "line": 65,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "preflight",
+        "line": 99,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_decode",
+        "line": 118,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "extract",
+        "line": 152,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "handle_starttag",
+        "line": 30,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "handle_endtag",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "handle_data",
+        "line": 42,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/integrations/google_gmail.py",
+    "definitions": [
+      {
+        "name": "identifier",
+        "line": 22,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_token",
+        "line": 28,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "Tokens",
+        "line": 35,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "parse_tokens",
+        "line": 45,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "payload_fields",
+        "line": 62,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "GoogleGmail",
+        "line": 68,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "clear",
+        "line": 41,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 71,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_request",
+        "line": 76,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_client_data",
+        "line": 133,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "exchange",
+        "line": 138,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "refresh",
+        "line": 144,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "profile",
+        "line": 151,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "label",
+        "line": 158,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "list_page",
+        "line": 168,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "message",
+        "line": 176,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/main.py",
+    "definitions": [
+      {
+        "name": "error_response",
+        "line": 105,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "create_app",
+        "line": 125,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "lifespan",
+        "line": 146,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "request_boundary",
+        "line": 205,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "application_error_handler",
+        "line": 224,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "validation_error_handler",
+        "line": 228,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "http_error_handler",
+        "line": 273,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "health",
+        "line": 277,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/mcp_server/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/mcp_server/server.py",
+    "definitions": [
+      {
+        "name": "_service_error",
+        "line": 37,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "AnalysisMCPServer",
+        "line": 47,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_mcp_server",
+        "line": 80,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "main",
+        "line": 125,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 50,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "call_tool",
+        "line": 55,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "lifespan",
+        "line": 95,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/mcp_server/tools.py",
+    "definitions": [
+      {
+        "name": "AnalysisServices",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "register_tools",
+        "line": 24,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze_feedback",
+        "line": 28,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "investigate_feedback",
+        "line": 46,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/prompts/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/prompts/investigation.py",
+    "definitions": [
+      {
+        "name": "action_messages",
+        "line": 29,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/prompts/sentiment.py",
+    "definitions": [
+      {
+        "name": "build_messages",
+        "line": 29,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/schemas/batch.py",
+    "definitions": [
+      {
+        "name": "BatchModel",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobState",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "DateState",
+        "line": 32,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "RecordState",
+        "line": 39,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "UploadOptions",
+        "line": 44,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "RecordMetadata",
+        "line": 68,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ParsedRecord",
+        "line": 81,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "BatchResult",
+        "line": 89,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobAccepted",
+        "line": 120,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobStatus",
+        "line": 127,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IssueAggregate",
+        "line": 156,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "AspectAggregate",
+        "line": 168,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ReportEvidence",
+        "line": 183,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "BatchReport",
+        "line": 189,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ResultsPage",
+        "line": 227,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "BatchDownload",
+        "line": 236,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "nonblank",
+        "line": 53,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "distinct_mapping",
+        "line": 61,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "date_consistent",
+        "line": 75,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analysis_data",
+        "line": 101,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "result_consistent",
+        "line": 105,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "reconcile",
+        "line": 138,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "unique_count",
+        "line": 162,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "unique_mentions",
+        "line": 175,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "totals",
+        "line": 209,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/chat.py",
+    "definitions": [
+      {
+        "name": "ChatMode",
+        "line": 18,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ChatRequest",
+        "line": 23,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ChatResponse",
+        "line": 63,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "require_message",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "require_nonblank_feedback",
+        "line": 41,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_mode_payload",
+        "line": 45,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_mode_result",
+        "line": 75,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/errors.py",
+    "definitions": [
+      {
+        "name": "ValidationIssue",
+        "line": 10,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ErrorDetail",
+        "line": 16,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ErrorResponse",
+        "line": 22,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "HealthResponse",
+        "line": 27,
+        "kind": "ClassDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/gmail.py",
+    "definitions": [
+      {
+        "name": "GmailModel",
+        "line": 12,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailConnect",
+        "line": 16,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailConnectionStatus",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailDisconnected",
+        "line": 28,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailOAuthComplete",
+        "line": 32,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailImportRequest",
+        "line": 36,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailAccepted",
+        "line": 40,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailResult",
+        "line": 46,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailJobStatus",
+        "line": 64,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailResults",
+        "line": 76,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "consistent_outcome",
+        "line": 55,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/ingestion.py",
+    "definitions": [
+      {
+        "name": "IngestionRequest",
+        "line": 13,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IngestionResponse",
+        "line": 27,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "WebhookPayload",
+        "line": 35,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "EventState",
+        "line": 43,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "WebhookAcknowledgment",
+        "line": 50,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "EventStatus",
+        "line": 56,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "normalize_id",
+        "line": 20,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/investigation.py",
+    "definitions": [
+      {
+        "name": "FeedbackItem",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "InvestigationRequest",
+        "line": 36,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "InvestigationAction",
+        "line": 57,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "ActionSelection",
+        "line": 64,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "AnalyzedFeedback",
+        "line": 95,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "SentimentSummary",
+        "line": 102,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IssueSummary",
+        "line": 111,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "FeedbackEvidence",
+        "line": 125,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "InvestigationResponse",
+        "line": 132,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "require_nonblank",
+        "line": 29,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "require_question",
+        "line": 45,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "unique_ids",
+        "line": 51,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bound_evidence",
+        "line": 76,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "compatible_filters",
+        "line": 82,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "consistent_count",
+        "line": 119,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "consistent_totals",
+        "line": 149,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/schemas/sentiment.py",
+    "definitions": [
+      {
+        "name": "Sentiment",
+        "line": 14,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Urgency",
+        "line": 21,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "IssueCategory",
+        "line": 28,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "SentimentRequest",
+        "line": 41,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Aspect",
+        "line": 59,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "SentimentResponse",
+        "line": 75,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "require_nonblank_feedback",
+        "line": 52,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_name",
+        "line": 69,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "validate_summary_text",
+        "line": 92,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bound_aspects",
+        "line": 100,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "bound_evidence",
+        "line": 107,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "verify_evidence",
+        "line": 113,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/services/batch_service.py",
+    "definitions": [
+      {
+        "name": "BatchService",
+        "line": 25,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 28,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "start",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "close",
+        "line": 56,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_sweep",
+        "line": 69,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_reserve",
+        "line": 75,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_release",
+        "line": 96,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_abandoned_parse",
+        "line": 102,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "submit",
+        "line": 110,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_run_owned",
+        "line": 146,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_abort_remaining",
+        "line": 150,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_run",
+        "line": 158,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "status",
+        "line": 208,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "report",
+        "line": 211,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "results",
+        "line": 219,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "download",
+        "line": 230,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/conversation_service.py",
+    "definitions": [
+      {
+        "name": "ConversationService",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "respond",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/file_parser.py",
+    "definitions": [
+      {
+        "name": "ParsedFile",
+        "line": 22,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "blank",
+        "line": 27,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "FileParser",
+        "line": 31,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 32,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "parse",
+        "line": 38,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_headers",
+        "line": 59,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_csv",
+        "line": 70,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_csv_quotes",
+        "line": 98,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_check_archive",
+        "line": 123,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_xlsx",
+        "line": 153,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_append",
+        "line": 191,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_date",
+        "line": 224,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_finish",
+        "line": 249,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/gmail_service.py",
+    "definitions": [
+      {
+        "name": "GmailService",
+        "line": 35,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "start",
+        "line": 45,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "close",
+        "line": 49,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_sweep",
+        "line": 62,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_ready",
+        "line": 69,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_usable",
+        "line": 76,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "connect",
+        "line": 84,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "callback",
+        "line": 111,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "status",
+        "line": 174,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "disconnect",
+        "line": 184,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_disconnect",
+        "line": 195,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_live",
+        "line": 225,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_access",
+        "line": 229,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "submit",
+        "line": 251,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "job_status",
+        "line": 281,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "results",
+        "line": 286,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_select",
+        "line": 292,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_message",
+        "line": 316,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_run",
+        "line": 348,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/ingestion_service.py",
+    "definitions": [
+      {
+        "name": "normalize_event",
+        "line": 8,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "IngestionService",
+        "line": 15,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze",
+        "line": 19,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/investigation_service.py",
+    "definitions": [
+      {
+        "name": "InvestigationService",
+        "line": 20,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configure_admission",
+        "line": 33,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "investigate",
+        "line": 39,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_investigate",
+        "line": 45,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/reporting_service.py",
+    "definitions": [
+      {
+        "name": "percentages",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ReportingService",
+        "line": 28,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "build",
+        "line": 29,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/sentiment_service.py",
+    "definitions": [
+      {
+        "name": "StructuredModel",
+        "line": 24,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "classify_provider_error",
+        "line": 30,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "SentimentService",
+        "line": 51,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "create_sentiment_service",
+        "line": 134,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ainvoke",
+        "line": 27,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 54,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configuration_error",
+        "line": 72,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "configure_admission",
+        "line": 76,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze",
+        "line": 80,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_analyze",
+        "line": 87,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/services/webhook_service.py",
+    "definitions": [
+      {
+        "name": "WebhookService",
+        "line": 15,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "__init__",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "start",
+        "line": 28,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "close",
+        "line": 35,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "accept",
+        "line": 49,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "status",
+        "line": 88,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_next_event",
+        "line": 91,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_worker",
+        "line": 106,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "_cleanup",
+        "line": 136,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/storage/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/storage/event_store.py",
+    "definitions": [
+      {
+        "name": "Event",
+        "line": 14,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "EventStore",
+        "line": 28,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "public_status",
+        "line": 24,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 29,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "events",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "get",
+        "line": 42,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_purge",
+        "line": 50,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_finish",
+        "line": 57,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_clear",
+        "line": 63,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/storage/gmail_store.py",
+    "definitions": [
+      {
+        "name": "OAuthState",
+        "line": 17,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Connection",
+        "line": 26,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailJob",
+        "line": 41,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Reservation",
+        "line": 62,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "GmailStore",
+        "line": 67,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "invalidate",
+        "line": 35,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "snapshot",
+        "line": 53,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 68,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "job",
+        "line": 77,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_purge",
+        "line": 85,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_clear",
+        "line": 105,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/storage/job_store.py",
+    "definitions": [
+      {
+        "name": "Job",
+        "line": 15,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "JobStore",
+        "line": 47,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "snapshot",
+        "line": 29,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "erase",
+        "line": 39,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 50,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_authorize",
+        "line": 56,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "jobs",
+        "line": 69,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_bind_registry",
+        "line": 75,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_purge",
+        "line": 83,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "add",
+        "line": 89,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "get",
+        "line": 98,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_terminal",
+        "line": 106,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "_clear",
+        "line": 113,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "app/tools/aggregation.py",
+    "definitions": [
+      {
+        "name": "aggregate_sentiment",
+        "line": 13,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "aggregate_issues",
+        "line": 17,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "matching_results",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "generate_insights",
+        "line": 40,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/batch_analysis.py",
+    "definitions": [
+      {
+        "name": "failed_result",
+        "line": 11,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analyze_record",
+        "line": 15,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/evidence.py",
+    "definitions": [
+      {
+        "name": "evidence_ids",
+        "line": 12,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "retrieve_evidence",
+        "line": 26,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "verify_findings",
+        "line": 41,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/feedback_analysis.py",
+    "definitions": [
+      {
+        "name": "analyze_feedback_items",
+        "line": 8,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "app/tools/statistics.py",
+    "definitions": [
+      {
+        "name": "count_sentiments",
+        "line": 9,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "group_issue_ids",
+        "line": 14,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/__init__.py",
+    "definitions": []
+  },
+  {
+    "path": "tests/conftest.py",
+    "definitions": [
+      {
+        "name": "authenticated_service_context",
+        "line": 19,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "offline",
+        "line": 31,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "pytest_make_parametrize_id",
+        "line": 51,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "services",
+        "line": 59,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "api",
+        "line": 64,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "measurements",
+        "line": 74,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "deny",
+        "line": 38,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "deny_async",
+        "line": 41,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/helpers.py",
+    "definitions": [
+      {
+        "name": "settings",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "analysis",
+        "line": 24,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "Model",
+        "line": 35,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "SelectionModel",
+        "line": 62,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Harness",
+        "line": 78,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "harness",
+        "line": 85,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "xlsx",
+        "line": 93,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "until",
+        "line": 107,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "settled",
+        "line": 113,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 36,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ainvoke",
+        "line": 44,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 63,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "ainvoke",
+        "line": 70,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_api_contracts.py",
+    "definitions": [
+      {
+        "name": "test_openapi_inventory_security_and_response_schemas",
+        "line": 15,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_all_application_modules_import_and_no_undocumented_routes",
+        "line": 28,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_batch_api.py",
+    "definitions": [
+      {
+        "name": "upload",
+        "line": 9,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "terminal",
+        "line": 13,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_upload_report_download_workflows_e_f",
+        "line": 22,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_pending_running_reports_and_concurrent_status_reads",
+        "line": 43,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_upload_rejection_without_model_calls",
+        "line": 66,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_explicit_blank_source_is_rejected",
+        "line": 72,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_job_ids_and_pagination_validation",
+        "line": 80,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_missing_file",
+        "line": 86,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_source_default_and_valid_metadata_labels_are_preserved",
+        "line": 99,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_whitespace_and_overlong_sources_do_not_create_jobs",
+        "line": 115,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_nontext_source_form_part_is_rejected",
+        "line": 123,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_chat_api.py",
+    "definitions": [
+      {
+        "name": "test_chat_analysis_workflow_c_reuses_t01_once",
+        "line": 6,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_chat_investigation_workflow_d_preserves_findings",
+        "line": 15,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_chat_cross_field_and_history_validation",
+        "line": 33,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_chat_has_no_cross_request_memory",
+        "line": 39,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_gmail_import.py",
+    "definitions": [
+      {
+        "name": "test_import_filtered_paginated_bounded_and_reuses_t01_without_headers_or_tokens",
+        "line": 16,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_empty_or_unsafe_mail_does_not_fabricate_feedback",
+        "line": 38,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_partial_failure_counts_include_skips_and_preserve_success",
+        "line": 60,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_repeated_and_concurrent_imports_deduplicate_messages_not_threads",
+        "line": 71,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_foreign_and_unknown_jobs_are_identical_and_store_enforces_owner",
+        "line": 89,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_separate_mailboxes_can_reuse_message_ids_without_dedup_collision",
+        "line": 104,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_refresh_is_single_flight_and_preserves_required_scope",
+        "line": 114,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_unusable_credentials_require_reconnect_and_are_not_retried_blindly",
+        "line": 132,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_google_retries_are_bounded_and_rate_errors_stop_import",
+        "line": 152,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_provider_errors_are_controlled_and_never_create_analysis",
+        "line": 164,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_import_schema_and_absolute_server_cap_cannot_be_overridden",
+        "line": 184,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_expiry_clears_results_and_dedup_reservations_without_permanent_history",
+        "line": 192,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_email_instructions_are_data_and_do_not_receive_oauth_or_header_metadata",
+        "line": 206,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_ungrounded_model_output_is_a_failed_message_without_fabricated_analysis",
+        "line": 217,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_revoked_or_reduced_gmail_api_access_clears_connection",
+        "line": 229,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_ingestion_api.py",
+    "definitions": [
+      {
+        "name": "test_direct_reuses_t01_and_normalizes_metadata",
+        "line": 13,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_direct_authentication",
+        "line": 25,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_direct_rejects_invalid_fields_without_inference",
+        "line": 37,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_direct_required_fields",
+        "line": 45,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_direct_propagates_controlled_provider_errors_and_independent_service",
+        "line": 51,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_direct_rejects_ungrounded_provider_output",
+        "line": 62,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_investigation_api.py",
+    "definitions": [
+      {
+        "name": "test_investigation_rest_workflow_b",
+        "line": 6,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_invalid_investigation_inputs",
+        "line": 24,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_mcp_server.py",
+    "definitions": [
+      {
+        "name": "test_real_inprocess_protocol_workflows_g_h",
+        "line": 20,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_mcp_rejects_invalid_arguments_and_unapproved_capabilities",
+        "line": 51,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_mcp_preserves_service_errors",
+        "line": 62,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_mcp_missing_config_and_unexpected_error_sanitization",
+        "line": 71,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_mcp_capacity_cancellation_and_recovery",
+        "line": 81,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_stdio_official_client_protocol_only_stdout_and_clean_shutdown",
+        "line": 99,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "Capture",
+        "line": 101,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "Proxy",
+        "line": 106,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "spawn",
+        "line": 109,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 102,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "receive",
+        "line": 103,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "aclose",
+        "line": 105,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 107,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__getattr__",
+        "line": 108,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/integration/test_sentiment_api.py",
+    "definitions": [
+      {
+        "name": "test_sentiment_classifications",
+        "line": 9,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_existing_source_and_business_allowlists",
+        "line": 22,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_request_validation_precedes_analysis",
+        "line": 31,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_http_service_errors_are_sanitized",
+        "line": 41,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_malformed_json_and_invented_evidence",
+        "line": 50,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/performance/test_local_benchmarks.py",
+    "definitions": [
+      {
+        "name": "record",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_http_latency_samples",
+        "line": 27,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_parser_and_reducer_samples",
+        "line": 42,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_mcp_invocation_samples",
+        "line": 64,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_authentication.py",
+    "definitions": [
+      {
+        "name": "test_every_protected_route_rejects_credentials",
+        "line": 15,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_health_public_and_missing_application_configuration",
+        "line": 25,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_batch_tenant_isolation.py",
+    "definitions": [
+      {
+        "name": "upload",
+        "line": 17,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_owner_can_read_but_foreign_and_missing_are_identical_404",
+        "line": 24,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_service_and_store_enforce_ownership_without_http",
+        "line": 41,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_rotation_shares_ownership_and_quota_but_not_other_tenant_access",
+        "line": 63,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_concurrent_business_jobs_have_independent_owners",
+        "line": 84,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_expiration_erases_data_and_releases_owner_retention_quota",
+        "line": 98,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_untrusted_query_header_csv_metadata_cannot_select_owner",
+        "line": 122,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_no_untrusted_authority_rebind_of_existing_store",
+        "line": 133,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_data_privacy.py",
+    "definitions": [
+      {
+        "name": "test_characterize_shared_key_job_access_without_tenant_ownership",
+        "line": 8,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_validation_errors_and_logs_exclude_rejected_values",
+        "line": 20,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_spooled_upload_resources_close_on_parse_failure",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "close",
+        "line": 28,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_gmail_oauth.py",
+    "definitions": [
+      {
+        "name": "start",
+        "line": 20,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_state_pkce_fixed_redirect_readonly_and_private_url_metadata",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_protected_gmail_routes_authenticate_before_provider",
+        "line": 44,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_gmail_permissions_do_not_come_from_request_fields",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_configuration_failure_is_closed_and_other_apis_still_work",
+        "line": 66,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_local_http_requires_explicit_nonproduction_mode",
+        "line": 74,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_callback_consumes_state_without_api_key_and_never_returns_tokens",
+        "line": 82,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_state_expiration_releases_capacity_and_rejects_replay",
+        "line": 101,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_parallel_callback_replay_does_not_exchange_twice",
+        "line": 112,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_callback_cannot_select_tenant_or_redirect",
+        "line": 126,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_denial_consumes_state_and_unknown_or_missing_state_is_safe",
+        "line": 133,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_token_response_requires_exact_scope_and_bearer_contract",
+        "line": 145,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_token_exchange_not_retried_and_provider_errors_are_sanitized",
+        "line": 155,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_verified_mailbox_cannot_be_claimed_by_another_tenant",
+        "line": 163,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_disconnect_invalidates_pending_and_inflight_authorization",
+        "line": 173,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_service_authority_required_and_callback_query_is_bounded",
+        "line": 186,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_google_http_capacity_is_immediate_and_bounded_across_callbacks",
+        "line": 195,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_profile_address_is_verified_and_invalid_provider_identity_is_not_stored",
+        "line": 208,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_duplicate_callback_parameters_do_not_bypass_single_state_policy",
+        "line": 217,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_ingress_limits.py",
+    "definitions": [
+      {
+        "name": "padded",
+        "line": 14,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_json_limits_before_parsing_preserve_existing_endpoints",
+        "line": 27,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_approved_default_four_mib_boundary",
+        "line": 35,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_byte_limit_counts_unicode_without_altering_text",
+        "line": 42,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_chunked_actual_bytes_override_missing_or_misleading_length",
+        "line": 52,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_chunked_signed_unicode_bytes_preserved_and_separate_webhook_limit",
+        "line": 64,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_authentication_precedes_body_consumption",
+        "line": 80,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_concurrent_multipart_intake_is_bounded_before_parsing",
+        "line": 93,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_global_ingress_rate_is_bounded_health_remains_available",
+        "line": 115,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_body_read_deadline_releases_global_admission",
+        "line": 124,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_global_model_budget_shared_by_rest_ingestion_selector_and_webhook",
+        "line": 134,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_model_budget_released_on_cancellation",
+        "line": 155,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_streamed_webhook_uses_stricter_actual_byte_limit",
+        "line": 166,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_global_intake_capacity_and_cancellation_release",
+        "line": 176,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_real_batch_route_keeps_file_and_actual_envelope_limits_separate",
+        "line": 195,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "chunks",
+        "line": 53,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "chunks",
+        "line": 66,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "downstream",
+        "line": 82,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "receive",
+        "line": 84,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "send",
+        "line": 86,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "body",
+        "line": 96,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "slow",
+        "line": 125,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "chunks",
+        "line": 168,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "waiting",
+        "line": 178,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "chunks",
+        "line": 198,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_input_validation.py",
+    "definitions": [
+      {
+        "name": "test_chunked_multipart_body_guard_runs_before_parser",
+        "line": 6,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_characterize_missing_json_body_byte_limit",
+        "line": 18,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_malicious_filename_never_used_as_storage_path",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "downstream",
+        "line": 10,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "receive",
+        "line": 12,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "send",
+        "line": 13,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_prompt_injection.py",
+    "definitions": [
+      {
+        "name": "test_review_injection_cannot_enter_selector_or_expand_tool_surface",
+        "line": 6,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_poisoned_selector_cannot_request_arbitrary_execution",
+        "line": 17,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_tenant_api_regressions.py",
+    "definitions": [
+      {
+        "name": "test_each_business_can_use_existing_stateless_and_ingestion_contracts",
+        "line": 26,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_request_identity_claims_cannot_override_registry",
+        "line": 36,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_legacy_mode_is_a_separate_tenant_when_real_businesses_are_configured",
+        "line": 42,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_production_ignores_both_legacy_mechanisms_even_if_flag_true",
+        "line": 59,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_mcp_remains_stateless_launcher_authorized_without_tenant_arguments_or_registry_disclosure",
+        "line": 69,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_tenant_auth.py",
+    "definitions": [
+      {
+        "name": "test_registry_authenticates_immutable_principal_without_secret_repr",
+        "line": 19,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_production_rejects_invalid_and_legacy_credentials",
+        "line": 30,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_malformed_registry_fails_closed_without_echoing_input",
+        "line": 38,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_invalid_or_ambiguous_security_configuration_rejected",
+        "line": 52,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_registry_byte_bound_and_duplicate_json_properties",
+        "line": 82,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_registry_count_limits_and_tenant_bound",
+        "line": 87,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_settings_reads_json_from_environment_without_unmasking",
+        "line": 96,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_pydantic_structured_configuration_errors_do_not_echo_secret_input",
+        "line": 109,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_business_mode_rejects_global_budgets_without_tenant_headroom",
+        "line": 118,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_legacy_is_an_explicit_owning_principal_and_cannot_be_ambiguous",
+        "line": 122,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_business_registry_disables_implicit_development_fallback",
+        "line": 132,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_forged_claims_or_unrelated_registry_cannot_be_used_as_authority",
+        "line": 140,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_missing_permissions_are_403_on_every_protected_operation",
+        "line": 164,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_http_missing_invalid_or_legacy_in_production_cannot_infer_or_leak",
+        "line": 173,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_tenant_quotas.py",
+    "definitions": [
+      {
+        "name": "analyze",
+        "line": 18,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_one_business_model_saturation_leaves_capacity_for_other_business",
+        "line": 22,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_global_model_cap_still_applies_with_two_tenants",
+        "line": 42,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_cancellation_releases_model_and_tenant_ingress_capacity",
+        "line": 57,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_provider_deadline_releases_owner_model_budget",
+        "line": 70,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_investigation_lifetime_quota_covers_chat_and_releases",
+        "line": 82,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_batch_owner_capacity_and_cancellation_safe_parse_reservations",
+        "line": 103,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_webhook_pending_and_worker_quotas_do_not_block_second_business",
+        "line": 135,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_global_webhook_pending_cap_still_rejects",
+        "line": 156,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_owner_rate_limit_and_expiry_are_bounded_and_use_verified_identity",
+        "line": 172,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_per_owner_intake_does_not_admit_spoofed_slow_body_concurrency",
+        "line": 190,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_per_tenant_body_timeout_releases_intake_for_following_request",
+        "line": 209,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_webhook_terminal_retention_quota_preserves_other_owner_capacity",
+        "line": 219,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_global_http_intake_cap_still_bounds_three_verified_tenants",
+        "line": 231,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "slow",
+        "line": 193,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "slow",
+        "line": 210,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "parse",
+        "line": 111,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "submit",
+        "line": 117,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_webhook_security.py",
+    "definitions": [
+      {
+        "name": "test_valid_raw_signature_no_rest_key_status_and_duplicate",
+        "line": 12,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_tampered_or_malformed_signed_headers",
+        "line": 37,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_missing_signed_headers",
+        "line": 46,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_signed_expired_or_future_timestamp",
+        "line": 56,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_body_tampering_and_duplicate_authentication_cannot_be_bypassed",
+        "line": 63,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_duplicate_headers_rejected_before_inference",
+        "line": 74,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_authenticated_invalid_payload_rejected",
+        "line": 89,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_missing_configuration_fails_closed",
+        "line": 97,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_parallel_duplicates_schedule_exactly_one_call",
+        "line": 105,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_signature_is_verified_before_json_validation",
+        "line": 117,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_unknown_and_expired_status_have_identical_controlled_responses",
+        "line": 127,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_missing_t01_configuration_rejects_before_acknowledgment",
+        "line": 138,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_timestamp_window_includes_exact_boundaries",
+        "line": 150,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/security/test_webhook_tenant_isolation.py",
+    "definitions": [
+      {
+        "name": "test_integrations_map_to_distinct_businesses_with_same_delivery_id",
+        "line": 24,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_changing_integration_identity_cannot_transplant_a_signature",
+        "line": 49,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_signed_body_cannot_override_tenant_authority",
+        "line": 59,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_same_owner_different_integration_collision_is_explicit_and_preserves_first_event",
+        "line": 66,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_same_integration_retry_conflict_auth_and_foreign_tenant_are_independent",
+        "line": 77,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_concurrent_reused_delivery_ids_are_atomic_per_tenant",
+        "line": 91,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_direct_status_and_store_need_verified_owner_and_permission",
+        "line": 107,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_forged_or_modified_delivery_context_cannot_bypass_service_hmac",
+        "line": 125,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_event_expiry_removes_tenant_reservation_and_allows_fresh_delivery",
+        "line": 136,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/stdio_bootstrap.py",
+    "definitions": [
+      {
+        "name": "deny",
+        "line": 15,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "deny_async",
+        "line": 19,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/t06_helpers.py",
+    "definitions": [
+      {
+        "name": "raw_event",
+        "line": 19,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "signed",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "client_app",
+        "line": 35,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/t07_helpers.py",
+    "definitions": [
+      {
+        "name": "multi_settings",
+        "line": 31,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "api_headers",
+        "line": 40,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "webhook_headers",
+        "line": 44,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "multi_app",
+        "line": 56,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/t08_helpers.py",
+    "definitions": [
+      {
+        "name": "part",
+        "line": 24,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "message",
+        "line": 31,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "gmail_settings",
+        "line": 41,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "FakeGoogle",
+        "line": 48,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "gmail_app",
+        "line": 115,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "authorize",
+        "line": 125,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "import_job",
+        "line": 133,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "__init__",
+        "line": 49,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "__call__",
+        "line": 60,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_action_selector.py",
+    "definitions": [
+      {
+        "name": "test_invalid_selector_outputs_fail_closed",
+        "line": 11,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_selector_receives_question_and_hint_only",
+        "line": 18,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_aggregation.py",
+    "definitions": [
+      {
+        "name": "rows",
+        "line": 11,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_counts_order_and_unique_supporting_ids",
+        "line": 17,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_evidence_verifier_rejects_tampering",
+        "line": 25,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_batch_jobs.py",
+    "definitions": [
+      {
+        "name": "submit",
+        "line": 13,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_cross_job_limits_progress_and_no_task_fanout",
+        "line": 17,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_partial_success_counts_and_raw_text_cleanup",
+        "line": 38,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_fatal_provider_errors_stop_and_latch",
+        "line": 56,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_whole_job_deadline_accounts_for_cancelled_attempt",
+        "line": 70,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_lazy_expiry_removes_raw_and_derived_results",
+        "line": 81,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_periodic_expiry_and_shutdown_clear",
+        "line": 92,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_cancelled_http_parse_keeps_capacity_until_thread_finishes",
+        "line": 102,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_report_verification_failure_never_publishes_success",
+        "line": 119,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "parse",
+        "line": 105,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "Broken",
+        "line": 120,
+        "kind": "ClassDef"
+      },
+      {
+        "name": "build",
+        "line": 121,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_file_parser.py",
+    "definitions": [
+      {
+        "name": "parser",
+        "line": 15,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "parse",
+        "line": 19,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_csv_bom_quotes_mapping_blank_rows_and_invalid_text",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_csv_rejections",
+        "line": 44,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_invalid_or_duplicate_ids",
+        "line": 51,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_extension_mime_and_charset",
+        "line": 62,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_exact_limits_and_stable_generated_ids",
+        "line": 68,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_xlsx_first_sheet_dates_and_formulas",
+        "line": 75,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_xlsx_mapping_ids_and_nontext",
+        "line": 93,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "rewrite",
+        "line": 99,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_xlsx_corruption_macros_entities_and_expansion",
+        "line": 114,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_xlsx_untrusted_declared_dimensions_are_reset",
+        "line": 126,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_optional_dates_never_invent_missing_values",
+        "line": 132,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_gmail_lifecycle.py",
+    "definitions": [
+      {
+        "name": "test_import_admission_is_async_bounded_and_each_tenant_keeps_capacity",
+        "line": 16,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_gmail_uses_existing_shared_model_budget_and_never_bypasses_it",
+        "line": 36,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_deadline_releases_model_capacity_and_preserves_controlled_failed_outcome",
+        "line": 53,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_disconnect_cancels_only_owner_jobs_wipes_tokens_results_and_duplicates",
+        "line": 69,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_disconnect_during_google_read_releases_http_capacity",
+        "line": 89,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_shutdown_cancels_inflight_callback_and_clears_all_secret_state",
+        "line": 100,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_hard_connection_expiration_clears_tokens_and_requires_same_mailbox_reconnect",
+        "line": 115,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_google_can_omit_refresh_token_and_connection_is_access_only_until_expiry",
+        "line": 129,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_connection_and_retained_job_capacities_are_bounded",
+        "line": 142,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_periodic_cleanup_erases_idle_jobs_and_expired_oauth_states",
+        "line": 155,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_dedup_store_capacity_fails_closed_without_evicting_existing_records",
+        "line": 168,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_gmail_mime.py",
+    "definitions": [
+      {
+        "name": "test_plain_text_charset_and_minimal_metadata",
+        "line": 11,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_plaintext_preferred_to_html_alternative_without_duplicate_record",
+        "line": 20,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_empty_plaintext_alternative_uses_nonempty_html_without_inventing_content",
+        "line": 25,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_html_only_is_inert_text_without_scripts_resources_or_rendering",
+        "line": 30,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_malformed_or_missing_content_is_controlled",
+        "line": 39,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_attachment_or_external_body_is_not_decoded",
+        "line": 60,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_byte_and_character_bounds_reject_without_truncation",
+        "line": 72,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_selection_is_verified_against_actual_message_labels",
+        "line": 78,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_mime_depth_and_part_count_are_bounded",
+        "line": 83,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_langgraph_workflow.py",
+    "definitions": [
+      {
+        "name": "test_all_four_conditional_routes",
+        "line": 17,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_graph_fail_fast_and_no_cross_request_state",
+        "line": 29,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_whole_graph_timeout",
+        "line": 39,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_reporting.py",
+    "definitions": [
+      {
+        "name": "test_deterministic_percentage_denominator_and_rounding",
+        "line": 15,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_reporting_unique_aspects_and_supporting_ids",
+        "line": 21,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_reporting_rejects_foreign_source_metadata",
+        "line": 40,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_sentiment_schemas.py",
+    "definitions": [
+      {
+        "name": "test_classifications_and_exact_evidence",
+        "line": 9,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_invalid_requests",
+        "line": 21,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_invalid_classifications_and_invented_evidence",
+        "line": 32,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_bounds_and_multiple_aspects",
+        "line": 37,
+        "kind": "FunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_sentiment_service.py",
+    "definitions": [
+      {
+        "name": "provider_error",
+        "line": 16,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_bounded_retries_and_permanent_failures",
+        "line": 25,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_network_timeout_and_unexpected_errors",
+        "line": 40,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_no_successful_fallback_for_invalid_outputs",
+        "line": 48,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_wall_clock_deadline_includes_model_wait",
+        "line": 54,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_configuration_errors",
+        "line": 66,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_actual_chatgroq_adapter_strict_schema_with_mock_http",
+        "line": 76,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "respond",
+        "line": 79,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  },
+  {
+    "path": "tests/unit/test_webhook_workers.py",
+    "definitions": [
+      {
+        "name": "manager",
+        "line": 19,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "admit",
+        "line": 23,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_worker_bound_pending_capacity_state_transitions_and_shutdown",
+        "line": 29,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_shutdown_cancels_active_drains_pending_and_releases_raw_references",
+        "line": 56,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_worker_failures_and_deadline_are_sanitized",
+        "line": 76,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_retention_expiry_full_store_never_evicts_active_and_fresh_retry_is_duplicate",
+        "line": 91,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_missing_provider_configuration_is_rejected_before_reserving",
+        "line": 119,
+        "kind": "AsyncFunctionDef"
+      },
+      {
+        "name": "test_configuration_prevents_unsafe_capacities_or_replay_retention",
+        "line": 136,
+        "kind": "FunctionDef"
+      },
+      {
+        "name": "test_background_sweeper_expires_terminal_metadata_without_a_lookup",
+        "line": 141,
+        "kind": "AsyncFunctionDef"
+      }
+    ]
+  }
+]

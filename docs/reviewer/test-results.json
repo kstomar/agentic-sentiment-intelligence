@@ -1,0 +1,2869 @@
+{
+  "suite": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "571",
+    "time": "18.834",
+    "timestamp": "2026-11-02T15:05:23.329101+05:30",
+    "hostname": "rails"
+  },
+  "cases": [
+    {
+      "id": "tests.integration.test_api_contracts::test_openapi_inventory_security_and_response_schemas",
+      "time_seconds": 0.094,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_api_contracts::test_all_application_modules_import_and_no_undocumented_routes",
+      "time_seconds": 0.033,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_report_download_workflows_e_f[csv]",
+      "time_seconds": 0.06,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_report_download_workflows_e_f[xlsx]",
+      "time_seconds": 0.052,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_pending_running_reports_and_concurrent_status_reads",
+      "time_seconds": 0.045,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[review\\na-safe.xls-application/octet-stream-None-415]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[review\\na-safe.csv-application/json-None-415]",
+      "time_seconds": 0.036,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[review\\n\\xff-safe.csv-text/csv-None-422]",
+      "time_seconds": 0.116,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[other\\na-safe.csv-text/csv-None-422]",
+      "time_seconds": 0.036,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[review\\na-safe.csv-text/csv-fields4-422]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[review\\na-safe.csv-text/csv-fields5-422]",
+      "time_seconds": 0.035,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[content-len209-fd49da35-safe.csv-text/csv-None-422]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[content-len2097153-71ac24a7-safe.csv-text/csv-None-413]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_upload_rejection_without_model_calls[content-len2162689-355b261b-safe.csv-text/csv-None-413]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_explicit_blank_source_is_rejected",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_job_ids_and_pagination_validation[bad-id]",
+      "time_seconds": 0.034,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_job_ids_and_pagination_validation[00000000000000000000000000000000]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_job_ids_and_pagination_validation[00000000000000000000000000000000/results?page=0]",
+      "time_seconds": 0.034,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_job_ids_and_pagination_validation[00000000000000000000000000000000/results?page_size=101]",
+      "time_seconds": 0.036,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_missing_file",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_source_default_and_valid_metadata_labels_are_preserved[None-file_upload]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_source_default_and_valid_metadata_labels_are_preserved[file_upload-file_upload]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_source_default_and_valid_metadata_labels_are_preserved[customer_review-customer_review]",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_source_default_and_valid_metadata_labels_are_preserved[custom_import-custom_import]",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_source_default_and_valid_metadata_labels_are_preserved[ external_crm -external_crm]",
+      "time_seconds": 0.046,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_source_default_and_valid_metadata_labels_are_preserved[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+      "time_seconds": 0.051,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_whitespace_and_overlong_sources_do_not_create_jobs[   ]",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_whitespace_and_overlong_sources_do_not_create_jobs[\\t\\r\\n]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_whitespace_and_overlong_sources_do_not_create_jobs[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_batch_api::test_nontext_source_form_part_is_rejected",
+      "time_seconds": 0.036,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_analysis_workflow_c_reuses_t01_once",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_investigation_workflow_d_preserves_findings",
+      "time_seconds": 0.033,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload0]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload1]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload2]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload3]",
+      "time_seconds": 0.029,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload4]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload5]",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload6]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload7]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload8]",
+      "time_seconds": 0.03,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_cross_field_and_history_validation[payload9]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_chat_api::test_chat_has_no_cross_request_memory",
+      "time_seconds": 0.028,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_import_filtered_paginated_bounded_and_reuses_t01_without_headers_or_tokens",
+      "time_seconds": 0.162,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_empty_or_unsafe_mail_does_not_fabricate_feedback[empty]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_empty_or_unsafe_mail_does_not_fabricate_feedback[attachments]",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_empty_or_unsafe_mail_does_not_fabricate_feedback[oversized]",
+      "time_seconds": 0.05,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_empty_or_unsafe_mail_does_not_fabricate_feedback[invalid]",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_empty_or_unsafe_mail_does_not_fabricate_feedback[unrelated_label]",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_empty_or_unsafe_mail_does_not_fabricate_feedback[spam]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_partial_failure_counts_include_skips_and_preserve_success",
+      "time_seconds": 0.05,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_repeated_and_concurrent_imports_deduplicate_messages_not_threads",
+      "time_seconds": 0.053,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_foreign_and_unknown_jobs_are_identical_and_store_enforces_owner[]",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_foreign_and_unknown_jobs_are_identical_and_store_enforces_owner[/results]",
+      "time_seconds": 0.052,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_separate_mailboxes_can_reuse_message_ids_without_dedup_collision",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_refresh_is_single_flight_and_preserves_required_scope",
+      "time_seconds": 0.146,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_unusable_credentials_require_reconnect_and_are_not_retried_blindly[revoked]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_unusable_credentials_require_reconnect_and_are_not_retried_blindly[scope]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_unusable_credentials_require_reconnect_and_are_not_retried_blindly[missing_refresh]",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_unusable_credentials_require_reconnect_and_are_not_retried_blindly[expired_refresh]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_google_retries_are_bounded_and_rate_errors_stop_import",
+      "time_seconds": 0.153,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_provider_errors_are_controlled_and_never_create_analysis[malformed]",
+      "time_seconds": 0.05,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_provider_errors_are_controlled_and_never_create_analysis[oversized]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_provider_errors_are_controlled_and_never_create_analysis[redirect]",
+      "time_seconds": 0.047,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_provider_errors_are_controlled_and_never_create_analysis[timeout]",
+      "time_seconds": 0.151,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_provider_errors_are_controlled_and_never_create_analysis[missing_label]",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_provider_errors_are_controlled_and_never_create_analysis[repeated_page]",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_import_schema_and_absolute_server_cap_cannot_be_overridden[payload0]",
+      "time_seconds": 0.047,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_import_schema_and_absolute_server_cap_cannot_be_overridden[payload1]",
+      "time_seconds": 0.046,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_import_schema_and_absolute_server_cap_cannot_be_overridden[payload2]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_import_schema_and_absolute_server_cap_cannot_be_overridden[payload3]",
+      "time_seconds": 0.143,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_import_schema_and_absolute_server_cap_cannot_be_overridden[payload4]",
+      "time_seconds": 0.047,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_import_schema_and_absolute_server_cap_cannot_be_overridden[payload5]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_expiry_clears_results_and_dedup_reservations_without_permanent_history",
+      "time_seconds": 0.052,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_email_instructions_are_data_and_do_not_receive_oauth_or_header_metadata",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_ungrounded_model_output_is_a_failed_message_without_fabricated_analysis",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_revoked_or_reduced_gmail_api_access_clears_connection[401]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_gmail_import::test_revoked_or_reduced_gmail_api_access_clears_connection[403]",
+      "time_seconds": 0.047,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_reuses_t01_and_normalizes_metadata[website]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_reuses_t01_and_normalizes_metadata[mobile_app]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_reuses_t01_and_normalizes_metadata[support_platform]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_reuses_t01_and_normalizes_metadata[external_api]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_authentication[headers0]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_authentication[headers1]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes0]",
+      "time_seconds": 0.036,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes1]",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes2]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes3]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes4]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes5]",
+      "time_seconds": 0.131,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes6]",
+      "time_seconds": 0.036,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes7]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes8]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes9]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes10]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes11]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes12]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_invalid_fields_without_inference[changes13]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_required_fields[text]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_required_fields[channel]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_propagates_controlled_provider_errors_and_independent_service",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_ingestion_api::test_direct_rejects_ungrounded_provider_output",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_investigation_rest_workflow_b",
+      "time_seconds": 0.028,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates0]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates1]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates2]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates3]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates4]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates5]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates6]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_investigation_api::test_invalid_investigation_inputs[updates7]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_real_inprocess_protocol_workflows_g_h[legacy]",
+      "time_seconds": 0.063,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_real_inprocess_protocol_workflows_g_h[auto]",
+      "time_seconds": 0.036,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[analyze_feedback-args0]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[analyze_feedback-args1]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[analyze_feedback-args2]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[investigate_feedback-args3]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[investigate_feedback-args4]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[investigate_feedback-args5]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[get_batch_report-args6]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities[run_shell-args7]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_preserves_service_errors[UPSTREAM_TIMEOUT]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_preserves_service_errors[UPSTREAM_AUTHENTICATION_FAILED]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_preserves_service_errors[UPSTREAM_RATE_LIMITED]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_preserves_service_errors[EVIDENCE_VERIFICATION_FAILED]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_missing_config_and_unexpected_error_sanitization",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_mcp_capacity_cancellation_and_recovery",
+      "time_seconds": 0.03,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_stdio_official_client_protocol_only_stdout_and_clean_shutdown[True]",
+      "time_seconds": 1.369,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_mcp_server::test_stdio_official_client_protocol_only_stdout_and_clean_shutdown[False]",
+      "time_seconds": 1.177,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_sentiment_classifications[POSITIVE]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_sentiment_classifications[NEGATIVE]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_sentiment_classifications[NEUTRAL]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_sentiment_classifications[MIXED]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_existing_source_and_business_allowlists[business_type-values0]",
+      "time_seconds": 0.027,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_existing_source_and_business_allowlists[source-values1]",
+      "time_seconds": 0.032,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_request_validation_precedes_analysis[payload0]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_request_validation_precedes_analysis[payload1]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_request_validation_precedes_analysis[payload2]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_request_validation_precedes_analysis[payload3]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_request_validation_precedes_analysis[payload4]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_request_validation_precedes_analysis[payload5]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_request_validation_precedes_analysis[payload6]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[GROQ_NOT_CONFIGURED-503]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[GROQ_MODEL_UNSUPPORTED-503]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[UPSTREAM_AUTHENTICATION_FAILED-502]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[UPSTREAM_RATE_LIMITED-429]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[UPSTREAM_TIMEOUT-504]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[UPSTREAM_UNAVAILABLE-502]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[INVALID_MODEL_RESPONSE-502]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_http_service_errors_are_sanitized[INTERNAL_ERROR-500]",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.integration.test_sentiment_api::test_malformed_json_and_invented_evidence",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.performance.test_local_benchmarks::test_http_latency_samples",
+      "time_seconds": 0.152,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.performance.test_local_benchmarks::test_parser_and_reducer_samples",
+      "time_seconds": 0.197,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.performance.test_local_benchmarks::test_mcp_invocation_samples",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-POST-/api/v1/sentiment/analyze]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-POST-/api/v1/agent/investigate]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-POST-/api/v1/chat]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-POST-/api/v1/batch/upload]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-GET-/api/v1/batch/jobs/00000000000000000000000000000000]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-GET-/api/v1/batch/jobs/00000000000000000000000000000000/report]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-GET-/api/v1/batch/jobs/00000000000000000000000000000000/results]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[None-GET-/api/v1/batch/jobs/00000000000000000000000000000000/download]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-POST-/api/v1/sentiment/analyze]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-POST-/api/v1/agent/investigate]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-POST-/api/v1/chat]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-POST-/api/v1/batch/upload]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-GET-/api/v1/batch/jobs/00000000000000000000000000000000]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-GET-/api/v1/batch/jobs/00000000000000000000000000000000/report]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-GET-/api/v1/batch/jobs/00000000000000000000000000000000/results]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_every_protected_route_rejects_credentials[incorrect-key-GET-/api/v1/batch/jobs/00000000000000000000000000000000/download]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_authentication::test_health_public_and_missing_application_configuration",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_owner_can_read_but_foreign_and_missing_are_identical_404[]",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_owner_can_read_but_foreign_and_missing_are_identical_404[/report]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_owner_can_read_but_foreign_and_missing_are_identical_404[/results]",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_owner_can_read_but_foreign_and_missing_are_identical_404[/download]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_service_and_store_enforce_ownership_without_http[status]",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_service_and_store_enforce_ownership_without_http[report]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_service_and_store_enforce_ownership_without_http[results]",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_service_and_store_enforce_ownership_without_http[download]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_rotation_shares_ownership_and_quota_but_not_other_tenant_access",
+      "time_seconds": 0.051,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_concurrent_business_jobs_have_independent_owners",
+      "time_seconds": 0.045,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_expiration_erases_data_and_releases_owner_retention_quota",
+      "time_seconds": 0.009,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_untrusted_query_header_csv_metadata_cannot_select_owner",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_batch_tenant_isolation::test_no_untrusted_authority_rebind_of_existing_store",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_data_privacy::test_characterize_shared_key_job_access_without_tenant_ownership",
+      "time_seconds": 0.043,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_data_privacy::test_validation_errors_and_logs_exclude_rejected_values",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_data_privacy::test_spooled_upload_resources_close_on_parse_failure",
+      "time_seconds": 0.07,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_state_pkce_fixed_redirect_readonly_and_private_url_metadata",
+      "time_seconds": 0.058,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[missing-/connect-POST]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[missing-/status-GET]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[missing-/disconnect-DELETE]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[missing-/import-POST]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[missing-/imports/00000000000000000000000000000000-GET]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[missing-/imports/00000000000000000000000000000000/results-GET]",
+      "time_seconds": 0.016,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[invalid-/connect-POST]",
+      "time_seconds": 0.016,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[invalid-/status-GET]",
+      "time_seconds": 0.016,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[invalid-/disconnect-DELETE]",
+      "time_seconds": 0.016,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[invalid-/import-POST]",
+      "time_seconds": 0.016,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[invalid-/imports/00000000000000000000000000000000-GET]",
+      "time_seconds": 0.015,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_protected_gmail_routes_authenticate_before_provider[invalid-/imports/00000000000000000000000000000000/results-GET]",
+      "time_seconds": 0.016,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_gmail_permissions_do_not_come_from_request_fields[/connect-POST]",
+      "time_seconds": 0.017,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_gmail_permissions_do_not_come_from_request_fields[/status-GET]",
+      "time_seconds": 0.017,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_gmail_permissions_do_not_come_from_request_fields[/disconnect-DELETE]",
+      "time_seconds": 0.017,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_gmail_permissions_do_not_come_from_request_fields[/import-POST]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_gmail_permissions_do_not_come_from_request_fields[/imports/00000000000000000000000000000000-GET]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_gmail_permissions_do_not_come_from_request_fields[/imports/00000000000000000000000000000000/results-GET]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides0]",
+      "time_seconds": 0.056,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides1]",
+      "time_seconds": 0.05,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides2]",
+      "time_seconds": 0.159,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides3]",
+      "time_seconds": 0.053,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides4]",
+      "time_seconds": 0.053,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides5]",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides6]",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_configuration_failure_is_closed_and_other_apis_still_work[overrides7]",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_local_http_requires_explicit_nonproduction_mode",
+      "time_seconds": 0.103,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_callback_consumes_state_without_api_key_and_never_returns_tokens",
+      "time_seconds": 0.056,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_state_expiration_releases_capacity_and_rejects_replay",
+      "time_seconds": 0.058,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_parallel_callback_replay_does_not_exchange_twice",
+      "time_seconds": 0.058,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_callback_cannot_select_tenant_or_redirect[extra0]",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_callback_cannot_select_tenant_or_redirect[extra1]",
+      "time_seconds": 0.054,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_callback_cannot_select_tenant_or_redirect[extra2]",
+      "time_seconds": 0.053,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_denial_consumes_state_and_unknown_or_missing_state_is_safe",
+      "time_seconds": 0.056,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_token_response_requires_exact_scope_and_bearer_contract[change0]",
+      "time_seconds": 0.172,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_token_response_requires_exact_scope_and_bearer_contract[change1]",
+      "time_seconds": 0.053,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_token_response_requires_exact_scope_and_bearer_contract[change2]",
+      "time_seconds": 0.047,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_token_response_requires_exact_scope_and_bearer_contract[change3]",
+      "time_seconds": 0.047,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_token_response_requires_exact_scope_and_bearer_contract[change4]",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_token_exchange_not_retried_and_provider_errors_are_sanitized",
+      "time_seconds": 0.051,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_verified_mailbox_cannot_be_claimed_by_another_tenant",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_disconnect_invalidates_pending_and_inflight_authorization",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_service_authority_required_and_callback_query_is_bounded",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_google_http_capacity_is_immediate_and_bounded_across_callbacks",
+      "time_seconds": 0.057,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_profile_address_is_verified_and_invalid_provider_identity_is_not_stored",
+      "time_seconds": 0.053,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_gmail_oauth::test_duplicate_callback_parameters_do_not_bypass_single_state_policy",
+      "time_seconds": 0.056,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[-1-200-/api/v1/sentiment/analyze-payload0]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[-1-200-/api/v1/agent/investigate-payload1]",
+      "time_seconds": 0.031,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[-1-200-/api/v1/chat-payload2]",
+      "time_seconds": 0.029,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[-1-200-/api/v1/ingest/feedback-payload3]",
+      "time_seconds": 0.048,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[0-200-/api/v1/sentiment/analyze-payload0]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[0-200-/api/v1/agent/investigate-payload1]",
+      "time_seconds": 0.03,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[0-200-/api/v1/chat-payload2]",
+      "time_seconds": 0.033,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[0-200-/api/v1/ingest/feedback-payload3]",
+      "time_seconds": 0.18,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[1-413-/api/v1/sentiment/analyze-payload0]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[1-413-/api/v1/agent/investigate-payload1]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[1-413-/api/v1/chat-payload2]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_json_limits_before_parsing_preserve_existing_endpoints[1-413-/api/v1/ingest/feedback-payload3]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_approved_default_four_mib_boundary[-1-200]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_approved_default_four_mib_boundary[0-200]",
+      "time_seconds": 0.037,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_approved_default_four_mib_boundary[1-413]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_byte_limit_counts_unicode_without_altering_text[text-len300-b7eed197-200]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_byte_limit_counts_unicode_without_altering_text[text-len400-b56dc32c-413]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_byte_limit_counts_unicode_without_altering_text[text-len220-a53f2a83-200]",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_byte_limit_counts_unicode_without_altering_text[text-len300-3a49cf35-413]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_chunked_actual_bytes_override_missing_or_misleading_length[None]",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_chunked_actual_bytes_override_missing_or_misleading_length[1]",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_chunked_actual_bytes_override_missing_or_misleading_length[1024]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_chunked_signed_unicode_bytes_preserved_and_separate_webhook_limit",
+      "time_seconds": 0.045,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_authentication_precedes_body_consumption",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_concurrent_multipart_intake_is_bounded_before_parsing",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_global_ingress_rate_is_bounded_health_remains_available",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_body_read_deadline_releases_global_admission",
+      "time_seconds": 0.049,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_global_model_budget_shared_by_rest_ingestion_selector_and_webhook",
+      "time_seconds": 0.052,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_model_budget_released_on_cancellation",
+      "time_seconds": 0.021,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_streamed_webhook_uses_stricter_actual_byte_limit",
+      "time_seconds": 0.027,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_global_intake_capacity_and_cancellation_release",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_real_batch_route_keeps_file_and_actual_envelope_limits_separate[actual_envelope]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_ingress_limits::test_real_batch_route_keeps_file_and_actual_envelope_limits_separate[file_only]",
+      "time_seconds": 0.043,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_input_validation::test_chunked_multipart_body_guard_runs_before_parser",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_input_validation::test_characterize_missing_json_body_byte_limit",
+      "time_seconds": 0.031,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_input_validation::test_malicious_filename_never_used_as_storage_path",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_prompt_injection::test_review_injection_cannot_enter_selector_or_expand_tool_surface",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_prompt_injection::test_poisoned_selector_cannot_request_arbitrary_execution",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/sentiment/analyze-payload0-alpha]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/sentiment/analyze-payload0-beta]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/agent/investigate-payload1-alpha]",
+      "time_seconds": 0.031,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/agent/investigate-payload1-beta]",
+      "time_seconds": 0.027,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/chat-payload2-alpha]",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/chat-payload2-beta]",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/chat-payload3-alpha]",
+      "time_seconds": 0.032,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/chat-payload3-beta]",
+      "time_seconds": 0.028,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/ingest/feedback-payload4-alpha]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_each_business_can_use_existing_stateless_and_ingestion_contracts[/api/v1/ingest/feedback-payload4-beta]",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_request_identity_claims_cannot_override_registry[/api/v1/sentiment/analyze-payload0]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_request_identity_claims_cannot_override_registry[/api/v1/agent/investigate-payload1]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_request_identity_claims_cannot_override_registry[/api/v1/chat-payload2]",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_request_identity_claims_cannot_override_registry[/api/v1/chat-payload3]",
+      "time_seconds": 0.028,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_request_identity_claims_cannot_override_registry[/api/v1/ingest/feedback-payload4]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_legacy_mode_is_a_separate_tenant_when_real_businesses_are_configured",
+      "time_seconds": 0.053,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_production_ignores_both_legacy_mechanisms_even_if_flag_true",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_api_regressions::test_mcp_remains_stateless_launcher_authorized_without_tenant_arguments_or_registry_disclosure",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_registry_authenticates_immutable_principal_without_secret_repr[alpha]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_registry_authenticates_immutable_principal_without_secret_repr[beta]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_production_rejects_invalid_and_legacy_credentials[missing]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_production_rejects_invalid_and_legacy_credentials[empty]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_production_rejects_invalid_and_legacy_credentials[invalid]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_production_rejects_invalid_and_legacy_credentials[legacy-disabled]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[{}]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[null]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[false]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[[1]]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[[{}]]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[[]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[NaN]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_malformed_registry_fails_closed_without_echoing_input[[{\"tenant_id\":\"business_alpha\",\"tenant_id\":\"business_beta\"}]]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[duplicate_id]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[duplicate_key]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[key_other_tenant]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[bad_tenant]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[bad_id]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[short_key]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[constant_key]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[extra_field]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[bad_permission]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[duplicate_permission]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[bad_permission_type]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[reserved_tenant]",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[reserved_key_id]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[unknown_integration_owner]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[duplicate_integration]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[duplicate_integration_secret]",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[bad_integration_id]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[short_integration_secret]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[api_secret_reused_as_webhook]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_invalid_or_ambiguous_security_configuration_rejected[too_many_tenant_credentials]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_registry_byte_bound_and_duplicate_json_properties[raw-len80000-dd30ff30]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_registry_byte_bound_and_duplicate_json_properties[raw-len208-d826e538]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_registry_count_limits_and_tenant_bound",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_settings_reads_json_from_environment_without_unmasking",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_pydantic_structured_configuration_errors_do_not_echo_secret_input[tenant_credentials_json-value-len86-ff843192]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_pydantic_structured_configuration_errors_do_not_echo_secret_input[webhook_integrations_json-value-len92-b07e9333]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_pydantic_structured_configuration_errors_do_not_echo_secret_input[webhook_shared_secret-private-short-secret]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_business_mode_rejects_global_budgets_without_tenant_headroom[model_max_concurrent_calls]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_business_mode_rejects_global_budgets_without_tenant_headroom[ingress_max_concurrent_requests]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_business_mode_rejects_global_budgets_without_tenant_headroom[batch_model_concurrency]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_business_mode_rejects_global_budgets_without_tenant_headroom[webhook_max_concurrent_analyses]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_legacy_is_an_explicit_owning_principal_and_cannot_be_ambiguous",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_business_registry_disables_implicit_development_fallback",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_forged_claims_or_unrelated_registry_cannot_be_used_as_authority",
+      "time_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[POST-/api/v1/sentiment/analyze]",
+      "time_seconds": 0.022,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[POST-/api/v1/agent/investigate]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[POST-/api/v1/chat]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[POST-/api/v1/batch/upload]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[POST-/api/v1/ingest/feedback]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[GET-/api/v1/batch/jobs/00000000000000000000000000000000]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[GET-/api/v1/batch/jobs/00000000000000000000000000000000/report]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[GET-/api/v1/batch/jobs/00000000000000000000000000000000/results]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[GET-/api/v1/batch/jobs/00000000000000000000000000000000/download]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_missing_permissions_are_403_on_every_protected_operation[GET-/api/v1/ingest/events/missing]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_http_missing_invalid_or_legacy_in_production_cannot_infer_or_leak[missing]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_http_missing_invalid_or_legacy_in_production_cannot_infer_or_leak[invalid]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_auth::test_http_missing_invalid_or_legacy_in_production_cannot_infer_or_leak[legacy-disabled]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_one_business_model_saturation_leaves_capacity_for_other_business",
+      "time_seconds": 0.032,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_global_model_cap_still_applies_with_two_tenants",
+      "time_seconds": 0.028,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_cancellation_releases_model_and_tenant_ingress_capacity",
+      "time_seconds": 0.027,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_provider_deadline_releases_owner_model_budget",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_investigation_lifetime_quota_covers_chat_and_releases",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_batch_owner_capacity_and_cancellation_safe_parse_reservations",
+      "time_seconds": 0.025,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_webhook_pending_and_worker_quotas_do_not_block_second_business",
+      "time_seconds": 0.045,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_global_webhook_pending_cap_still_rejects",
+      "time_seconds": 0.045,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_owner_rate_limit_and_expiry_are_bounded_and_use_verified_identity",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_per_owner_intake_does_not_admit_spoofed_slow_body_concurrency",
+      "time_seconds": 0.026,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_per_tenant_body_timeout_releases_intake_for_following_request",
+      "time_seconds": 0.043,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_webhook_terminal_retention_quota_preserves_other_owner_capacity",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_tenant_quotas::test_global_http_intake_cap_still_bounds_three_verified_tenants",
+      "time_seconds": 0.029,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_valid_raw_signature_no_rest_key_status_and_duplicate",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Signature-sha256=0000000000000000000000000000000000000000000000000000000000000000]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Signature-bad]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Signature-sha256=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Integration-Id-unknown]",
+      "time_seconds": 0.023,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Integration-Id-bad.id]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Delivery-Id-OTHER]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Delivery-Id-bad/id]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Timestamp-nonsense]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_tampered_or_malformed_signed_headers[X-Feedback-Timestamp-0]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_missing_signed_headers[X-Feedback-Integration-Id]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_missing_signed_headers[X-Feedback-Delivery-Id]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_missing_signed_headers[X-Feedback-Timestamp]",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_missing_signed_headers[X-Feedback-Signature]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_signed_expired_or_future_timestamp[-600]",
+      "time_seconds": 0.029,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_signed_expired_or_future_timestamp[600]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_body_tampering_and_duplicate_authentication_cannot_be_bypassed",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_duplicate_headers_rejected_before_inference",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes0]",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes1]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes2]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes3]",
+      "time_seconds": 0.138,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes4]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes5]",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes6]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes7]",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes8]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes9]",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_authenticated_invalid_payload_rejected[changes10]",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_missing_configuration_fails_closed[config0]",
+      "time_seconds": 0.02,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_missing_configuration_fails_closed[config1]",
+      "time_seconds": 0.018,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_parallel_duplicates_schedule_exactly_one_call",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_signature_is_verified_before_json_validation",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_unknown_and_expired_status_have_identical_controlled_responses",
+      "time_seconds": 0.042,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_missing_t01_configuration_rejects_before_acknowledgment",
+      "time_seconds": 0.038,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_timestamp_window_includes_exact_boundaries[-300-True]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_timestamp_window_includes_exact_boundaries[300-True]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_timestamp_window_includes_exact_boundaries[-300.1-False]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_security::test_timestamp_window_includes_exact_boundaries[300.1-False]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_integrations_map_to_distinct_businesses_with_same_delivery_id",
+      "time_seconds": 0.045,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_changing_integration_identity_cannot_transplant_a_signature[wrong-secret-for-beta]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_changing_integration_identity_cannot_transplant_a_signature[wrong-secret-for-alpha]",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_signed_body_cannot_override_tenant_authority[changes0]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_signed_body_cannot_override_tenant_authority[changes1]",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_signed_body_cannot_override_tenant_authority[changes2]",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_same_owner_different_integration_collision_is_explicit_and_preserves_first_event",
+      "time_seconds": 0.041,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_same_integration_retry_conflict_auth_and_foreign_tenant_are_independent",
+      "time_seconds": 0.045,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_concurrent_reused_delivery_ids_are_atomic_per_tenant",
+      "time_seconds": 0.046,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_direct_status_and_store_need_verified_owner_and_permission",
+      "time_seconds": 0.04,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_forged_or_modified_delivery_context_cannot_bypass_service_hmac",
+      "time_seconds": 0.019,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.security.test_webhook_tenant_isolation::test_event_expiry_removes_tenant_reservation_and_allows_fresh_delivery",
+      "time_seconds": 0.044,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_action_selector::test_invalid_selector_outputs_fail_closed[None]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_action_selector::test_invalid_selector_outputs_fail_closed[output1]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_action_selector::test_invalid_selector_outputs_fail_closed[output2]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_action_selector::test_invalid_selector_outputs_fail_closed[output3]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_action_selector::test_invalid_selector_outputs_fail_closed[output4]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_action_selector::test_selector_receives_question_and_hint_only",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_aggregation::test_counts_order_and_unique_supporting_ids",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_aggregation::test_evidence_verifier_rejects_tampering[counts]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_aggregation::test_evidence_verifier_rejects_tampering[ids]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_aggregation::test_evidence_verifier_rejects_tampering[quotes]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_cross_job_limits_progress_and_no_task_fanout",
+      "time_seconds": 0.009,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_partial_success_counts_and_raw_text_cleanup",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_fatal_provider_errors_stop_and_latch[UPSTREAM_AUTHENTICATION_FAILED]",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_fatal_provider_errors_stop_and_latch[GROQ_NOT_CONFIGURED]",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_fatal_provider_errors_stop_and_latch[GROQ_MODEL_UNSUPPORTED]",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_whole_job_deadline_accounts_for_cancelled_attempt",
+      "time_seconds": 0.039,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_lazy_expiry_removes_raw_and_derived_results",
+      "time_seconds": 0.01,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_periodic_expiry_and_shutdown_clear",
+      "time_seconds": 0.034,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_cancelled_http_parse_keeps_capacity_until_thread_finishes",
+      "time_seconds": 0.011,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_batch_jobs::test_report_verification_failure_never_publishes_success",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_bom_quotes_mapping_blank_rows_and_invalid_text",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[-BATCH_INVALID_FILE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review,review\\na,b-BATCH_INVALID_COLUMNS]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[,other\\na,b-BATCH_INVALID_COLUMNS]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[other\\na-BATCH_INVALID_COLUMNS]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review\\n\"unfinished-BATCH_INVALID_FILE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review\\na\"b-BATCH_INVALID_FILE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review\\n\"ok\"bad-BATCH_INVALID_FILE]",
+      "time_seconds": 0.122,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review\\na,b-BATCH_INVALID_FILE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review\\n\\xff-BATCH_INVALID_ENCODING]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review\\nx\\x00-BATCH_INVALID_FILE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[review\\n\\n-BATCH_NO_VALID_RECORDS]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[content-len209-319e4876-BATCH_TOO_MANY_RECORDS]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[content-len2097153-71ac24a7-BATCH_FILE_TOO_LARGE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_csv_rejections[content-len1109-7b9f9798-BATCH_EXTRACTION_LIMIT]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_invalid_or_duplicate_ids[x,a\\nx,b]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_invalid_or_duplicate_ids[,a]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_invalid_or_duplicate_ids[identifier_rows-len103-bb6bcb26]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_extension_mime_and_charset[bad.xls-application/octet-stream-BATCH_UNSUPPORTED_FORMAT]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_extension_mime_and_charset[safe.csv-application/json-BATCH_UNSUPPORTED_FORMAT]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_extension_mime_and_charset[safe.csv-text/csv; charset=latin1-BATCH_INVALID_ENCODING]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_exact_limits_and_stable_generated_ids",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_first_sheet_dates_and_formulas",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_mapping_ids_and_nontext[rows0-options0-BATCH_INVALID_COLUMNS]",
+      "time_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_mapping_ids_and_nontext[rows1-options1-BATCH_INVALID_IDS]",
+      "time_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_mapping_ids_and_nontext[rows2-options2-BATCH_INVALID_IDS]",
+      "time_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_mapping_ids_and_nontext[rows3-options3-BATCH_NO_VALID_RECORDS]",
+      "time_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_corruption_macros_entities_and_expansion[not-zip-BATCH_INVALID_FILE]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_corruption_macros_entities_and_expansion[truncated-BATCH_INVALID_FILE]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_corruption_macros_entities_and_expansion[macro-BATCH_INVALID_FILE]",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_corruption_macros_entities_and_expansion[doctype-BATCH_INVALID_FILE]",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_corruption_macros_entities_and_expansion[compressed-BATCH_EXTRACTION_LIMIT]",
+      "time_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_xlsx_untrusted_declared_dimensions_are_reset",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_file_parser::test_optional_dates_never_invent_missing_values",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_import_admission_is_async_bounded_and_each_tenant_keeps_capacity",
+      "time_seconds": 0.059,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_gmail_uses_existing_shared_model_budget_and_never_bypasses_it",
+      "time_seconds": 0.055,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_deadline_releases_model_capacity_and_preserves_controlled_failed_outcome",
+      "time_seconds": 0.072,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_disconnect_cancels_only_owner_jobs_wipes_tokens_results_and_duplicates",
+      "time_seconds": 0.056,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_disconnect_during_google_read_releases_http_capacity",
+      "time_seconds": 0.056,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_shutdown_cancels_inflight_callback_and_clears_all_secret_state",
+      "time_seconds": 0.054,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_hard_connection_expiration_clears_tokens_and_requires_same_mailbox_reconnect",
+      "time_seconds": 0.057,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_google_can_omit_refresh_token_and_connection_is_access_only_until_expiry",
+      "time_seconds": 0.054,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_connection_and_retained_job_capacities_are_bounded",
+      "time_seconds": 0.111,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_periodic_cleanup_erases_idle_jobs_and_expired_oauth_states",
+      "time_seconds": 0.179,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_lifecycle::test_dedup_store_capacity_fails_closed_without_evicting_existing_records",
+      "time_seconds": 0.063,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_plain_text_charset_and_minimal_metadata[Fine delivery.-utf-8]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_plain_text_charset_and_minimal_metadata[\\u597d\\u8bc4 \\U0001f600-utf-8]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_plain_text_charset_and_minimal_metadata[Caf\\xe9-iso-8859-1]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_plain_text_charset_and_minimal_metadata[Caf\\xe9 \\u20ac-cp1252]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_plain_text_charset_and_minimal_metadata[Plain ASCII-us-ascii]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_plaintext_preferred_to_html_alternative_without_duplicate_record",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_empty_plaintext_alternative_uses_nonempty_html_without_inventing_content",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_html_only_is_inert_text_without_scripts_resources_or_rendering",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[missing_body]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[missing_data]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[empty]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_base64]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_utf8]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_charset]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_size]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_headers]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_mime]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_parts]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[bad_timestamp]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_malformed_or_missing_content_is_controlled[control]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_attachment_or_external_body_is_not_decoded[filename]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_attachment_or_external_body_is_not_decoded[disposition]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_attachment_or_external_body_is_not_decoded[binary]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_attachment_or_external_body_is_not_decoded[external_body]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_byte_and_character_bounds_reject_without_truncation[value0-16384]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_byte_and_character_bounds_reject_without_truncation[value1-99]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_byte_and_character_bounds_reject_without_truncation[value2-299]",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_selection_is_verified_against_actual_message_labels[labels0]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_selection_is_verified_against_actual_message_labels[labels1]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_selection_is_verified_against_actual_message_labels[labels2]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_gmail_mime::test_mime_depth_and_part_count_are_bounded",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_langgraph_workflow::test_all_four_conditional_routes[SENTIMENT_OVERVIEW-optional_tools0]",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_langgraph_workflow::test_all_four_conditional_routes[ISSUE_FREQUENCY-optional_tools1]",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_langgraph_workflow::test_all_four_conditional_routes[EVIDENCE_SEARCH-optional_tools2]",
+      "time_seconds": 0.007,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_langgraph_workflow::test_all_four_conditional_routes[GENERAL_FEEDBACK_SUMMARY-optional_tools3]",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_langgraph_workflow::test_graph_fail_fast_and_no_cross_request_state",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_langgraph_workflow::test_whole_graph_timeout",
+      "time_seconds": 0.027,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_reporting::test_deterministic_percentage_denominator_and_rounding[counts0-expected0]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_reporting::test_deterministic_percentage_denominator_and_rounding[counts1-expected1]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_reporting::test_deterministic_percentage_denominator_and_rounding[counts2-expected2]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_reporting::test_reporting_unique_aspects_and_supporting_ids",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_reporting::test_reporting_rejects_foreign_source_metadata",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_classifications_and_exact_evidence[POSITIVE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_classifications_and_exact_evidence[NEGATIVE]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_classifications_and_exact_evidence[NEUTRAL]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_classifications_and_exact_evidence[MIXED]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload0]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload1]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload2]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload3]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload4]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload5]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload6]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload7]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_requests[payload8]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_classifications_and_invented_evidence[updates0]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_classifications_and_invented_evidence[updates1]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_classifications_and_invented_evidence[updates2]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_classifications_and_invented_evidence[updates3]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_classifications_and_invented_evidence[updates4]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_classifications_and_invented_evidence[updates5]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_invalid_classifications_and_invented_evidence[updates6]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_schemas::test_bounds_and_multiple_aspects",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_bounded_retries_and_permanent_failures[401-UPSTREAM_AUTHENTICATION_FAILED-1]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_bounded_retries_and_permanent_failures[429-UPSTREAM_RATE_LIMITED-3]",
+      "time_seconds": 0.004,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_bounded_retries_and_permanent_failures[500-UPSTREAM_UNAVAILABLE-3]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_network_timeout_and_unexpected_errors[error0-UPSTREAM_UNAVAILABLE]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_network_timeout_and_unexpected_errors[error1-UPSTREAM_TIMEOUT]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_network_timeout_and_unexpected_errors[error2-INTERNAL_ERROR]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_no_successful_fallback_for_invalid_outputs[None]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_no_successful_fallback_for_invalid_outputs[free form]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_no_successful_fallback_for_invalid_outputs[result2]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_no_successful_fallback_for_invalid_outputs[result3]",
+      "time_seconds": 0.002,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_wall_clock_deadline_includes_model_wait",
+      "time_seconds": 0.024,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_configuration_errors[False-openai/gpt-oss-20b-GROQ_NOT_CONFIGURED]",
+      "time_seconds": 0.013,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_configuration_errors[True-unsupported-GROQ_MODEL_UNSUPPORTED]",
+      "time_seconds": 0.012,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_sentiment_service::test_actual_chatgroq_adapter_strict_schema_with_mock_http",
+      "time_seconds": 0.031,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_worker_bound_pending_capacity_state_transitions_and_shutdown",
+      "time_seconds": 0.011,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_shutdown_cancels_active_drains_pending_and_releases_raw_references",
+      "time_seconds": 0.008,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_worker_failures_and_deadline_are_sanitized[provider-UPSTREAM_UNAVAILABLE]",
+      "time_seconds": 0.006,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_worker_failures_and_deadline_are_sanitized[unexpected-INTERNAL_ERROR]",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_worker_failures_and_deadline_are_sanitized[timeout-WEBHOOK_PROCESSING_TIMEOUT]",
+      "time_seconds": 0.162,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_retention_expiry_full_store_never_evicts_active_and_fresh_retry_is_duplicate",
+      "time_seconds": 0.01,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_missing_provider_configuration_is_rejected_before_reserving",
+      "time_seconds": 0.005,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_configuration_prevents_unsafe_capacities_or_replay_retention[overrides0]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_configuration_prevents_unsafe_capacities_or_replay_retention[overrides1]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_configuration_prevents_unsafe_capacities_or_replay_retention[overrides2]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_configuration_prevents_unsafe_capacities_or_replay_retention[overrides3]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_configuration_prevents_unsafe_capacities_or_replay_retention[overrides4]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_configuration_prevents_unsafe_capacities_or_replay_retention[overrides5]",
+      "time_seconds": 0.003,
+      "status": "PASSED"
+    },
+    {
+      "id": "tests.unit.test_webhook_workers::test_background_sweeper_expires_terminal_metadata_without_a_lookup",
+      "time_seconds": 0.029,
+      "status": "PASSED"
+    }
+  ]
+}

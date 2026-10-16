@@ -1,0 +1,50 @@
+[
+  {
+    "name": "structured-output-specification",
+    "path": "patterns/structured-output-specification.md",
+    "sha": "ba6d6fba1e19dedad74f7635c7f58e21a87d1160",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/structured-output-specification.md"
+  },
+  {
+    "name": "action-selector-pattern",
+    "path": "patterns/action-selector-pattern.md",
+    "sha": "df7d27a00c9f91f5e9a919f18d02817eedb61e37",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/action-selector-pattern.md"
+  },
+  {
+    "name": "dual-use-tool-design",
+    "path": "patterns/dual-use-tool-design.md",
+    "sha": "d99f644047c4e39f91c31fa09992067f190aa84c",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/dual-use-tool-design.md"
+  },
+  {
+    "name": "output-verification-loop",
+    "path": "patterns/output-verification-loop.md",
+    "sha": "25c1e8523e8a679a46e4e9b03fab12c329ca8e53",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/output-verification-loop.md"
+  },
+  {
+    "name": "llm-map-reduce-pattern",
+    "path": "patterns/llm-map-reduce-pattern.md",
+    "sha": "2ac45c0c595e829174b7cd456e8df50154e7163f",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/llm-map-reduce-pattern.md"
+  },
+  {
+    "name": "llm-friendly-api-design",
+    "path": "patterns/llm-friendly-api-design.md",
+    "sha": "858317639eb8ec4af2324658f5cad2966d6b72fb",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/llm-friendly-api-design.md"
+  },
+  {
+    "name": "hybrid-llm-code-workflow-coordinator",
+    "path": "patterns/hybrid-llm-code-workflow-coordinator.md",
+    "sha": "e2c60278be02939d0ba57f1d3e53e4602392577e",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/hybrid-llm-code-workflow-coordinator.md"
+  },
+  {
+    "name": "multi-platform-webhook-triggers",
+    "path": "patterns/multi-platform-webhook-triggers.md",
+    "sha": "9c2af897cad7659f0ae5e082a62bb0c38a737c49",
+    "url": "https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/multi-platform-webhook-triggers.md"
+  }
+]

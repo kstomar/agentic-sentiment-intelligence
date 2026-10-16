@@ -1,0 +1,902 @@
+[
+  {
+    "id": "REQ-001",
+    "requirement": "Build a functional API-based customer-feedback sentiment analysis and intelligence system.",
+    "priority": "MUST",
+    "source": "User clarification, item 1; provisional, not reviewer quotation",
+    "implementation": "[main.py::create_app](../../app/main.py#L125)",
+    "test_evidence": "[test_api_contracts.py::test_all_application_modules_import_and_no_undocumented_routes](../../tests/integration/test_api_contracts.py#L28) \u2014 1 passed; workflows A\u2013I",
+    "status": "VERIFIED",
+    "scope": "provisional core; local/mocked verification plus historical T01 smoke"
+  },
+  {
+    "id": "REQ-002",
+    "requirement": "Use agentic AI techniques and meaningful tool orchestration.",
+    "priority": "MUST",
+    "source": "User clarification, item 2; provisional, not reviewer quotation",
+    "implementation": "[feedback_graph.py::build_feedback_graph](../../app/agents/feedback_graph.py#L29)",
+    "test_evidence": "[test_langgraph_workflow.py::test_all_four_conditional_routes](../../tests/unit/test_langgraph_workflow.py#L17) \u2014 4 passed; workflow B",
+    "status": "VERIFIED",
+    "scope": "provisional core; local/mocked verification plus historical T01 smoke"
+  },
+  {
+    "id": "REQ-003",
+    "requirement": "Use the mandatory GitHub repository: https://github.com/nibzard/awesome-agentic-patterns.",
+    "priority": "MUST",
+    "source": "User clarification, item 3; provisional, not reviewer quotation",
+    "implementation": "[action_selector.py::ActionSelector](../../app/agents/action_selector.py#L25); [sentiment_service.py::create_sentiment_service](../../app/services/sentiment_service.py#L134); [source comparison](AGENTIC_AI_VERIFICATION.md)",
+    "test_evidence": "[test_action_selector.py::test_selector_receives_question_and_hint_only](../../tests/unit/test_action_selector.py#L18) \u2014 1 passed; [test_sentiment_service.py::test_actual_chatgroq_adapter_strict_schema_with_mock_http](../../tests/unit/test_sentiment_service.py#L76) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "provisional core; local/mocked verification plus historical T01 smoke"
+  },
+  {
+    "id": "REQ-004",
+    "requirement": "Implement and document relevant agentic patterns in the actual application.",
+    "priority": "MUST",
+    "source": "User clarification, item 4; provisional, not reviewer quotation",
+    "implementation": "[feedback_graph.py::build_feedback_graph](../../app/agents/feedback_graph.py#L29); [existing mapping](../AGENTIC_PATTERNS.md); [independent mapping](AGENTIC_AI_VERIFICATION.md)",
+    "test_evidence": "[test_langgraph_workflow.py::test_all_four_conditional_routes](../../tests/unit/test_langgraph_workflow.py#L17) \u2014 4 passed; [test_reporting.py::test_reporting_unique_aspects_and_supporting_ids](../../tests/unit/test_reporting.py#L21) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "provisional core; local/mocked verification plus historical T01 smoke"
+  },
+  {
+    "id": "REQ-005",
+    "requirement": "Support sentiment analysis and useful customer-feedback insights.",
+    "priority": "MUST",
+    "source": "User clarification, item 5; provisional, not reviewer quotation",
+    "implementation": "[sentiment.py::SentimentResponse](../../app/schemas/sentiment.py#L75); [reporting_service.py::ReportingService](../../app/services/reporting_service.py#L28)",
+    "test_evidence": "[test_sentiment_api.py::test_sentiment_classifications](../../tests/integration/test_sentiment_api.py#L9) \u2014 4 passed; [test_aggregation.py::test_counts_order_and_unique_supporting_ids](../../tests/unit/test_aggregation.py#L17) \u2014 1 passed; workflows A/B/D",
+    "status": "VERIFIED",
+    "scope": "provisional core; local/mocked verification plus historical T01 smoke"
+  },
+  {
+    "id": "REQ-006",
+    "requirement": "Demonstrate the implemented functionality through APIs.",
+    "priority": "MUST",
+    "source": "User clarification, item 6; provisional, not reviewer quotation",
+    "implementation": "[main.py::create_app](../../app/main.py#L125); [19-operation inventory](API_FUNCTIONAL_COVERAGE.md)",
+    "test_evidence": "[test_api_contracts.py::test_openapi_inventory_security_and_response_schemas](../../tests/integration/test_api_contracts.py#L15) \u2014 1 passed; [actual API/adapter workflows](workflow-results.json)",
+    "status": "VERIFIED",
+    "scope": "provisional core; local/mocked verification plus historical T01 smoke"
+  },
+  {
+    "id": "SUP-001",
+    "requirement": "Feedback text, allowlisted context and schema validation",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment.py::SentimentRequest](../../app/schemas/sentiment.py#L41)",
+    "test_evidence": "[test_sentiment_api.py::test_request_validation_precedes_analysis](../../tests/integration/test_sentiment_api.py#L31) \u2014 7 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-002",
+    "requirement": "Positive, negative, neutral and mixed sentiment responses",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment.py::Sentiment](../../app/schemas/sentiment.py#L14)",
+    "test_evidence": "[test_sentiment_api.py::test_sentiment_classifications](../../tests/integration/test_sentiment_api.py#L9) \u2014 4 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-003",
+    "requirement": "Aspect extraction shape and relevant issue categories",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment.py::Aspect](../../app/schemas/sentiment.py#L59)",
+    "test_evidence": "[test_sentiment_schemas.py::test_bounds_and_multiple_aspects](../../tests/unit/test_sentiment_schemas.py#L37) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-004",
+    "requirement": "Urgency, concise summary and suggested next step fields",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment.py::SentimentResponse](../../app/schemas/sentiment.py#L75)",
+    "test_evidence": "[test_sentiment_schemas.py::test_invalid_classifications_and_invented_evidence](../../tests/unit/test_sentiment_schemas.py#L32) \u2014 7 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-005",
+    "requirement": "Configured Groq adapter with native strict JSON-schema output",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment_service.py::create_sentiment_service](../../app/services/sentiment_service.py#L134)",
+    "test_evidence": "[test_sentiment_service.py::test_actual_chatgroq_adapter_strict_schema_with_mock_http](../../tests/unit/test_sentiment_service.py#L76) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-006",
+    "requirement": "Ground exact sentiment evidence in supplied text",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment.py::verify_evidence](../../app/schemas/sentiment.py#L113)",
+    "test_evidence": "[test_sentiment_api.py::test_malformed_json_and_invented_evidence](../../tests/integration/test_sentiment_api.py#L50) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-007",
+    "requirement": "Controlled provider failures with no raw diagnostic exposure",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment_service.py::classify_provider_error](../../app/services/sentiment_service.py#L30)",
+    "test_evidence": "[test_sentiment_api.py::test_http_service_errors_are_sanitized](../../tests/integration/test_sentiment_api.py#L41) \u2014 8 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-008",
+    "requirement": "Bound retries and total model-call deadline",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[sentiment_service.py::SentimentService](../../app/services/sentiment_service.py#L51)",
+    "test_evidence": "[test_sentiment_service.py::test_bounded_retries_and_permanent_failures](../../tests/unit/test_sentiment_service.py#L25) \u2014 3 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-009",
+    "requirement": "Compile and execute real LangGraph conditional workflow",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[feedback_graph.py::build_feedback_graph](../../app/agents/feedback_graph.py#L29)",
+    "test_evidence": "[test_langgraph_workflow.py::test_all_four_conditional_routes](../../tests/unit/test_langgraph_workflow.py#L17) \u2014 4 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-010",
+    "requirement": "Validate action selection against finite action schema",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[action_selector.py::ActionSelector](../../app/agents/action_selector.py#L25)",
+    "test_evidence": "[test_action_selector.py::test_invalid_selector_outputs_fail_closed](../../tests/unit/test_action_selector.py#L11) \u2014 5 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-011",
+    "requirement": "Keep reviews and tool outputs out of selector input",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[feedback_graph.py::select_action](../../app/agents/feedback_graph.py#L32)",
+    "test_evidence": "[test_action_selector.py::test_selector_receives_question_and_hint_only](../../tests/unit/test_action_selector.py#L18) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-012",
+    "requirement": "Bound graph lifetime; fail fast without retained request state",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[investigation_service.py::InvestigationService](../../app/services/investigation_service.py#L20)",
+    "test_evidence": "[test_langgraph_workflow.py::test_graph_fail_fast_and_no_cross_request_state](../../tests/unit/test_langgraph_workflow.py#L29) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-013",
+    "requirement": "Whole-graph timeout and termination",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[investigation_service.py::_investigate](../../app/services/investigation_service.py#L45)",
+    "test_evidence": "[test_langgraph_workflow.py::test_whole_graph_timeout](../../tests/unit/test_langgraph_workflow.py#L39) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-014",
+    "requirement": "Deterministic sentiment/issue counts with stable evidence IDs",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[aggregation.py::aggregate_issues](../../app/tools/aggregation.py#L17)",
+    "test_evidence": "[test_aggregation.py::test_counts_order_and_unique_supporting_ids](../../tests/unit/test_aggregation.py#L17) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-015",
+    "requirement": "Reject invented source IDs, quotes and changed counts",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[evidence.py::verify_findings](../../app/tools/evidence.py#L41)",
+    "test_evidence": "[test_aggregation.py::test_evidence_verifier_rejects_tampering](../../tests/unit/test_aggregation.py#L25) \u2014 3 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-016",
+    "requirement": "Chat ANALYZE_TEXT delegates once to T01",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[conversation_service.py::respond](../../app/services/conversation_service.py#L26)",
+    "test_evidence": "[test_chat_api.py::test_chat_analysis_workflow_c_reuses_t01_once](../../tests/integration/test_chat_api.py#L6) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-017",
+    "requirement": "Chat INVESTIGATE_FEEDBACK preserves verified investigation findings",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[conversation_service.py::respond](../../app/services/conversation_service.py#L26)",
+    "test_evidence": "[test_chat_api.py::test_chat_investigation_workflow_d_preserves_findings](../../tests/integration/test_chat_api.py#L15) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-018",
+    "requirement": "Chat validates mode-specific current feedback without memory",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[chat.py::ChatRequest](../../app/schemas/chat.py#L23)",
+    "test_evidence": "[test_chat_api.py::test_chat_has_no_cross_request_memory](../../tests/integration/test_chat_api.py#L39) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-019",
+    "requirement": "CSV and XLSX upload \u2192 processing \u2192 JSON report/download",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[batch_service.py::submit](../../app/services/batch_service.py#L110)",
+    "test_evidence": "[test_batch_api.py::test_upload_report_download_workflows_e_f](../../tests/integration/test_batch_api.py#L22) \u2014 2 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-020",
+    "requirement": "Column mapping, blank rows, validation and generated source IDs",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[file_parser.py::FileParser](../../app/services/file_parser.py#L31)",
+    "test_evidence": "[test_file_parser.py::test_csv_bom_quotes_mapping_blank_rows_and_invalid_text](../../tests/unit/test_file_parser.py#L23) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-021",
+    "requirement": "Reject duplicate or invalid source IDs",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[file_parser.py::FileParser](../../app/services/file_parser.py#L31)",
+    "test_evidence": "[test_file_parser.py::test_invalid_or_duplicate_ids](../../tests/unit/test_file_parser.py#L51) \u2014 3 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-022",
+    "requirement": "Respect file-size/row/text limits and supported formats",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[file_parser.py::FileParser](../../app/services/file_parser.py#L31)",
+    "test_evidence": "[test_file_parser.py::test_exact_limits_and_stable_generated_ids](../../tests/unit/test_file_parser.py#L68) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-023",
+    "requirement": "Validate XLSX structure, formulas and unsafe expansion",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[file_parser.py::FileParser](../../app/services/file_parser.py#L31)",
+    "test_evidence": "[test_file_parser.py::test_xlsx_corruption_macros_entities_and_expansion](../../tests/unit/test_file_parser.py#L114) \u2014 5 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-024",
+    "requirement": "Asynchronous batch states, status and bounded workers",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[batch_service.py::BatchService](../../app/services/batch_service.py#L25)",
+    "test_evidence": "[test_batch_jobs.py::test_cross_job_limits_progress_and_no_task_fanout](../../tests/unit/test_batch_jobs.py#L17) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-025",
+    "requirement": "Continue controlled per-row failures; wipe raw processed text",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[batch_service.py::_run](../../app/services/batch_service.py#L158)",
+    "test_evidence": "[test_batch_jobs.py::test_partial_success_counts_and_raw_text_cleanup](../../tests/unit/test_batch_jobs.py#L38) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-026",
+    "requirement": "Independent T01 record map and Python report reduction",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[batch_analysis.py::analyze_record](../../app/tools/batch_analysis.py#L15)",
+    "test_evidence": "[test_reporting.py::test_reporting_unique_aspects_and_supporting_ids](../../tests/unit/test_reporting.py#L21) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-027",
+    "requirement": "Exact sentiment denominator and deterministic percentage rounding",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[reporting_service.py::percentages](../../app/services/reporting_service.py#L16)",
+    "test_evidence": "[test_reporting.py::test_deterministic_percentage_denominator_and_rounding](../../tests/unit/test_reporting.py#L15) \u2014 3 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-028",
+    "requirement": "Aspect/issue aggregates, evidence references and grounded metadata",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[reporting_service.py::build](../../app/services/reporting_service.py#L29)",
+    "test_evidence": "[test_reporting.py::test_reporting_rejects_foreign_source_metadata](../../tests/unit/test_reporting.py#L40) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-029",
+    "requirement": "Batch source omission accepted; explicitly blank source rejected",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[batch.py::upload](../../app/api/v1/batch.py#L28)",
+    "test_evidence": "[test_batch_api.py::test_explicit_blank_source_is_rejected](../../tests/integration/test_batch_api.py#L72) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-030",
+    "requirement": "Temporary batch retention and cleanup",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[job_store.py::_purge](../../app/storage/job_store.py#L83)",
+    "test_evidence": "[test_batch_jobs.py::test_lazy_expiry_removes_raw_and_derived_results](../../tests/unit/test_batch_jobs.py#L81) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-031",
+    "requirement": "Official MCP discovery/invocation and typed input/output",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[server.py::create_mcp_server](../../app/mcp_server/server.py#L80)",
+    "test_evidence": "[test_mcp_server.py::test_real_inprocess_protocol_workflows_g_h](../../tests/integration/test_mcp_server.py#L20) \u2014 2 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-032",
+    "requirement": "Official MCP stdio protocol with clean stdout/shutdown",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[server.py::create_mcp_server](../../app/mcp_server/server.py#L80)",
+    "test_evidence": "[test_mcp_server.py::test_stdio_official_client_protocol_only_stdout_and_clean_shutdown](../../tests/integration/test_mcp_server.py#L99) \u2014 2 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-033",
+    "requirement": "Exactly analyze_feedback and investigate_feedback; reject unapproved tools",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[server.py::AnalysisMCPServer](../../app/mcp_server/server.py#L47)",
+    "test_evidence": "[test_mcp_server.py::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities](../../tests/integration/test_mcp_server.py#L51) \u2014 8 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-034",
+    "requirement": "MCP retains safe service error codes",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[server.py::_service_error](../../app/mcp_server/server.py#L37)",
+    "test_evidence": "[test_mcp_server.py::test_mcp_preserves_service_errors](../../tests/integration/test_mcp_server.py#L62) \u2014 4 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-035",
+    "requirement": "External authenticated REST feedback normalization and T01 reuse",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[ingestion_service.py::IngestionService](../../app/services/ingestion_service.py#L15)",
+    "test_evidence": "[test_ingestion_api.py::test_direct_reuses_t01_and_normalizes_metadata](../../tests/integration/test_ingestion_api.py#L13) \u2014 4 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-036",
+    "requirement": "Reject malformed external feedback before inference",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[ingestion.py::IngestionRequest](../../app/schemas/ingestion.py#L13)",
+    "test_evidence": "[test_ingestion_api.py::test_direct_rejects_invalid_fields_without_inference](../../tests/integration/test_ingestion_api.py#L37) \u2014 14 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-037",
+    "requirement": "HMAC-SHA256 covers exact original webhook bytes",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[webhook_security.py::authenticate_webhook](../../app/core/webhook_security.py#L51)",
+    "test_evidence": "[test_webhook_security.py::test_valid_raw_signature_no_rest_key_status_and_duplicate](../../tests/security/test_webhook_security.py#L12) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-038",
+    "requirement": "Timestamp acceptance and replay-window boundaries",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[webhook_security.py::signed_headers](../../app/core/webhook_security.py#L27)",
+    "test_evidence": "[test_webhook_security.py::test_timestamp_window_includes_exact_boundaries](../../tests/security/test_webhook_security.py#L150) \u2014 4 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-039",
+    "requirement": "Authenticate duplicate retries; reject body/signature tampering",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[webhook_security.py::authenticate_webhook](../../app/core/webhook_security.py#L51)",
+    "test_evidence": "[test_webhook_security.py::test_body_tampering_and_duplicate_authentication_cannot_be_bypassed](../../tests/security/test_webhook_security.py#L63) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-040",
+    "requirement": "Atomically deduplicate parallel authenticated deliveries",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[webhook_service.py::accept](../../app/services/webhook_service.py#L49)",
+    "test_evidence": "[test_webhook_security.py::test_parallel_duplicates_schedule_exactly_one_call](../../tests/security/test_webhook_security.py#L105) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-041",
+    "requirement": "Bound webhook workers, terminal status and raw-data cleanup",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[webhook_service.py::WebhookService](../../app/services/webhook_service.py#L15)",
+    "test_evidence": "[test_webhook_workers.py::test_worker_bound_pending_capacity_state_transitions_and_shutdown](../../tests/unit/test_webhook_workers.py#L29) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-042",
+    "requirement": "Verified immutable business principal from private bounded registry",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[tenant_auth.py::TenantRegistry](../../app/core/tenant_auth.py#L129)",
+    "test_evidence": "[test_tenant_auth.py::test_registry_authenticates_immutable_principal_without_secret_repr](../../tests/security/test_tenant_auth.py#L19) \u2014 2 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-043",
+    "requirement": "Fail closed on malformed/ambiguous registry without credential diagnostics",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[config.py::Settings](../../app/core/config.py#L11)",
+    "test_evidence": "[test_tenant_auth.py::test_invalid_or_ambiguous_security_configuration_rejected](../../tests/security/test_tenant_auth.py#L52) \u2014 20 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-044",
+    "requirement": "Permission checks across all protected entry operations",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[security.py::require_permission](../../app/core/security.py#L35)",
+    "test_evidence": "[test_tenant_auth.py::test_missing_permissions_are_403_on_every_protected_operation](../../tests/security/test_tenant_auth.py#L164) \u2014 10 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-045",
+    "requirement": "Batch jobs/reports/results/downloads enforce owner in routes/services/stores",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[job_store.py::get](../../app/storage/job_store.py#L98)",
+    "test_evidence": "[test_batch_tenant_isolation.py::test_owner_can_read_but_foreign_and_missing_are_identical_404](../../tests/security/test_batch_tenant_isolation.py#L24) \u2014 4 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-046",
+    "requirement": "Rotation keys share owner/quota without another tenant access",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[tenant_auth.py::TenantRegistry](../../app/core/tenant_auth.py#L129)",
+    "test_evidence": "[test_batch_tenant_isolation.py::test_rotation_shares_ownership_and_quota_but_not_other_tenant_access](../../tests/security/test_batch_tenant_isolation.py#L63) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-047",
+    "requirement": "Webhook integrations/status/dedup derive configured owner",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[webhook_service.py::WebhookService](../../app/services/webhook_service.py#L15)",
+    "test_evidence": "[test_webhook_tenant_isolation.py::test_integrations_map_to_distinct_businesses_with_same_delivery_id](../../tests/security/test_webhook_tenant_isolation.py#L24) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-048",
+    "requirement": "Caller body/headers do not select tenant authority",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[tenant_auth.py::TenantRegistry](../../app/core/tenant_auth.py#L129)",
+    "test_evidence": "[test_tenant_api_regressions.py::test_request_identity_claims_cannot_override_registry](../../tests/security/test_tenant_api_regressions.py#L36) \u2014 5 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-049",
+    "requirement": "Per-tenant/global model and graph quotas preserve headroom",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[processing_limits.py::ModelAdmission](../../app/core/processing_limits.py#L10)",
+    "test_evidence": "[test_tenant_quotas.py::test_one_business_model_saturation_leaves_capacity_for_other_business](../../tests/security/test_tenant_quotas.py#L22) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-050",
+    "requirement": "Per-tenant rate/admission and expiry use verified owner identity",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[ingress_limits.py::IngressLimitMiddleware](../../app/core/ingress_limits.py#L36)",
+    "test_evidence": "[test_tenant_quotas.py::test_owner_rate_limit_and_expiry_are_bounded_and_use_verified_identity](../../tests/security/test_tenant_quotas.py#L172) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-051",
+    "requirement": "Authenticating REST precedes body consumption",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[ingress_limits.py::__call__](../../app/core/ingress_limits.py#L77)",
+    "test_evidence": "[test_ingress_limits.py::test_authentication_precedes_body_consumption](../../tests/security/test_ingress_limits.py#L80) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-052",
+    "requirement": "4 MiB actual-byte JSON cap including Unicode and chunked misleading lengths",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[ingress_limits.py::__call__](../../app/core/ingress_limits.py#L77)",
+    "test_evidence": "[test_ingress_limits.py::test_chunked_actual_bytes_override_missing_or_misleading_length](../../tests/security/test_ingress_limits.py#L52) \u2014 3 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-053",
+    "requirement": "Separate webhook16KiB and multipart2MiB limits",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[ingress_limits.py::__call__](../../app/core/ingress_limits.py#L77)",
+    "test_evidence": "[test_ingress_limits.py::test_real_batch_route_keeps_file_and_actual_envelope_limits_separate](../../tests/security/test_ingress_limits.py#L195) \u2014 2 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-054",
+    "requirement": "Cancellation/body deadlines release admission/model capacity",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[processing_limits.py::claim](../../app/core/processing_limits.py#L49)",
+    "test_evidence": "[test_ingress_limits.py::test_body_read_deadline_releases_global_admission](../../tests/security/test_ingress_limits.py#L124) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-055",
+    "requirement": "Gmail connection permission and fail-closed optional configuration",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::_ready](../../app/services/gmail_service.py#L69)",
+    "test_evidence": "[test_gmail_oauth.py::test_configuration_failure_is_closed_and_other_apis_still_work](../../tests/security/test_gmail_oauth.py#L66) \u2014 8 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-056",
+    "requirement": "Readonly scope, random state, S256 PKCE and fixed redirect",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::connect](../../app/services/gmail_service.py#L84)",
+    "test_evidence": "[test_gmail_oauth.py::test_state_pkce_fixed_redirect_readonly_and_private_url_metadata](../../tests/security/test_gmail_oauth.py#L26) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-057",
+    "requirement": "Expiring, single-use, tenant-bound OAuth callback state",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::callback](../../app/services/gmail_service.py#L111)",
+    "test_evidence": "[test_gmail_oauth.py::test_parallel_callback_replay_does_not_exchange_twice](../../tests/security/test_gmail_oauth.py#L112) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-058",
+    "requirement": "Scope/Bearer/expiry token contract validation",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[google_gmail.py::parse_tokens](../../app/integrations/google_gmail.py#L45)",
+    "test_evidence": "[test_gmail_oauth.py::test_token_response_requires_exact_scope_and_bearer_contract](../../tests/security/test_gmail_oauth.py#L145) \u2014 5 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-059",
+    "requirement": "Authenticated mailbox identity and conflicting-owner rejection",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[google_gmail.py::profile](../../app/integrations/google_gmail.py#L151)",
+    "test_evidence": "[test_gmail_oauth.py::test_verified_mailbox_cannot_be_claimed_by_another_tenant](../../tests/security/test_gmail_oauth.py#L163) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-060",
+    "requirement": "Connection status and owner-isolated disconnect",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::disconnect](../../app/services/gmail_service.py#L184)",
+    "test_evidence": "[test_gmail_lifecycle.py::test_disconnect_cancels_only_owner_jobs_wipes_tokens_results_and_duplicates](../../tests/unit/test_gmail_lifecycle.py#L69) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-061",
+    "requirement": "Bound label/date policy, pagination and total selected-message count",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::_select](../../app/services/gmail_service.py#L292)",
+    "test_evidence": "[test_gmail_import.py::test_import_filtered_paginated_bounded_and_reuses_t01_without_headers_or_tokens](../../tests/integration/test_gmail_import.py#L16) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-062",
+    "requirement": "Plaintext/Unicode/charset decoding with transient sender/subject/time",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_mime.py::extract](../../app/integrations/gmail_mime.py#L152)",
+    "test_evidence": "[test_gmail_mime.py::test_plain_text_charset_and_minimal_metadata](../../tests/unit/test_gmail_mime.py#L11) \u2014 5 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-063",
+    "requirement": "HTML-only extraction without scripts, rendering or external loads",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_mime.py::_HTMLText](../../app/integrations/gmail_mime.py#L24)",
+    "test_evidence": "[test_gmail_mime.py::test_html_only_is_inert_text_without_scripts_resources_or_rendering](../../tests/unit/test_gmail_mime.py#L30) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-064",
+    "requirement": "Attachment/external bodies excluded before body-data retrieval",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_mime.py::preflight](../../app/integrations/gmail_mime.py#L99)",
+    "test_evidence": "[test_gmail_mime.py::test_attachment_or_external_body_is_not_decoded](../../tests/unit/test_gmail_mime.py#L60) \u2014 4 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-065",
+    "requirement": "Reject oversized Gmail text without silent truncation",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_mime.py::extract](../../app/integrations/gmail_mime.py#L152)",
+    "test_evidence": "[test_gmail_mime.py::test_byte_and_character_bounds_reject_without_truncation](../../tests/unit/test_gmail_mime.py#L72) \u2014 3 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-066",
+    "requirement": "Gmail uses same T01 source=email without headers/OAuth prompt metadata",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::_message](../../app/services/gmail_service.py#L316)",
+    "test_evidence": "[test_gmail_import.py::test_email_instructions_are_data_and_do_not_receive_oauth_or_header_metadata](../../tests/integration/test_gmail_import.py#L206) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-067",
+    "requirement": "Gmail worker admission/status/counts share global/owner model limits",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::submit](../../app/services/gmail_service.py#L251)",
+    "test_evidence": "[test_gmail_lifecycle.py::test_gmail_uses_existing_shared_model_budget_and_never_bypasses_it](../../tests/unit/test_gmail_lifecycle.py#L36) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-068",
+    "requirement": "Foreign and unknown Gmail jobs/results have same404 at service/store boundary",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_store.py::job](../../app/storage/gmail_store.py#L77)",
+    "test_evidence": "[test_gmail_import.py::test_foreign_and_unknown_jobs_are_identical_and_store_enforces_owner](../../tests/integration/test_gmail_import.py#L89) \u2014 2 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-069",
+    "requirement": "Deduplicate owner/mailbox/message ID, not thread; bounded temporary retention",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::_message](../../app/services/gmail_service.py#L316)",
+    "test_evidence": "[test_gmail_import.py::test_repeated_and_concurrent_imports_deduplicate_messages_not_threads](../../tests/integration/test_gmail_import.py#L71) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-070",
+    "requirement": "Single-flight refresh with exact scope and missing-new-refresh handling",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::_access](../../app/services/gmail_service.py#L229)",
+    "test_evidence": "[test_gmail_import.py::test_refresh_is_single_flight_and_preserves_required_scope](../../tests/integration/test_gmail_import.py#L114) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-071",
+    "requirement": "Revoked/reduced Gmail grant clears credentials; reconnect safely",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::_run](../../app/services/gmail_service.py#L348)",
+    "test_evidence": "[test_gmail_import.py::test_revoked_or_reduced_gmail_api_access_clears_connection](../../tests/integration/test_gmail_import.py#L229) \u2014 2 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-072",
+    "requirement": "Connection hard TTL, shutdown and pending OAuth cancellation cleanup",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_service.py::close](../../app/services/gmail_service.py#L49)",
+    "test_evidence": "[test_gmail_lifecycle.py::test_shutdown_cancels_inflight_callback_and_clears_all_secret_state](../../tests/unit/test_gmail_lifecycle.py#L100) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-073",
+    "requirement": "Gmail result/dedup expiry without permanent message history",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[gmail_store.py::_purge](../../app/storage/gmail_store.py#L85)",
+    "test_evidence": "[test_gmail_import.py::test_expiry_clears_results_and_dedup_reservations_without_permanent_history](../../tests/integration/test_gmail_import.py#L192) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-074",
+    "requirement": "Sensitive validation errors/logs omit rejected values",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[main.py::error_response](../../app/main.py#L105)",
+    "test_evidence": "[test_data_privacy.py::test_validation_errors_and_logs_exclude_rejected_values](../../tests/security/test_data_privacy.py#L20) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "SUP-075",
+    "requirement": "All application routes register and all modules import",
+    "priority": "SHOULD",
+    "source": "Agreed implementation scope / final audit checklist; priority assigned for this provisional checklist",
+    "implementation": "[main.py::create_app](../../app/main.py#L125)",
+    "test_evidence": "[test_api_contracts.py::test_all_application_modules_import_and_no_undocumented_routes](../../tests/integration/test_api_contracts.py#L28) \u2014 1 passed",
+    "status": "VERIFIED",
+    "scope": "mock/local supporting verification; not an original-reviewer mandate"
+  },
+  {
+    "id": "EXT-001",
+    "requirement": "Live Gmail authorization and message retrieval using a real Google account",
+    "priority": "OPTIONAL",
+    "source": "Unconfirmed reviewer expectation; user says do not make it an automatic mandatory blocker",
+    "implementation": "[google_gmail.py::GoogleGmail](../../app/integrations/google_gmail.py#L68)",
+    "test_evidence": "124 mocked Gmail cases pass; no live acceptance",
+    "status": "IMPLEMENTED_NOT_VERIFIED",
+    "scope": "external verification outstanding; excluded from core score"
+  },
+  {
+    "id": "EXT-002",
+    "requirement": "Statistical model accuracy measured using labeled evaluation data",
+    "priority": "OPTIONAL",
+    "source": "No reviewer criterion or accuracy threshold available",
+    "implementation": "No labeled evaluation harness/dataset identified",
+    "test_evidence": "Mock labels are predetermined; one historical real sample is not accuracy measurement",
+    "status": "NOT_IMPLEMENTED",
+    "scope": "optional assurance, not a proved missing reviewer requirement"
+  },
+  {
+    "id": "EXT-003",
+    "requirement": "Additional MCP reporting/job-lookup tools",
+    "priority": "OPTIONAL",
+    "source": "Earlier planning phrase is ambiguous; latest clarification does not confirm a reviewer mandate",
+    "implementation": "[Two-tool allowlist](../../app/mcp_server/server.py#L30)",
+    "test_evidence": "[test_mcp_server.py::test_mcp_rejects_invalid_arguments_and_unapproved_capabilities](../../tests/integration/test_mcp_server.py#L51) \u2014 8 passed",
+    "status": "NOT_IMPLEMENTED",
+    "scope": "do not add or count as mandatory gap without original requirement"
+  },
+  {
+    "id": "EXT-004",
+    "requirement": "Persistent chat memory / automatic intent detection",
+    "priority": "OPTIONAL",
+    "source": "Explicitly deferred agreed scope",
+    "implementation": "[conversation_service.py::respond](../../app/services/conversation_service.py#L26)",
+    "test_evidence": "[test_chat_api.py::test_chat_has_no_cross_request_memory](../../tests/integration/test_chat_api.py#L39) \u2014 1 passed",
+    "status": "NOT_IMPLEMENTED",
+    "scope": "stateless explicit modes satisfy current agreed scope"
+  },
+  {
+    "id": "EXT-005",
+    "requirement": "PDF or Excel report export",
+    "priority": "OPTIONAL",
+    "source": "No such reviewer requirement supplied",
+    "implementation": "[batch.py::download](../../app/api/v1/batch.py#L94)",
+    "test_evidence": "[test_batch_api.py::test_upload_report_download_workflows_e_f](../../tests/integration/test_batch_api.py#L22) \u2014 2 passed",
+    "status": "NOT_IMPLEMENTED",
+    "scope": "JSON report/download implemented; alternate exports optional"
+  },
+  {
+    "id": "EXC-001",
+    "requirement": "Frontend/UI/mobile dashboard",
+    "priority": "OUT_OF_SCOPE",
+    "source": "Frontend not mandatory in user clarification",
+    "implementation": "Outside implemented demonstration scope",
+    "test_evidence": "Not scored",
+    "status": "NOT_APPLICABLE",
+    "scope": "excluded from provisional functional denominator"
+  },
+  {
+    "id": "EXC-002",
+    "requirement": "Docker/cloud/public hosting/Kubernetes/CI/CD",
+    "priority": "OUT_OF_SCOPE",
+    "source": "Explicitly excluded from reviewer score by current task and user clarification",
+    "implementation": "Outside implemented demonstration scope",
+    "test_evidence": "Not scored",
+    "status": "NOT_APPLICABLE",
+    "scope": "excluded from provisional functional denominator"
+  },
+  {
+    "id": "EXC-003",
+    "requirement": "Public Google OAuth approval/security assessment",
+    "priority": "OUT_OF_SCOPE",
+    "source": "Public production authorization is separate; no original public-user criterion available",
+    "implementation": "Outside implemented demonstration scope",
+    "test_evidence": "Not scored",
+    "status": "NOT_APPLICABLE",
+    "scope": "excluded from provisional functional denominator"
+  },
+  {
+    "id": "EXC-004",
+    "requirement": "Distributed permanent OAuth/feedback persistence and horizontal scaling",
+    "priority": "OUT_OF_SCOPE",
+    "source": "Production operation concern, outside temporary single-process demonstration",
+    "implementation": "Outside implemented demonstration scope",
+    "test_evidence": "Not scored",
+    "status": "NOT_APPLICABLE",
+    "scope": "excluded from provisional functional denominator"
+  }
+]

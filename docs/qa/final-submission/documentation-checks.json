@@ -1,0 +1,23 @@
+{
+  "active_markdown_files": 10,
+  "relative_links_checked": 97,
+  "heading_anchors_checked": 3,
+  "broken_links": [],
+  "readme_code_blocks": {
+    "mermaid": 2,
+    "bash": 8,
+    "json": 2,
+    "text": 1,
+    "python": 1
+  },
+  "bash_syntax": "PASS",
+  "python_compile": "PASS",
+  "json_examples_schema_validation": "PASS",
+  "hmac_example_exact_bytes_signature_and_schema": "PASS with synthetic configuration; no HTTP call",
+  "mermaid": [
+    "source lexical and topology review; renderer unavailable",
+    "source lexical and topology review; renderer unavailable"
+  ],
+  "rendered_mermaid_verified": false,
+  "historical_readme_links_excluded": "original root-relative snapshot bytes deliberately preserved"
+}

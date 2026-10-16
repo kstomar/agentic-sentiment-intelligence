@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-02",
+  "timezone": "Asia/Calcutta",
+  "deadline_communicated": "2026-11-06",
+  "assessment": "READY FOR PROVISIONAL REVIEWER DEMO",
+  "original_reviewer_specification": "UNAVAILABLE; ORIGINAL_REVIEWER_SPECIFICATION_NOT_FOUND",
+  "definitive_reviewer_compliance": "NOT ESTABLISHED",
+  "core_implementation": "Complete within six supplied provisional core items and agreed API-only scope",
+  "tests_collected": 571,
+  "tests_passed": 571,
+  "tests_failed": 0,
+  "tests_skipped": 0,
+  "tests_errors": 0,
+  "tests_duration_seconds": 17.848,
+  "pytest_warnings_reported": 0,
+  "baseline_cases_retained": 571,
+  "end_to_end_passed": 9,
+  "end_to_end_failed": 0,
+  "application_paths": 19,
+  "openapi_unchanged": true,
+  "startup": "Loopback Uvicorn health/Swagger/OpenAPI and graceful lifespan shutdown passed",
+  "python": "3.12.16",
+  "uv": "0.13.6",
+  "mcp": "2.3.0",
+  "dependencies": "Locked offline sync77resolved; all73 installed compatible; dependency files unchanged",
+  "groq": "Prior single T01 live smoke recorded; zero new live calls",
+  "gmail": "Mock verified only;124 tests; no live Google acceptance/public approval",
+  "patterns": {
+    "verified_core_applications": 5,
+    "partial_adaptations": 3,
+    "additional_hybrid_principle": 1,
+    "mandatory_gaps_demonstrated": 0
+  },
+  "protected_preexisting_files_unchanged": 251,
+  "production_source_or_existing_tests_modified": false,
+  "git_actions": false,
+  "deployment_or_frontend_or_database_or_feature_added": false,
+  "archive": {
+    "directory": ".local/reviewer-submission",
+    "filename": "agentic-sentiment-intelligence-source-20261102.tar.gz",
+    "checksum": "External .sha256 sidecar and SOURCE_ARCHIVE_RECEIPT.json; not embedded to avoid circular hash",
+    "verified": true,
+    "secret_pattern_findings": 0,
+    "published_or_uploaded": false
+  },
+  "known_limits": [
+    "Original reviewer assignment/rubric unavailable",
+    "Gmail live acceptance and Google public approval unverified; not established mandatory local-review blockers",
+    "Model/selector accuracy and arbitrary-summary truthfulness unmeasured",
+    "Process-local temporary state and attachment-bearing-message skips",
+    "Cross-session/container artifact retention unverified"
+  ]
+}

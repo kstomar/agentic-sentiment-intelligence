@@ -1,0 +1,144 @@
+{
+  "verification": "OFFLINE_ONLY",
+  "live_google_requests": 0,
+  "live_groq_requests": 0,
+  "synthetic_classifier_outputs": true,
+  "model_accuracy_measured": false,
+  "workflows": {
+    "A": {
+      "status": "PASSED",
+      "http_status": 200,
+      "classifications": [
+        "POSITIVE",
+        "NEGATIVE",
+        "NEUTRAL",
+        "MIXED"
+      ],
+      "real_adapter_mock_transport": true,
+      "native_strict_and_pydantic_evidence": "PASSED"
+    },
+    "B": {
+      "status": "PASSED",
+      "routes": {
+        "SENTIMENT_OVERVIEW": [
+          "analyze_feedback_items",
+          "aggregate_sentiment",
+          "generate_insights"
+        ],
+        "ISSUE_FREQUENCY": [
+          "analyze_feedback_items",
+          "aggregate_sentiment",
+          "aggregate_issues",
+          "retrieve_evidence",
+          "generate_insights"
+        ],
+        "EVIDENCE_SEARCH": [
+          "analyze_feedback_items",
+          "aggregate_sentiment",
+          "retrieve_evidence",
+          "generate_insights"
+        ],
+        "GENERAL_FEEDBACK_SUMMARY": [
+          "analyze_feedback_items",
+          "aggregate_sentiment",
+          "aggregate_issues",
+          "retrieve_evidence",
+          "generate_insights"
+        ]
+      },
+      "sentiment_counts": {
+        "POSITIVE": 1,
+        "NEGATIVE": 1,
+        "NEUTRAL": 1,
+        "MIXED": 1
+      },
+      "delivery_complaints": 2
+    },
+    "C": {
+      "status": "PASSED",
+      "modes": [
+        "ANALYZE_TEXT",
+        "INVESTIGATE_FEEDBACK"
+      ],
+      "http_status": 200
+    },
+    "D": {
+      "status": "PASSED",
+      "reports": [
+        {
+          "format": "csv",
+          "status": "COMPLETED",
+          "successful_records": 4,
+          "percentages": {
+            "POSITIVE": 25.0,
+            "NEGATIVE": 25.0,
+            "NEUTRAL": 25.0,
+            "MIXED": 25.0
+          },
+          "top_issue_count": 2,
+          "aspect_counts": {
+            "delivery": 2,
+            "product_quality": 2,
+            "package_arrival": 1
+          }
+        },
+        {
+          "format": "xlsx",
+          "status": "COMPLETED",
+          "successful_records": 4,
+          "percentages": {
+            "POSITIVE": 25.0,
+            "NEGATIVE": 25.0,
+            "NEUTRAL": 25.0,
+            "MIXED": 25.0
+          },
+          "top_issue_count": 2,
+          "aspect_counts": {
+            "delivery": 2,
+            "product_quality": 2,
+            "package_arrival": 1
+          }
+        }
+      ]
+    },
+    "E": {
+      "status": "PASSED",
+      "tools": [
+        "analyze_feedback",
+        "investigate_feedback"
+      ],
+      "protocol": "official in-process client; subprocess stdio also passed in full suite"
+    },
+    "F": {
+      "status": "PASSED",
+      "http_status": 200,
+      "sentiment": "NEGATIVE"
+    },
+    "G": {
+      "status": "PASSED",
+      "first_http": 202,
+      "retry_http": 200,
+      "retry_status": "DUPLICATE",
+      "event_status": "COMPLETED"
+    },
+    "H": {
+      "status": "PASSED",
+      "foreign_http": 404,
+      "owner_http": 200
+    },
+    "I": {
+      "status": "PASSED",
+      "oauth": "MOCKED",
+      "gmail": "MOCKED",
+      "job_status": "COMPLETED",
+      "successful_messages": 1,
+      "foreign_http": 404,
+      "disconnect": "PASSED"
+    },
+    "provider_wire": {
+      "classifier_calls": 41,
+      "selector_calls": 6,
+      "all_native_strict": true
+    }
+  }
+}

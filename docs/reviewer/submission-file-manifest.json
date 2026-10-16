@@ -1,0 +1,75 @@
+{
+  "scope": "New submission documents and verification artifacts; old QA/reviewer/source/test/config files unchanged",
+  "self_hash": "Not included",
+  "created": [
+    {
+      "path": "docs/reviewer/ARCHITECTURE_WALKTHROUGH.md",
+      "sha256": "fc76234ed8bb113c0b8e989761782b30bd236985c0d58ce6648f93ea64b3ec60"
+    },
+    {
+      "path": "docs/reviewer/FINAL_DEMO_SCRIPT.md",
+      "sha256": "ae230e0c7035cf798130eba75b3ae1749039bbe1b2042ff6e52f96ae5cbda62e"
+    },
+    {
+      "path": "docs/reviewer/FINAL_PROJECT_SUMMARY.md",
+      "sha256": "d1c09aa9babfd587eaab395697ded58e15dc2d9a8f17e2a97df14093cf9229de"
+    },
+    {
+      "path": "docs/reviewer/FINAL_SUBMISSION_CHECKLIST.md",
+      "sha256": "225e95d2a911ce8019ae4cd23f18394c78c0e0cb13182a3a4bbd6ca089166651"
+    },
+    {
+      "path": "docs/reviewer/SOURCE_ARCHIVE_REPORT.md",
+      "sha256": "3c795bca20a0a49e8c0b97fb2f134967e02afcaa9f8b050f84b34e236c09dcad"
+    },
+    {
+      "path": "docs/reviewer/TECHNICAL_QA.md",
+      "sha256": "695d53971224acbab08be2fbc055ad7bd08ce684c854845afbeedfba6f46b3dd"
+    },
+    {
+      "path": "docs/reviewer/submission-dependencies.txt",
+      "sha256": "f4d51dd2f4d5b7a45d04f9ca90900c2cf5e1de12544034a3c62a1ba9ec8a0058"
+    },
+    {
+      "path": "docs/reviewer/submission-documentation-checks.json",
+      "sha256": "93cffc2db05d9605546002928d0647092e95e065aad824d45fa8bd6cf510ea5c"
+    },
+    {
+      "path": "docs/reviewer/submission-mock-benchmarks.json",
+      "sha256": "c1f605ca0e73017ce2f7d8c13655b5b018aba24d78dcba7085b69890ee4dbb2d"
+    },
+    {
+      "path": "docs/reviewer/submission-openapi.json",
+      "sha256": "5b6fe9424c24ee476d11e64370740a128ce984d192aa6a63022142f1e8048a2c"
+    },
+    {
+      "path": "docs/reviewer/submission-pytest-output.txt",
+      "sha256": "d1e16aee73717bf330078c90893086267810d82fc9e185052a741c0b45f6f301"
+    },
+    {
+      "path": "docs/reviewer/submission-pytest.xml",
+      "sha256": "80f71cc1741569782c468dac9b9ae59fd517360cdb4686073e4fea6ccd4de8a4"
+    },
+    {
+      "path": "docs/reviewer/submission-startup.json",
+      "sha256": "897036c08f51eabe4310cbf6cb6da48e5ff99f013f544afafb41f7e882689b7e"
+    },
+    {
+      "path": "docs/reviewer/submission-status.txt",
+      "sha256": "0447c465b7fe4651930e56d8bfea0b0341de2c87b36394128020d2fb7c5e01c8"
+    },
+    {
+      "path": "docs/reviewer/submission-verification.json",
+      "sha256": "1a37867ca078dd928026ac368cee8f368ba4e62768b59b2a3bcf35c856d0e797"
+    },
+    {
+      "path": "docs/reviewer/submission-workflow-output.txt",
+      "sha256": "25572b5e9fbff6efe35c6a814a264bdfadea1840efe5acd6d96bec49a1ccc934"
+    },
+    {
+      "path": "docs/reviewer/submission-workflows.json",
+      "sha256": "32793f2a582415ffa4bc5d28696ae6b0433a2bee80466766a39ec58ccc78be46"
+    }
+  ],
+  "protected_files_unchanged": 251
+}

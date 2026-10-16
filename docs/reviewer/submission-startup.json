@@ -1,0 +1,20 @@
+{
+  "application": "app.main:app",
+  "server": "uvicorn",
+  "bind": "127.0.0.1 only",
+  "real_http_health": {
+    "status": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "openapi_http_status": 200,
+  "application_paths": 19,
+  "swagger_http_status": 200,
+  "private_env_file_loaded": false,
+  "credentials_inherited": false,
+  "external_connections": "blocked in child; no inference endpoints requested",
+  "live_provider_requests": 0,
+  "server_exit_code": -15,
+  "graceful_lifespan_shutdown": true
+}

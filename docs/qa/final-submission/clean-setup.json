@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "operations": [
+    {
+      "operation": "sync --locked --offline",
+      "exit_code": 0
+    },
+    {
+      "operation": "pip check --python",
+      "exit_code": 0
+    },
+    {
+      "operation": "run --locked --offline",
+      "exit_code": 0
+    }
+  ],
+  "fresh_source_copy": ".local/audit-clean-d470929385",
+  "fresh_venv": true,
+  "private_env_copied": false,
+  "git_metadata_copied_or_created": false,
+  "tools_and_cache": "existing project-local cached Python/uv artifacts",
+  "online_fresh_clone_install_verified": false,
+  "http_statuses": {
+    "/health": 200,
+    "/docs": 200,
+    "/redoc": 200,
+    "/openapi.json": 200,
+    "authenticated_analysis_without_provider": "503 GROQ_NOT_CONFIGURED"
+  },
+  "openapi_paths": 20,
+  "uvicorn_exit_code": -15,
+  "graceful_shutdown_complete": true,
+  "signal_exit_expected": true,
+  "provider_calls": 0,
+  "existing_development_database_modified": false,
+  "new_audit_demo_database_migrated": true
+}

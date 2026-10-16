@@ -1,0 +1,50 @@
+{
+  "head": "gmail_incremental_v1",
+  "single_head": true,
+  "revisions_oldest_first": [
+    "t09_batch_v1",
+    "t09_batch_v2",
+    "feedback_results_v1",
+    "gmail_incremental_v1"
+  ],
+  "orm_schema_differences": 0,
+  "tables": {
+    "alembic_version": {
+      "columns": 1,
+      "unique_constraints": 0,
+      "check_constraints": 0,
+      "indexes": 0
+    },
+    "batch_jobs": {
+      "columns": 20,
+      "unique_constraints": 1,
+      "check_constraints": 5,
+      "indexes": 4
+    },
+    "batch_records": {
+      "columns": 22,
+      "unique_constraints": 2,
+      "check_constraints": 3,
+      "indexes": 3
+    },
+    "feedback_events": {
+      "columns": 16,
+      "unique_constraints": 1,
+      "check_constraints": 4,
+      "indexes": 3
+    },
+    "gmail_message_tracking": {
+      "columns": 15,
+      "unique_constraints": 1,
+      "check_constraints": 5,
+      "indexes": 3
+    }
+  },
+  "server_version": "12.22 (Ubuntu 12.22-0ubuntu0.20.04.4)",
+  "tcp_listener": "",
+  "app_role_superuser": false,
+  "app_role_createdb": false,
+  "app_role_createrole": false,
+  "isolated_test_schema_cleaned": true,
+  "development_data_modified": false
+}

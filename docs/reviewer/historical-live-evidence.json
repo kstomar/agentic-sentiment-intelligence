@@ -1,0 +1,19 @@
+{
+  "source": "../qa/live-groq-result.json",
+  "source_date": "2026-11-02",
+  "kind": "Previously recorded live evidence; not a new provider request",
+  "model": "openai/gpt-oss-20b",
+  "recorded_requests": 1,
+  "recorded_http_status": 200,
+  "recorded_latency_seconds": 1.4903,
+  "recorded_token_usage": {
+    "prompt_tokens": 856,
+    "completion_tokens": 515,
+    "total_tokens": 1371
+  },
+  "current_schema_revalidation": "PASSED",
+  "exact_evidence_revalidation": "PASSED",
+  "sentiment": "MIXED",
+  "accuracy_dataset_used": false,
+  "additional_provider_requests": 0
+}
